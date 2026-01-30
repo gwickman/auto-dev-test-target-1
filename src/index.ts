@@ -1,1 +1,1 @@
-export {};
+export * from './string/index.js';
