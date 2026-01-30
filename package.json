@@ -1,0 +1,17 @@
+{
+  "name": "auto-dev-test-target-1",
+  "version": "0.1.0",
+  "description": "A minimal TypeScript utility library for auto-dev-mcp integration testing",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo 'No tests yet' && exit 0",
+    "lint": "echo 'No linting yet' && exit 0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.10.0"
+  }
+}
