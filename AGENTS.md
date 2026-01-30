@@ -1,66 +1,61 @@
 # auto-dev-test-target-1
 
-auto-dev-test-target-1 project
+## Project Overview
 
-## Development Setup
+This is auto-dev-test-target-1, a minimal TypeScript utility library designed as a test target for auto-dev-mcp integration testing. Treat this as a real project - follow all quality standards and workflows.
 
-```bash
-uv sync
+## Technology Stack
+
+- **Language**: TypeScript 5.x
+- **Runtime**: Node.js 20.x (ESM modules)
+- **Testing**: Jest with ts-jest
+- **CI**: GitHub Actions
+
+## Directory Structure
+
 ```
+src/           # Source code
+tests/         # Test files
+dist/          # Compiled output (gitignored)
+docs/          # Documentation
+comms/         # auto-dev communication files
+```
+
+## Mandatory PR Workflow
+
+**All changes must go through a pull request. Direct commits to main are not allowed.**
+
+1. Create a feature branch: `git checkout -b feat/<feature-name>`
+2. Make your changes
+3. Run quality checks:
+   - `npm run build` - Must compile without errors
+   - `npm test` - All tests must pass
+4. Commit with conventional commit message: `feat: add <feature>`
+5. Push branch and create PR
+6. Wait for CI checks to pass
+7. Merge PR (squash merge preferred)
+8. Delete feature branch
 
 ## Quality Gates
 
-Before committing, run:
+Before creating a PR, ensure:
+- [ ] TypeScript compiles without errors
+- [ ] All tests pass
+- [ ] New code has test coverage
+- [ ] No console.log statements in production code
 
-```bash
-# Lint
-uv run ruff check src/
+## Commit Message Format
 
-# Format
-uv run ruff format src/
+Use conventional commits:
+- `feat: <description>` - New feature
+- `fix: <description>` - Bug fix
+- `docs: <description>` - Documentation
+- `test: <description>` - Test changes
+- `chore: <description>` - Maintenance
 
-# Type check
-uv run mypy src/
+## Working with auto-dev
 
-# Test
-uv run pytest
-```
-
-## PR Workflow
-
-**IMPORTANT: Follow this workflow exactly. Do not paraphrase or summarize.**
-
-1. Create PR: `gh pr create --fill --base main`
-2. Wait for CI: `gh pr checks --watch`
-3. If CI fails: `gh run view --log-failed`
-4. Fix issues and push (max 3 iterations)
-5. Merge: `gh pr merge --squash --delete-branch`
-
-## When Called by MCP Server
-
-When this agent is spawned by an MCP server for autonomous execution:
-
-1. **Read the full prompt** provided in the spawning message
-2. **Execute exactly what is requested** - no more, no less
-3. **Follow the PR workflow above** for all code changes
-4. **Report completion** by writing to the specified output location
-5. **Do not ask for clarification** - work with what is provided
-6. **Respect iteration limits** - max 3 CI fix attempts before reporting failure
-
-## Code Style
-
-- **Linter:** ruff
-- **Type Checker:** mypy
-- **Type Hints:** Required for all public APIs
-- **Test Framework:** pytest
-- **Patterns:** dataclasses, async/await
-
-## Project Structure
-
-```
-auto-dev-test-target-1/
-├── comms/
-├── docs/
-├── LICENSE
-├── README.md
-```
+This project uses auto-dev-mcp for orchestrated development:
+- Design documents are in `comms/inbox/`
+- Completion reports go in `comms/outbox/`
+- Follow requirements.md and implementation-plan.md for each feature
