@@ -1,0 +1,40 @@
+{
+  "next_id": 2,
+  "updated_at": "2026-01-30T23:13:55.116319",
+  "items": [
+    {
+      "id": "BL-001",
+      "title": "Test backlog item for MCP testing",
+      "priority": "P3",
+      "status": "in-progress",
+      "size": "s",
+      "added": "2026-01-30T23:13:31.899878",
+      "completed_at": null,
+      "tags": [
+        "test",
+        "mcp-testing"
+      ],
+      "description": "This is a test backlog item created during MCP tool testing.",
+      "acceptance_criteria": [
+        {
+          "text": "Item can be created",
+          "done": false
+        },
+        {
+          "text": "Item can be retrieved",
+          "done": false
+        },
+        {
+          "text": "Item can be updated",
+          "done": false
+        }
+      ],
+      "notes": "Updated during MCP testing",
+      "use_case": "This feature addresses: Test backlog item for MCP testing. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    }
+  ],
+  "completed_count": 0,
+  "cancelled_count": 0
+}

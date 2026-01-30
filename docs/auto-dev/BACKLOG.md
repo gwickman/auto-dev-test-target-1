@@ -1,55 +1,49 @@
 # Project Backlog
 
-## Overview
+*Last updated: 2026-01-30 23:13*
 
-This document tracks work items and their priorities.
+**Total completed:** 0 | **Cancelled:** 0
 
-## Priority Legend
+## Priority Summary
 
-| Priority | Description |
-|----------|-------------|
-| P0 | Critical - blocks other work |
-| P1 | High - important for next version |
-| P2 | Medium - should be addressed |
-| P3 | Low - nice to have |
+| Priority | Name | Count |
+|----------|------|-------|
+| P0 | Critical | 0 |
+| P1 | High | 0 |
+| P2 | Medium | 0 |
+| P3 | Low | 1 |
 
-## Backlog Items
+## Quick Reference
 
-### P0 - Critical
+| ID | Pri | Size | Title | Description |
+|----|-----|------|-------|-------------|
+| <a id="bl-001-ref"></a>[BL-001](#bl-001) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 
-<!-- Critical items here -->
+## Tags Summary
 
-### P1 - High Priority
+| Tag | Count | Items |
+|-----|-------|-------|
+| test | 1 | BL-001 |
+| mcp-testing | 1 | BL-001 |
 
-<!-- High priority items here -->
+## Item Details
 
-### P2 - Medium Priority
+### P3: Low
 
-<!-- Medium priority items here -->
+#### 🔄 BL-001: Test backlog item for MCP testing
 
-### P3 - Low Priority
+**Status:** in-progress
+**Tags:** test, mcp-testing
 
-<!-- Low priority items here -->
+This is a test backlog item created during MCP tool testing.
 
----
-
-## Completed Items
-
-<!-- Move completed items here with completion date -->
-
----
-
-## Item Template
-
-```markdown
-### {ID}: {Title}
-
-**Priority:** P{n}
-**Added:** {date}
-**Tags:** {tags}
-
-{Description}
+**Use Case:** This feature addresses: Test backlog item for MCP testing. It improves the system by resolving the described requirement.
 
 **Acceptance Criteria:**
-- [ ] {Criterion}
-```
+- [ ] Item can be created
+- [ ] Item can be retrieved
+- [ ] Item can be updated
+
+**Notes:** Updated during MCP testing
+
+[↑ Back to list](#bl-001-ref)
