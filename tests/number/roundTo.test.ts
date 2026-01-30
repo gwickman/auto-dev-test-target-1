@@ -1,4 +1,5 @@
 import { roundTo } from '../../src/index.js';
+import { InvalidNumberError } from '../../src/errors/index.js';
 
 describe('roundTo', () => {
   it('rounds to 2 decimal places', () => {
@@ -17,11 +18,11 @@ describe('roundTo', () => {
     expect(roundTo(5.0, 2)).toBe(5);
   });
 
-  it('throws for negative decimals', () => {
-    expect(() => roundTo(5, -1)).toThrow();
+  it('throws InvalidNumberError for negative decimals', () => {
+    expect(() => roundTo(5, -1)).toThrow(InvalidNumberError);
   });
 
-  it('throws for non-integer decimals', () => {
-    expect(() => roundTo(5, 1.5)).toThrow();
+  it('throws InvalidNumberError for non-integer decimals', () => {
+    expect(() => roundTo(5, 1.5)).toThrow(InvalidNumberError);
   });
 });

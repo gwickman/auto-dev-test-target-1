@@ -1,4 +1,5 @@
 import { clamp } from '../../src/index.js';
+import { OutOfRangeError } from '../../src/errors/index.js';
 
 describe('clamp', () => {
   it('returns value when in range', () => {
@@ -21,7 +22,7 @@ describe('clamp', () => {
     expect(clamp(10, 0, 10)).toBe(10);
   });
 
-  it('throws if min > max', () => {
-    expect(() => clamp(5, 10, 0)).toThrow();
+  it('throws OutOfRangeError if min > max', () => {
+    expect(() => clamp(5, 10, 0)).toThrow(OutOfRangeError);
   });
 });
