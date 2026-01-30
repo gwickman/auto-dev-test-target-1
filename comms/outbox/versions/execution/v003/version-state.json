@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.0",
+  "version": "v003",
+  "description": "Edge Cases & Error Handling - Add input validation and custom error types to increase codebase complexity for testing auto-dev's ability to modify existing code.",
+  "status": "pending",
+  "started_at": "2026-01-30T21:46:18.208017Z",
+  "completed_at": null,
+  "themes": [
+    {
+      "number": 1,
+      "name": "validation",
+      "status": "pending",
+      "features_total": 3,
+      "features_complete": 0,
+      "started_at": null,
+      "completed_at": null,
+      "skip_reason": null
+    }
+  ],
+  "current_theme": 1,
+  "current_feature": 1,
+  "baseline_failures": []
+}
