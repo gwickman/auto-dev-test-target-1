@@ -8,7 +8,7 @@
 
 ## Backlog Items
 
-- [BL-001](docs/auto-dev/BACKLOG.md#bl-001)
+- [BL-002](docs/auto-dev/BACKLOG.md#bl-002)
 
 ## Themes
 

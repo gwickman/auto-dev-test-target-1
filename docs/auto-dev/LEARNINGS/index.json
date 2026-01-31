@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "LRN-001",
+      "title": "MCP Tool Testing Results",
+      "tags": [
+        "test",
+        "mcp-testing"
+      ],
+      "created": "2026-01-30T23:18:04.036544Z",
+      "source": "MCP tool testing session",
+      "source_type": "manual",
+      "related_backlog": null,
+      "summary": "Test learning created during comprehensive MCP tool testing",
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-001-mcp-tool-testing-results.md"
+    }
+  ],
+  "next_id": 2
+}

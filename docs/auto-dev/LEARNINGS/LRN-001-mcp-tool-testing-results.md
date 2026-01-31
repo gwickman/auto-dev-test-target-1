@@ -1,0 +1,1 @@
+# Test Learning\n\nThis learning was created during MCP tool testing.\n\n## Key Points\n\n- Backlog tools work correctly\n- Git operations function properly\n- Version design workflow is validated
