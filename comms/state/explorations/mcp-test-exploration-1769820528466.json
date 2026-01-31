@@ -1,0 +1,15 @@
+{
+  "exploration_id": "mcp-test-exploration-1769820528466",
+  "results_folder": "mcp-test-exploration",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-01-31T00:48:48.467014",
+  "updated_at": "2026-01-31T00:48:48.467014",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/mcp-test-exploration/prompt.md",
+  "outbox_path": "comms/outbox/exploration/mcp-test-exploration"
+}
