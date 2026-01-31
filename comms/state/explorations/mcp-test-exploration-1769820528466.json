@@ -1,10 +1,10 @@
 {
   "exploration_id": "mcp-test-exploration-1769820528466",
   "results_folder": "mcp-test-exploration",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 3972,
   "started_at": "2026-01-31T00:48:48.467014",
-  "updated_at": "2026-01-31T00:48:48.467014",
+  "updated_at": "2026-01-31T00:48:50.653893",
   "completed_at": null,
   "error": null,
   "documents": [],
