@@ -1,14 +1,16 @@
 {
   "exploration_id": "mcp-test-exploration-1769820528466",
   "results_folder": "mcp-test-exploration",
-  "status": "running",
+  "status": "complete",
   "pid": 3972,
   "started_at": "2026-01-31T00:48:48.467014",
-  "updated_at": "2026-01-31T00:48:50.653893",
-  "completed_at": null,
+  "updated_at": "2026-01-31T00:50:31.136269",
+  "completed_at": "2026-01-31T00:50:31.135670",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/mcp-test-exploration/prompt.md",
   "outbox_path": "comms/outbox/exploration/mcp-test-exploration"

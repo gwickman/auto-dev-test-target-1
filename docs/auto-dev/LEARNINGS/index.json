@@ -13,7 +13,23 @@
       "related_backlog": null,
       "summary": "Test learning created during comprehensive MCP tool testing",
       "content_path": "docs/auto-dev/LEARNINGS/LRN-001-mcp-tool-testing-results.md"
+    },
+    {
+      "id": "LRN-002",
+      "title": "MCP Tool Testing - Conversation 2 Insights",
+      "tags": [
+        "test",
+        "mcp-testing",
+        "git-operations",
+        "exploration"
+      ],
+      "created": "2026-01-31T00:57:14.281840Z",
+      "source": "mcp-tool-testing-conversation-2",
+      "source_type": "manual",
+      "related_backlog": "BL-001",
+      "summary": "Key insights from MCP tool testing including bug in git_read pr_checks operation",
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-002-mcp-tool-testing-conversation-2-insights.md"
     }
   ],
-  "next_id": 2
+  "next_id": 3
 }

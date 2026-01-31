@@ -1,0 +1,19 @@
+{
+  "schema_version": "2.0",
+  "execution_id": "auto-dev-test-target-1-v999-exec-1769841443",
+  "project": "auto-dev-test-target-1",
+  "version": "v999",
+  "status": "paused",
+  "phase": "development",
+  "post_dev_step": null,
+  "post_dev_progress": null,
+  "started_at": "2026-01-31T06:37:23.158842Z",
+  "updated_at": "2026-01-31T06:41:54.516044Z",
+  "completed_at": null,
+  "halt_reason": "Pause requested",
+  "c4_regenerated": null,
+  "pause_reason": null,
+  "pause_message": null,
+  "crashed_predecessor": null,
+  "crashed_successor": null
+}

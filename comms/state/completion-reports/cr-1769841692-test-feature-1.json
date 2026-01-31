@@ -1,0 +1,27 @@
+{
+  "report_id": "cr-1769841692-test-feature-1",
+  "project": "auto-dev-test-target-1",
+  "version": "v999",
+  "theme": "test-theme",
+  "feature": "test-feature-1",
+  "iteration": 1,
+  "status": "complete",
+  "started_at": "2026-01-31T06:41:32.290447",
+  "updated_at": "2026-01-31T06:41:33.985610",
+  "completed_at": "2026-01-31T06:41:33.978015",
+  "progress": {
+    "pytest": "failed",
+    "ruff": "complete",
+    "mypy": "failed"
+  },
+  "result": {
+    "feature": "test-feature-1",
+    "status": "complete",
+    "summary": "Status: complete. Quality checks: 0/0 passed.",
+    "iteration": 1,
+    "all_checks_passed": true,
+    "acceptance_passed": 0,
+    "acceptance_total": 0
+  },
+  "error": null
+}
