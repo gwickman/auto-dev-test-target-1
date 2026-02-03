@@ -1,14 +1,16 @@
 {
   "exploration_id": "health-check-destructive-nested-test-1770106706665",
   "results_folder": "health-check-destructive-nested-test",
-  "status": "running",
+  "status": "complete",
   "pid": 28764,
   "started_at": "2026-02-03T08:18:26.665755",
-  "updated_at": "2026-02-03T08:18:28.544973",
-  "completed_at": null,
+  "updated_at": "2026-02-03T08:20:20.665530",
+  "completed_at": "2026-02-03T08:20:20.665080",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/health-check-destructive-nested-test/prompt.md",
   "outbox_path": "comms/outbox/exploration/health-check-destructive-nested-test"
