@@ -1,10 +1,10 @@
 {
   "exploration_id": "health-check-destructive-test-1770106599182",
   "results_folder": "health-check-destructive-test",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 28764,
   "started_at": "2026-02-03T08:16:39.182409",
-  "updated_at": "2026-02-03T08:16:39.182409",
+  "updated_at": "2026-02-03T08:16:40.954860",
   "completed_at": null,
   "error": null,
   "documents": [],
