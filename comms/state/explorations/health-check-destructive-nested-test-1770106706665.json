@@ -1,10 +1,10 @@
 {
   "exploration_id": "health-check-destructive-nested-test-1770106706665",
   "results_folder": "health-check-destructive-nested-test",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 28764,
   "started_at": "2026-02-03T08:18:26.665755",
-  "updated_at": "2026-02-03T08:18:26.665755",
+  "updated_at": "2026-02-03T08:18:28.544973",
   "completed_at": null,
   "error": null,
   "documents": [],
