@@ -1,10 +1,10 @@
 {
   "exploration_id": "nested-exploration-destructive-test-1770106669633",
   "results_folder": "nested-exploration-destructive-test",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 28764,
   "started_at": "2026-02-03T08:17:49.633485",
-  "updated_at": "2026-02-03T08:17:49.633485",
+  "updated_at": "2026-02-03T08:17:51.426059",
   "completed_at": null,
   "error": null,
   "documents": [],

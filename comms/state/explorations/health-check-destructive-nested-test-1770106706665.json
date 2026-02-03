@@ -1,0 +1,15 @@
+{
+  "exploration_id": "health-check-destructive-nested-test-1770106706665",
+  "results_folder": "health-check-destructive-nested-test",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-03T08:18:26.665755",
+  "updated_at": "2026-02-03T08:18:26.665755",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/health-check-destructive-nested-test/prompt.md",
+  "outbox_path": "comms/outbox/exploration/health-check-destructive-nested-test"
+}

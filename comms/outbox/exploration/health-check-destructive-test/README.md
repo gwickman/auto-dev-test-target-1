@@ -1,0 +1,354 @@
+# Health Check Success Test - Complete Response
+
+## Health Check Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "status": "healthy",
+    "version": "6.0.0",
+    "uptime_seconds": 1577,
+    "services": {
+      "config": "ok",
+      "state": "ok",
+      "execution": "ok"
+    },
+    "active_themes": 0,
+    "timestamp": "2026-02-03T08:17:01.578386+00:00",
+    "external_dependencies": {
+      "git": {
+        "available": true,
+        "path": "C:\\Program Files\\Git\\cmd\\git.EXE"
+      },
+      "gh": {
+        "available": true,
+        "authenticated": true,
+        "path": "C:\\Program Files\\GitHub CLI\\gh.EXE"
+      }
+    },
+    "execution_backend_mode": "legacy",
+    "require_tool_keys": true,
+    "tool_authorization": {
+      "enabled": true,
+      "active_keys_count": 2,
+      "static_test_keys_configured": 0,
+      "orphaned_keys": []
+    },
+    "security_status": {
+      "require_tool_keys": true,
+      "authorization_enforcement_active": true,
+      "warnings": [],
+      "recommendation": null
+    },
+    "capabilities": {
+      "manifest_version": "1.1.0",
+      "expected_tools": [
+        "health_check",
+        "list_projects",
+        "get_project_info",
+        "design_version",
+        "design_theme",
+        "validate_version_design",
+        "start_version_execution",
+        "get_version_execution_status",
+        "pause_version_execution",
+        "resume_version_execution",
+        "get_version_status",
+        "complete_version",
+        "list_versions",
+        "get_theme_status",
+        "complete_theme",
+        "halt_theme",
+        "generate_retrospective",
+        "get_recovery_status",
+        "recover_theme",
+        "explore_project",
+        "start_exploration",
+        "get_exploration_status",
+        "get_exploration_result",
+        "available_explorations",
+        "list_explorations",
+        "request_clarification",
+        "list_backlog_items",
+        "get_backlog_item",
+        "add_backlog_item",
+        "update_backlog_item",
+        "complete_backlog_item",
+        "commit_changes",
+        "git_read",
+        "generate_completion_report",
+        "extract_learnings",
+        "get_iteration_metrics",
+        "save_learning",
+        "get_learning",
+        "search_learnings",
+        "list_learnings",
+        "check_usage",
+        "run_quality_gates",
+        "start_completion_report",
+        "get_completion_report_status",
+        "get_completion_report_result",
+        "get_server_logs",
+        "set_log_level",
+        "read_document",
+        "tool_help",
+        "bootstrap_project",
+        "list_library_modules",
+        "get_template_version",
+        "sync_templates",
+        "configure_webhooks"
+      ],
+      "critical_tools": [
+        "health_check",
+        "list_projects",
+        "get_project_info",
+        "design_version",
+        "design_theme",
+        "start_version_execution",
+        "get_theme_status",
+        "list_backlog_items",
+        "commit_changes"
+      ],
+      "expected_count": 54,
+      "verification_instruction": "Chatbot: Verify you can see all expected_tools listed above. If any are missing or marked hidden, report as P1 issue."
+    },
+    "sdk_test": {
+      "success": true,
+      "return_code": 0,
+      "output_length": 39,
+      "output_preview": "SDK test successful\nSDK test successful",
+      "duration_ms": 6652,
+      "error": null,
+      "cli_direct": {
+        "cli_path_resolved": "C:\\Users\\grant\\.local\\bin\\claude.exe",
+        "cli_verification": {
+          "path": "C:\\Users\\grant\\.local\\bin\\claude.exe",
+          "exists": true,
+          "is_claude_code": true,
+          "version": "2.1.29 (Claude Code)",
+          "error": null
+        },
+        "version_check": {
+          "success": true,
+          "return_code": 0,
+          "stdout": "2.1.29 (Claude Code)\n",
+          "stderr": "",
+          "duration_ms": 400
+        },
+        "simple_prompt": {
+          "success": true,
+          "return_code": 0,
+          "stdout_length": 21,
+          "stdout_preview": "Hello there, friend.\n",
+          "stderr_preview": "",
+          "duration_ms": 6390
+        },
+        "env_vars": {
+          "ANTHROPIC_API_KEY": "(not set)",
+          "PATH": "(667 chars)",
+          "HOME": "(not set)",
+          "USERPROFILE": "C:\\Users\\grant"
+        }
+      }
+    },
+    "source_sync": {
+      "status": "yes",
+      "checked_file": "services\\tool_key_manager.py",
+      "source_checksum": "81fd9f954358920c133f2bb0068a704ecee3178bdb9eeabdcbfa4f49731b53a3",
+      "running_checksum": "81fd9f954358920c133f2bb0068a704ecee3178bdb9eeabdcbfa4f49731b53a3"
+    },
+    "claude_processes": [
+      {
+        "pid": 3708,
+        "ppid": 5944,
+        "name": "cmd.exe",
+        "cmdline": "C:\\WINDOWS\\system32\\cmd.exe /d /s /c C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\resources\\chrome-native-host.exe chrome-extension://fcoeoabgfenejglbffodgkkbkcdhcgfn/ --parent-window=0 <",
+        "cpu_seconds": 0.0,
+        "memory_mb": 4.5,
+        "runtime_minutes": 3802.7,
+        "likely_stuck": true
+      },
+      {
+        "pid": 3872,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=crashpad-handler --user-data-dir=C:\\Users\\grant\\AppData\\Roaming\\Claude /prefetch:4 --no-rate-limit --monitor-self-annotation",
+        "cpu_seconds": 0.0,
+        "memory_mb": 33.1,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 8800,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=renderer --user-data-dir=C:\\Users\\grant\\AppData\\Roaming\\Claude --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --",
+        "cpu_seconds": 0.2,
+        "memory_mb": 82.4,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 9204,
+        "ppid": 28764,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\.local\\bin\\claude.exe --dangerously-skip-permissions -p Working directory: C:\\Users\\grant\\Documents\\projects\\auto-dev-test-target-1 | autoDevToolKey: 3f4cbeb9-5d62-4543-97c5-2969def88b6",
+        "cpu_seconds": 2.2,
+        "memory_mb": 599.3,
+        "runtime_minutes": 0.6,
+        "likely_stuck": false
+      },
+      {
+        "pid": 9740,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\gr",
+        "cpu_seconds": 2.2,
+        "memory_mb": 62.2,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 10148,
+        "ppid": 3708,
+        "name": "chrome-native-host.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\resources\\chrome-native-host.exe chrome-extension://fcoeoabgfenejglbffodgkkbkcdhcgfn/ --parent-window=0",
+        "cpu_seconds": 0.0,
+        "memory_mb": 5.0,
+        "runtime_minutes": 3802.7,
+        "likely_stuck": true
+      },
+      {
+        "pid": 13032,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-bu",
+        "cpu_seconds": 1.4,
+        "memory_mb": 114.4,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 15320,
+        "ppid": 22028,
+        "name": "python.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Roaming\\Claude\\Claude Extensions\\ant.dir.cursortouch.windows-mcp\\.venv\\Scripts\\python.exe main.py",
+        "cpu_seconds": 0.0,
+        "memory_mb": 3.9,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 16936,
+        "ppid": 9300,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe",
+        "cpu_seconds": 26.8,
+        "memory_mb": 169.0,
+        "runtime_minutes": 26.4,
+        "likely_stuck": false
+      },
+      {
+        "pid": 17168,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --video-capture-use-gpu-memory",
+        "cpu_seconds": 0.1,
+        "memory_mb": 101.7,
+        "runtime_minutes": 25.7,
+        "likely_stuck": true
+      },
+      {
+        "pid": 18632,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=renderer --user-data-dir=C:\\Users\\grant\\AppData\\Roaming\\Claude --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --",
+        "cpu_seconds": 92.0,
+        "memory_mb": 447.0,
+        "runtime_minutes": 26.4,
+        "likely_stuck": false
+      },
+      {
+        "pid": 21908,
+        "ppid": 15320,
+        "name": "python.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Roaming\\Claude\\Claude Extensions\\ant.dir.cursortouch.windows-mcp\\.venv\\Scripts\\python.exe main.py",
+        "cpu_seconds": 2.9,
+        "memory_mb": 147.4,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 22028,
+        "ppid": 16936,
+        "name": "uv.exe",
+        "cmdline": "C:\\Users\\grant\\.local\\bin\\uv.exe --directory C:\\Users\\grant\\AppData\\Roaming\\Claude\\Claude Extensions\\ant.dir.cursortouch.windows-mcp run main.py",
+        "cpu_seconds": 0.1,
+        "memory_mb": 24.6,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 22452,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=renderer --user-data-dir=C:\\Users\\grant\\AppData\\Roaming\\Claude --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --",
+        "cpu_seconds": 0.2,
+        "memory_mb": 81.2,
+        "runtime_minutes": 26.4,
+        "likely_stuck": true
+      },
+      {
+        "pid": 23184,
+        "ppid": 16936,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\AppData\\Local\\AnthropicClaude\\app-1.1.1520\\claude.exe --type=gpu-process --user-data-dir=C:\\Users\\grant\\AppData\\Roaming\\Claude --gpu-preferences=UAAAAAAAAADgAAAEAAAAAAAAAAAAAAAAAABgAAEA",
+        "cpu_seconds": 23.0,
+        "memory_mb": 374.6,
+        "runtime_minutes": 26.4,
+        "likely_stuck": false
+      },
+      {
+        "pid": 27416,
+        "ppid": 28764,
+        "name": "claude.exe",
+        "cmdline": "C:\\Users\\grant\\.local\\bin\\claude.exe --dangerously-skip-permissions -p Working directory: C:\\Users\\grant\\Documents\\projects\\auto-dev-test-target-1 | autoDevToolKey: 79eb7a9f-069a-4dad-837c-997cada9455",
+        "cpu_seconds": 3.4,
+        "memory_mb": 579.6,
+        "runtime_minutes": 1.2,
+        "likely_stuck": false
+      }
+    ]
+  },
+  "request_id": "79e16735"
+}
+```
+
+## Summary
+
+Health check executed successfully with all optional parameters:
+- `include_processes=true` - Process information included
+- `test_sdk=true` - SDK test successful
+- `check_source_sync=true` - Source sync confirmed (checksums match)
+
+### Key Findings
+
+**Status**: Healthy (version 6.0.0)
+
+**External Dependencies**:
+- Git: Available at C:\Program Files\Git\cmd\git.EXE
+- GitHub CLI: Available and authenticated at C:\Program Files\GitHub CLI\gh.EXE
+
+**SDK Test**:
+- Success: true
+- CLI version: 2.1.29 (Claude Code)
+- Simple prompt test passed
+
+**Source Sync**:
+- Status: Yes (checksums match)
+- Verified file: services\tool_key_manager.py
+
+**Claude Processes**: 16 processes detected
+- 2 active Claude Code sessions (PIDs 9204, 27416)
+- Multiple likely stuck processes from older sessions
