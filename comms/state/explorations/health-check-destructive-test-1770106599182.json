@@ -1,0 +1,15 @@
+{
+  "exploration_id": "health-check-destructive-test-1770106599182",
+  "results_folder": "health-check-destructive-test",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-03T08:16:39.182409",
+  "updated_at": "2026-02-03T08:16:39.182409",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/health-check-destructive-test/prompt.md",
+  "outbox_path": "comms/outbox/exploration/health-check-destructive-test"
+}
