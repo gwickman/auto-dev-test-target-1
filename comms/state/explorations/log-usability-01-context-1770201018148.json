@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-usability-01-context-1770201018148",
   "results_folder": "log-usability-01-context",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:30:18.148069",
-  "updated_at": "2026-02-04T10:30:18.148069",
+  "updated_at": "2026-02-04T10:30:20.143540",
   "completed_at": null,
   "error": null,
   "documents": [],
