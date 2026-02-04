@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-tool-test-05-synthesis-1770202332816",
   "results_folder": "log-tool-test-05-synthesis",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:52:12.816537",
-  "updated_at": "2026-02-04T10:52:12.816537",
+  "updated_at": "2026-02-04T10:52:14.806321",
   "completed_at": null,
   "error": null,
   "documents": [],
