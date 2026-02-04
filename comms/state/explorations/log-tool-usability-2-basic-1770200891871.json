@@ -1,14 +1,19 @@
 {
   "exploration_id": "log-tool-usability-2-basic-1770200891871",
   "results_folder": "log-tool-usability-2-basic",
-  "status": "running",
+  "status": "complete",
   "pid": 21052,
   "started_at": "2026-02-04T10:28:11.871261",
-  "updated_at": "2026-02-04T10:28:13.689438",
-  "completed_at": null,
+  "updated_at": "2026-02-04T10:32:36.077295",
+  "completed_at": "2026-02-04T10:32:36.076934",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "default-behavior.md",
+    "issues-identified.md",
+    "line-count-comparison.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/log-tool-usability-2-basic/prompt.md",
   "outbox_path": "comms/outbox/exploration/log-tool-usability-2-basic"
