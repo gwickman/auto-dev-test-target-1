@@ -1,0 +1,15 @@
+{
+  "exploration_id": "test-delete-backlog-1770231794959",
+  "results_folder": "test-delete-backlog",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-04T19:03:14.959441",
+  "updated_at": "2026-02-04T19:03:14.959441",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/test-delete-backlog/prompt.md",
+  "outbox_path": "comms/outbox/exploration/test-delete-backlog"
+}
