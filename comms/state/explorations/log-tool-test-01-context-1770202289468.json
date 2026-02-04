@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-tool-test-01-context-1770202289468",
   "results_folder": "log-tool-test-01-context",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:51:29.468119",
-  "updated_at": "2026-02-04T10:51:29.468119",
+  "updated_at": "2026-02-04T10:51:31.373325",
   "completed_at": null,
   "error": null,
   "documents": [],
