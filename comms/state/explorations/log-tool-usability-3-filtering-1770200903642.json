@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-tool-usability-3-filtering-1770200903642",
   "results_folder": "log-tool-usability-3-filtering",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:28:23.642238",
-  "updated_at": "2026-02-04T10:28:23.642238",
+  "updated_at": "2026-02-04T10:28:28.873294",
   "completed_at": null,
   "error": null,
   "documents": [],
