@@ -1,14 +1,18 @@
 {
   "exploration_id": "nested-exploration-destructive-test-1770106669633",
   "results_folder": "nested-exploration-destructive-test",
-  "status": "running",
+  "status": "complete",
   "pid": 28764,
   "started_at": "2026-02-03T08:17:49.633485",
-  "updated_at": "2026-02-03T08:17:51.426059",
-  "completed_at": null,
+  "updated_at": "2026-02-03T08:23:36.304181",
+  "completed_at": "2026-02-03T08:23:36.303613",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "findings.md",
+    "validation-test.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/nested-exploration-destructive-test/prompt.md",
   "outbox_path": "comms/outbox/exploration/nested-exploration-destructive-test"
