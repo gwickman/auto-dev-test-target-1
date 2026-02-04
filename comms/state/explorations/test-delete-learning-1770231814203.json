@@ -1,14 +1,16 @@
 {
   "exploration_id": "test-delete-learning-1770231814203",
   "results_folder": "test-delete-learning",
-  "status": "running",
+  "status": "complete",
   "pid": 3840,
   "started_at": "2026-02-04T19:03:34.203639",
-  "updated_at": "2026-02-04T19:03:36.203749",
-  "completed_at": null,
+  "updated_at": "2026-02-04T19:06:49.583649",
+  "completed_at": "2026-02-04T19:06:49.582838",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/test-delete-learning/prompt.md",
   "outbox_path": "comms/outbox/exploration/test-delete-learning"
