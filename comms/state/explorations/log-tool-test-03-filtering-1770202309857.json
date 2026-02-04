@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-tool-test-03-filtering-1770202309857",
   "results_folder": "log-tool-test-03-filtering",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:51:49.857764",
-  "updated_at": "2026-02-04T10:51:49.857764",
+  "updated_at": "2026-02-04T10:51:51.621729",
   "completed_at": null,
   "error": null,
   "documents": [],
