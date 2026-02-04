@@ -1,10 +1,10 @@
 {
   "exploration_id": "log-tool-usability-2-basic-1770200891871",
   "results_folder": "log-tool-usability-2-basic",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21052,
   "started_at": "2026-02-04T10:28:11.871261",
-  "updated_at": "2026-02-04T10:28:11.871261",
+  "updated_at": "2026-02-04T10:28:13.689438",
   "completed_at": null,
   "error": null,
   "documents": [],
