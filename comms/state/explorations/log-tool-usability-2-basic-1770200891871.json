@@ -1,0 +1,15 @@
+{
+  "exploration_id": "log-tool-usability-2-basic-1770200891871",
+  "results_folder": "log-tool-usability-2-basic",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-04T10:28:11.871261",
+  "updated_at": "2026-02-04T10:28:11.871261",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/log-tool-usability-2-basic/prompt.md",
+  "outbox_path": "comms/outbox/exploration/log-tool-usability-2-basic"
+}
