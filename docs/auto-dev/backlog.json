@@ -1,6 +1,6 @@
 {
-  "next_id": 3,
-  "updated_at": "2026-01-31T00:34:05.712983",
+  "next_id": 15,
+  "updated_at": "2026-02-04T11:35:54.050820",
   "items": [
     {
       "id": "BL-001",
@@ -63,6 +63,418 @@
       ],
       "notes": "Updated during MCP testing",
       "use_case": "This feature addresses: Test backlog item for MCP testing. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-003",
+      "title": "Document token limits for get_server_logs lines parameter",
+      "priority": "P0",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:33:13.001462",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "The get_server_logs tool hits token limits at lines=500 (160K characters), causing results to be saved to file instead of returned. Users need clear guidance on safe line count ranges.\n\nCurrent behavior:\n- lines=100 works well\n- lines=500 causes overflow\n\nNeeded:\n- Document safe range (50-200 lines recommended)\n- Add warning in tool description about token limits\n- Explain file output behavior when limits exceeded",
+      "acceptance_criteria": [
+        {
+          "text": "Tool help documentation includes safe line count guidance",
+          "done": false
+        },
+        {
+          "text": "Warning about token limits at 500+ lines documented",
+          "done": false
+        },
+        {
+          "text": "File output fallback behavior explained",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Document token limits for get_server_logs lines parameter. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-004",
+      "title": "Fix or remove broken session_id filtering in get_server_logs",
+      "priority": "P0",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:33:25.890217",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "The session_id filter parameter exists but is completely non-functional. Testing shows it returns 0 results in all cases because:\n\n- Server operates in 'stateless mode'\n- All logs show 'Terminating session: None'\n- No actual session IDs are assigned\n- session_id only appears in message text, not as structured field\n\nOptions:\n1. Implement actual session tracking (assign IDs, maintain state)\n2. Remove the parameter entirely to avoid confusion\n\nCurrent state creates false expectations that session tracking exists.",
+      "acceptance_criteria": [
+        {
+          "text": "session_id parameter either works correctly or is removed",
+          "done": false
+        },
+        {
+          "text": "If implemented: sessions are actually tracked with IDs",
+          "done": false
+        },
+        {
+          "text": "If removed: parameter removed from tool signature and docs updated",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Fix or remove broken session_id filtering in get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-005",
+      "title": "Add tool_help documentation for get_server_logs",
+      "priority": "P0",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:33:35.737867",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Calling tool_help('get_server_logs') returns \"No help resources for 'get_server_logs'\". This leaves users without guidance on:\n\n- Parameter descriptions and valid values\n- Filter behavior (AND vs OR logic)\n- Default values and rationale\n- Output format specification\n- Search case sensitivity\n- Valid log levels\n- Logger name matching behavior\n- Error handling\n- Performance characteristics\n\nNeed comprehensive tool_help documentation covering all aspects of the tool.",
+      "acceptance_criteria": [
+        {
+          "text": "tool_help('get_server_logs') returns comprehensive documentation",
+          "done": false
+        },
+        {
+          "text": "Includes parameter reference with types and valid values",
+          "done": false
+        },
+        {
+          "text": "Documents filter behavior (AND logic, case sensitivity)",
+          "done": false
+        },
+        {
+          "text": "Includes usage examples for common scenarios",
+          "done": false
+        },
+        {
+          "text": "Documents output format and error codes",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Add tool_help documentation for get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-006",
+      "title": "Document case-sensitive search behavior in get_server_logs",
+      "priority": "P0",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:33:43.105436",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "The search parameter in get_server_logs is case-sensitive but this is not documented. Users get unexpected empty results.\n\nExample:\n- search='error' returns 0 results\n- search='ERROR' would find actual errors\n\nThis undocumented behavior wastes debugging time as users don't understand why their searches fail.\n\nNeed to:\n1. Document case sensitivity clearly in tool_help\n2. Add examples showing case-sensitive matching\n3. Consider adding optional case_insensitive flag",
+      "acceptance_criteria": [
+        {
+          "text": "Documentation explicitly states search is case-sensitive",
+          "done": false
+        },
+        {
+          "text": "Examples show case-sensitive behavior",
+          "done": false
+        },
+        {
+          "text": "Consider adding case_insensitive parameter option",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Document case-sensitive search behavior in get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-007",
+      "title": "Add logger discovery mechanism for get_server_logs",
+      "priority": "P1",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:33:51.681706",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Users must query logs first to discover available logger names before they can filter effectively. There's no built-in mechanism to see what loggers exist.\n\nCommon loggers found in testing:\n- auto_dev_mcp.middleware.tracing\n- auto_dev_mcp.middleware.auth\n- mcp.server.lowlevel.server\n- sse_starlette.sse\n\nOptions to solve:\n1. Add list_loggers operation/parameter to get_server_logs\n2. Document common logger names in tool_help\n3. Create separate tool for logger discovery\n4. Add auto-completion hints\n\nLogger discovery would greatly improve usability by helping users construct effective queries without trial and error.",
+      "acceptance_criteria": [
+        {
+          "text": "Users can discover available logger names without querying all logs",
+          "done": false
+        },
+        {
+          "text": "Could be a separate tool, parameter, or documentation",
+          "done": false
+        },
+        {
+          "text": "Includes descriptions of what each logger tracks",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Add logger discovery mechanism for get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-008",
+      "title": "Implement case-insensitive search option for get_server_logs",
+      "priority": "P1",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:34:13.636366",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Search parameter is case-sensitive only, which limits usability. Users searching for 'error' miss 'ERROR' logs, 'warning' misses 'WARNING', etc.\n\nCurrent behavior:\n- search='error' → 0 results\n- search='ERROR' → finds actual errors\n- No way to search case-insensitively\n\nProposed:\nAdd case_insensitive parameter (default: False for backward compatibility)\n\nExample usage:\nget_server_logs(search='error', case_insensitive=True)\n→ matches 'error', 'Error', 'ERROR', etc.\n\nThis would make the tool more user-friendly for typical debugging scenarios.",
+      "acceptance_criteria": [
+        {
+          "text": "Add case_insensitive boolean parameter to get_server_logs",
+          "done": false
+        },
+        {
+          "text": "When true, search matches case-insensitively",
+          "done": false
+        },
+        {
+          "text": "Document the new parameter in tool_help",
+          "done": false
+        },
+        {
+          "text": "Update examples to show both modes",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Implement case-insensitive search option for get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-009",
+      "title": "Add execution_id filtering for CLI logs in get_server_logs",
+      "priority": "P1",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:34:22.473351",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "CLI logs use execution_id for tracking but there's no execution_id filter parameter. CLI logs have request_id: '-' (placeholder) making them hard to filter.\n\nCurrent state:\n- MCP logs: request_id works (8-char hex IDs)\n- CLI logs: request_id is '-', execution_id in message text only\n\nThis creates tracking asymmetry between MCP and CLI operations.\n\nNeeded:\n1. Add execution_id parameter to get_server_logs\n2. Enable filtering CLI logs by execution ID\n3. Consider populating request_id in CLI logs with unique IDs\n4. Document the difference between request_id and execution_id\n\nThis would enable consistent tracking across both MCP API calls and CLI executions.",
+      "acceptance_criteria": [
+        {
+          "text": "Add execution_id parameter to get_server_logs",
+          "done": false
+        },
+        {
+          "text": "Filter CLI logs by execution ID",
+          "done": false
+        },
+        {
+          "text": "Document in tool_help with examples",
+          "done": false
+        },
+        {
+          "text": "Consider unified ID strategy for MCP and CLI logs",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Add execution_id filtering for CLI logs in get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-010",
+      "title": "Improve log level classification - validation failures should be ERROR not WARNING",
+      "priority": "P1",
+      "status": "open",
+      "size": "xl",
+      "added": "2026-02-04T11:34:34.080258",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Critical validation failures are logged at WARNING level instead of ERROR level, making them harder to discover during debugging.\n\nExample from testing:\n- 'VALIDATION completion count mismatch for v048' logged as WARNING\n- This is a critical failure that prevented version execution\n- Searching for ERROR level logs missed this entirely\n\nImpact:\n- Users filter for ERROR level expecting to find failures\n- Critical issues logged as WARNING are invisible\n- Wastes debugging time\n\nRecommendation:\n1. Log validation failures at ERROR level\n2. Review all WARNING logs for misclassified issues\n3. Establish clear guidelines for ERROR vs WARNING distinction\n\nERROR should indicate: system failures, data corruption, execution blocks\nWARNING should indicate: recoverable issues, deprecations, suspicious but non-blocking conditions",
+      "acceptance_criteria": [
+        {
+          "text": "Validation failures logged at ERROR level instead of WARNING",
+          "done": false
+        },
+        {
+          "text": "Review all WARNING logs for critical issues that should be ERROR",
+          "done": false
+        },
+        {
+          "text": "Update logging guidelines to clarify ERROR vs WARNING usage",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Improve log level classification - validation failures should be ERROR not WARNING. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-011",
+      "title": "Add regex search mode to get_server_logs",
+      "priority": "P2",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:35:04.720720",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Search parameter only supports literal string matching, limiting advanced queries.\n\nUse cases that don't work:\n- Pattern matching: search='request.*timeout'\n- Multiple terms: search='(error|warning|failure)'\n- Word boundaries: search='\\berror\\b'\n- Complex patterns: search='v\\d{3}.*failed'\n\nCurrent workaround: Multiple separate queries\n\nProposed:\nAdd regex_mode parameter (default: False)\n\nExample:\nget_server_logs(search='request.*timeout', regex_mode=True)\nget_server_logs(search='(ERROR|WARN)', regex_mode=True)\n\nBenefits:\n- Reduce number of queries needed\n- Enable complex pattern matching\n- Better for exploratory debugging\n\nKeep literal mode as default for simplicity and performance.",
+      "acceptance_criteria": [
+        {
+          "text": "Add regex_mode boolean parameter",
+          "done": false
+        },
+        {
+          "text": "When true, search treats pattern as regex",
+          "done": false
+        },
+        {
+          "text": "Document regex syntax and examples",
+          "done": false
+        },
+        {
+          "text": "Provide clear error messages for invalid regex",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Add regex search mode to get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-012",
+      "title": "Support multiple values per filter parameter in get_server_logs",
+      "priority": "P2",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-04T11:35:18.811225",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Current filters only accept single values, requiring multiple queries to see different levels or loggers together.\n\nCurrent limitation:\n- To see both INFO and ERROR: need 2 queries\n- To see logs from 3 different loggers: need 3 queries\n- Can't combine related severity levels\n\nProposed enhancement:\nSupport array values for level and logger parameters\n\nExamples:\nget_server_logs(level=['INFO', 'ERROR'])\n→ Returns both INFO and ERROR logs (OR logic)\n\nget_server_logs(logger=['auto_dev_mcp.middleware.auth', 'auto_dev_mcp.middleware.tracing'])\n→ Returns logs from both loggers\n\nBenefits:\n- Reduce query count\n- More flexible filtering\n- Better for overview debugging\n\nImplementation note: Within a parameter use OR logic, between parameters use AND logic.",
+      "acceptance_criteria": [
+        {
+          "text": "Parameters accept array values for multi-value filtering",
+          "done": false
+        },
+        {
+          "text": "level parameter accepts list: ['INFO', 'ERROR']",
+          "done": false
+        },
+        {
+          "text": "logger parameter accepts list of logger names",
+          "done": false
+        },
+        {
+          "text": "Document OR logic for multi-value parameters",
+          "done": false
+        },
+        {
+          "text": "Update examples showing multi-value usage",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Support multiple values per filter parameter in get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-013",
+      "title": "Add request correlation IDs for tracking multi-step operations",
+      "priority": "P2",
+      "status": "open",
+      "size": "xl",
+      "added": "2026-02-04T11:35:30.119061",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "No mechanism to group related requests together. Multi-step operations (like explorations) can't be tracked as a unit.\n\nCurrent limitation:\n- Exploration creates multiple MCP requests\n- Each has different request_id\n- No way to see 'all logs for exploration X'\n- Manual correlation required\n\nUse cases that need correlation:\n- Track all requests in an exploration\n- Group requests in a version execution\n- Follow multi-step operations across services\n- Debug complex workflows\n\nProposed:\nAdd correlation_id concept:\n- Assign to related operations (exploration_id, version_execution_id)\n- Propagate through request chains\n- Add correlation_id filter parameter\n\nExample:\nget_server_logs(correlation_id='log-tool-test-01-context-1770202289468')\n→ Returns all logs for that exploration\n\nBenefits:\n- Better visibility into complex operations\n- Easier debugging of multi-request workflows\n- Clear request relationships",
+      "acceptance_criteria": [
+        {
+          "text": "Add correlation_id parameter to get_server_logs",
+          "done": false
+        },
+        {
+          "text": "System assigns correlation IDs to related requests",
+          "done": false
+        },
+        {
+          "text": "Document correlation ID strategy",
+          "done": false
+        },
+        {
+          "text": "Examples show tracking multi-step operations",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Add request correlation IDs for tracking multi-step operations. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-014",
+      "title": "Implement pagination for large log result sets in get_server_logs",
+      "priority": "P2",
+      "status": "open",
+      "size": "xl",
+      "added": "2026-02-04T11:35:54.050812",
+      "completed_at": null,
+      "tags": [
+        "logger"
+      ],
+      "description": "Large result sets hit token limits at lines=500. No pagination support means users can't access more than ~100-200 logs per query.\n\nCurrent limitation:\n- lines=500 causes token overflow (160K chars)\n- Results saved to file instead of returned\n- No way to page through large result sets\n- Can't safely query thousands of logs\n\nTesting showed:\n- lines=100 works well\n- lines=500 overflows\n- No offset parameter to get next page\n\nProposed:\nAdd pagination support:\n\nget_server_logs(limit=100, offset=0)  # First 100\nget_server_logs(limit=100, offset=100)  # Next 100\nget_server_logs(limit=100, offset=200)  # Next 100\n\nResponse includes:\n- total_count: Total matching logs\n- returned_count: Logs in this response\n- has_more: Boolean if more results exist\n\nBenefits:\n- Access unlimited logs in chunks\n- No token limit issues\n- Standard pagination UX\n- Better for large datasets",
+      "acceptance_criteria": [
+        {
+          "text": "Add offset parameter for pagination",
+          "done": false
+        },
+        {
+          "text": "Add limit parameter (alias for lines)",
+          "done": false
+        },
+        {
+          "text": "Response includes total_count and has_more fields",
+          "done": false
+        },
+        {
+          "text": "Document pagination patterns with examples",
+          "done": false
+        },
+        {
+          "text": "Support querying thousands of logs safely",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Implement pagination for large log result sets in get_server_logs. It improves the system by resolving the described requirement.",
       "implemented_in_version": null,
       "implemented_in_theme": null
     }
