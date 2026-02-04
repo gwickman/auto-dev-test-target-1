@@ -1,14 +1,16 @@
 {
   "exploration_id": "test-update-backlog-1770231785463",
   "results_folder": "test-update-backlog",
-  "status": "running",
+  "status": "complete",
   "pid": 3840,
   "started_at": "2026-02-04T19:03:05.463835",
-  "updated_at": "2026-02-04T19:03:07.368960",
-  "completed_at": null,
+  "updated_at": "2026-02-04T19:04:51.605673",
+  "completed_at": "2026-02-04T19:04:51.605372",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/test-update-backlog/prompt.md",
   "outbox_path": "comms/outbox/exploration/test-update-backlog"
