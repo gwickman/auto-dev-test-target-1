@@ -1,14 +1,16 @@
 {
   "exploration_id": "test-delete-backlog-1770231794959",
   "results_folder": "test-delete-backlog",
-  "status": "running",
+  "status": "complete",
   "pid": 3840,
   "started_at": "2026-02-04T19:03:14.959441",
-  "updated_at": "2026-02-04T19:03:16.799807",
-  "completed_at": null,
+  "updated_at": "2026-02-04T19:06:41.923158",
+  "completed_at": "2026-02-04T19:06:41.922770",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/test-delete-backlog/prompt.md",
   "outbox_path": "comms/outbox/exploration/test-delete-backlog"
