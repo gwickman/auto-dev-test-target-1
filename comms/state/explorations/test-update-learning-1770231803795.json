@@ -1,10 +1,10 @@
 {
   "exploration_id": "test-update-learning-1770231803795",
   "results_folder": "test-update-learning",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 3840,
   "started_at": "2026-02-04T19:03:23.795894",
-  "updated_at": "2026-02-04T19:03:23.795894",
+  "updated_at": "2026-02-04T19:03:25.837531",
   "completed_at": null,
   "error": null,
   "documents": [],
