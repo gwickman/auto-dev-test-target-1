@@ -1,10 +1,10 @@
 {
   "exploration_id": "test-delete-backlog-1770231794959",
   "results_folder": "test-delete-backlog",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 3840,
   "started_at": "2026-02-04T19:03:14.959441",
-  "updated_at": "2026-02-04T19:03:14.959441",
+  "updated_at": "2026-02-04T19:03:16.799807",
   "completed_at": null,
   "error": null,
   "documents": [],
