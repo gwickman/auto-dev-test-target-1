@@ -1,14 +1,16 @@
 {
   "exploration_id": "log-tool-test-04-tracking-1770202323214",
   "results_folder": "log-tool-test-04-tracking",
-  "status": "running",
+  "status": "complete",
   "pid": 21052,
   "started_at": "2026-02-04T10:52:03.214567",
-  "updated_at": "2026-02-04T10:52:05.093896",
-  "completed_at": null,
+  "updated_at": "2026-02-04T10:55:16.649756",
+  "completed_at": "2026-02-04T10:55:16.649445",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/log-tool-test-04-tracking/prompt.md",
   "outbox_path": "comms/outbox/exploration/log-tool-test-04-tracking"
