@@ -1,6 +1,6 @@
 {
-  "next_id": 15,
-  "updated_at": "2026-02-04T11:35:54.050820",
+  "next_id": 18,
+  "updated_at": "2026-02-04T19:03:53.170247",
   "items": [
     {
       "id": "BL-001",
@@ -475,6 +475,63 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Implement pagination for large log result sets in get_server_logs. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-015",
+      "title": "Updated Test Item",
+      "priority": "P2",
+      "status": "open",
+      "size": "xs",
+      "added": "2026-02-04T19:03:34.820006",
+      "completed_at": null,
+      "tags": [],
+      "description": "New description",
+      "acceptance_criteria": [
+        {
+          "text": "First criterion",
+          "done": false
+        },
+        {
+          "text": "Second criterion",
+          "done": false
+        }
+      ],
+      "notes": null,
+      "use_case": "This feature addresses: Updated Test Item. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-016",
+      "title": "Item for Soft Delete",
+      "priority": "P2",
+      "status": "open",
+      "size": "xs",
+      "added": "2026-02-04T19:03:42.979259",
+      "completed_at": null,
+      "tags": [],
+      "description": "This is a test backlog item that will be soft-deleted to verify soft delete functionality.",
+      "acceptance_criteria": [],
+      "notes": null,
+      "use_case": "This feature addresses: Item for Soft Delete. It improves the system by resolving the described requirement.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
+    },
+    {
+      "id": "BL-017",
+      "title": "Item for Hard Delete",
+      "priority": "P2",
+      "status": "open",
+      "size": "xs",
+      "added": "2026-02-04T19:03:44.262570",
+      "completed_at": null,
+      "tags": [],
+      "description": "This is a test backlog item that will be hard-deleted to verify hard delete functionality.",
+      "acceptance_criteria": [],
+      "notes": null,
+      "use_case": "This feature addresses: Item for Hard Delete. It improves the system by resolving the described requirement.",
       "implemented_in_version": null,
       "implemented_in_theme": null
     }

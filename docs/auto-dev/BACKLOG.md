@@ -1,6 +1,6 @@
 # Project Backlog
 
-*Last updated: 2026-02-04 11:35*
+*Last updated: 2026-02-04 19:03*
 
 **Total completed:** 0 | **Cancelled:** 0
 
@@ -10,7 +10,7 @@
 |----------|------|-------|
 | P0 | Critical | 4 |
 | P1 | High | 4 |
-| P2 | Medium | 4 |
+| P2 | Medium | 7 |
 | P3 | Low | 2 |
 
 ## Quick Reference
@@ -29,6 +29,9 @@
 | <a id="bl-012-ref"></a>[BL-012](#bl-012) | P2 | l | Support multiple values per filter parameter in get_server_logs | Current filters only accept single values, requiring mult... |
 | <a id="bl-013-ref"></a>[BL-013](#bl-013) | P2 | xl | Add request correlation IDs for tracking multi-step operations | No mechanism to group related requests together. Multi-st... |
 | <a id="bl-014-ref"></a>[BL-014](#bl-014) | P2 | xl | Implement pagination for large log result sets in get_server_logs | Large result sets hit token limits at lines=500. No pagin... |
+| <a id="bl-015-ref"></a>[BL-015](#bl-015) | P2 | xs | Updated Test Item | New description |
+| <a id="bl-016-ref"></a>[BL-016](#bl-016) | P2 | xs | Item for Soft Delete | This is a test backlog item that will be soft-deleted to ... |
+| <a id="bl-017-ref"></a>[BL-017](#bl-017) | P2 | xs | Item for Hard Delete | This is a test backlog item that will be hard-deleted to ... |
 | <a id="bl-001-ref"></a>[BL-001](#bl-001) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 | <a id="bl-002-ref"></a>[BL-002](#bl-002) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 
@@ -452,6 +455,40 @@ Benefits:
 - [ ] Support querying thousands of logs safely
 
 [↑ Back to list](#bl-014-ref)
+
+#### 📋 BL-015: Updated Test Item
+
+**Status:** open
+
+New description
+
+**Use Case:** This feature addresses: Updated Test Item. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] First criterion
+- [ ] Second criterion
+
+[↑ Back to list](#bl-015-ref)
+
+#### 📋 BL-016: Item for Soft Delete
+
+**Status:** open
+
+This is a test backlog item that will be soft-deleted to verify soft delete functionality.
+
+**Use Case:** This feature addresses: Item for Soft Delete. It improves the system by resolving the described requirement.
+
+[↑ Back to list](#bl-016-ref)
+
+#### 📋 BL-017: Item for Hard Delete
+
+**Status:** open
+
+This is a test backlog item that will be hard-deleted to verify hard delete functionality.
+
+**Use Case:** This feature addresses: Item for Hard Delete. It improves the system by resolving the described requirement.
+
+[↑ Back to list](#bl-017-ref)
 
 ### P3: Low
 

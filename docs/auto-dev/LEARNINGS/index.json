@@ -12,7 +12,8 @@
       "source_type": "manual",
       "related_backlog": null,
       "summary": "Test learning created during comprehensive MCP tool testing",
-      "content_path": "docs/auto-dev/LEARNINGS/LRN-001-mcp-tool-testing-results.md"
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-001-mcp-tool-testing-results.md",
+      "status": "active"
     },
     {
       "id": "LRN-002",
@@ -28,8 +29,56 @@
       "source_type": "manual",
       "related_backlog": "BL-001",
       "summary": "Key insights from MCP tool testing including bug in git_read pr_checks operation",
-      "content_path": "docs/auto-dev/LEARNINGS/LRN-002-mcp-tool-testing-conversation-2-insights.md"
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-002-mcp-tool-testing-conversation-2-insights.md",
+      "status": "active"
+    },
+    {
+      "id": "LRN-003",
+      "title": "Original Learning Title",
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
+      "created": "2026-02-04T19:03:59.930622Z",
+      "source": null,
+      "source_type": "manual",
+      "related_backlog": null,
+      "summary": "Original summary",
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-003-original-learning-title.md",
+      "status": "active"
+    },
+    {
+      "id": "LRN-004",
+      "title": "Learning for Soft Delete",
+      "tags": [
+        "test",
+        "soft-delete",
+        "cleanup"
+      ],
+      "created": "2026-02-04T19:04:05.393698Z",
+      "source": null,
+      "source_type": "manual",
+      "related_backlog": null,
+      "summary": "Test Learning for Soft Delete",
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-004-learning-for-soft-delete.md",
+      "status": "active"
+    },
+    {
+      "id": "LRN-005",
+      "title": "Learning for Hard Delete",
+      "tags": [
+        "test",
+        "hard-delete",
+        "cleanup"
+      ],
+      "created": "2026-02-04T19:04:06.987309Z",
+      "source": null,
+      "source_type": "manual",
+      "related_backlog": null,
+      "summary": "Test Learning for Hard Delete",
+      "content_path": "docs/auto-dev/LEARNINGS/LRN-005-learning-for-hard-delete.md",
+      "status": "active"
     }
   ],
-  "next_id": 3
+  "next_id": 6
 }

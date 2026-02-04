@@ -1,10 +1,10 @@
 {
   "exploration_id": "test-delete-learning-1770231814203",
   "results_folder": "test-delete-learning",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 3840,
   "started_at": "2026-02-04T19:03:34.203639",
-  "updated_at": "2026-02-04T19:03:34.203639",
+  "updated_at": "2026-02-04T19:03:36.203749",
   "completed_at": null,
   "error": null,
   "documents": [],
