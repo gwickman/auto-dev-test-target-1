@@ -1,0 +1,15 @@
+{
+  "exploration_id": "design-v004-007-critical-check-1770331096864",
+  "results_folder": "design-v004-007-critical-check",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-05T22:38:16.864433",
+  "updated_at": "2026-02-05T22:38:16.864433",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/design-v004-007-critical-check/prompt.md",
+  "outbox_path": "comms/outbox/exploration/design-v004-007-critical-check"
+}
