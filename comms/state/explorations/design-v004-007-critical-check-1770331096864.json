@@ -1,10 +1,10 @@
 {
   "exploration_id": "design-v004-007-critical-check-1770331096864",
   "results_folder": "design-v004-007-critical-check",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21928,
   "started_at": "2026-02-05T22:38:16.864433",
-  "updated_at": "2026-02-05T22:38:16.864433",
+  "updated_at": "2026-02-05T22:38:18.746729",
   "completed_at": null,
   "error": null,
   "documents": [],
