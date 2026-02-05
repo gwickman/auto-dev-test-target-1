@@ -1,14 +1,19 @@
 {
   "exploration_id": "design-v004-004-logical-design-1770328995784",
   "results_folder": "design-v004-004-logical-design",
-  "status": "running",
+  "status": "complete",
   "pid": 21928,
   "started_at": "2026-02-05T22:03:15.784435",
-  "updated_at": "2026-02-05T22:03:17.574879",
-  "completed_at": null,
+  "updated_at": "2026-02-05T22:08:54.284177",
+  "completed_at": "2026-02-05T22:08:54.283809",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "open-questions.md",
+    "phase-1-logical-design.md",
+    "test-strategy.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/design-v004-004-logical-design/prompt.md",
   "outbox_path": "comms/outbox/exploration/design-v004-004-logical-design"
