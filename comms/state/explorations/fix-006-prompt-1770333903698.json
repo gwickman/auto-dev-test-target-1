@@ -1,10 +1,10 @@
 {
   "exploration_id": "fix-006-prompt-1770333903698",
   "results_folder": "fix-006-prompt",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 18712,
   "started_at": "2026-02-05T23:25:03.698964",
-  "updated_at": "2026-02-05T23:25:03.698964",
+  "updated_at": "2026-02-05T23:25:05.520533",
   "completed_at": null,
   "error": null,
   "documents": [],
