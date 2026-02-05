@@ -1,14 +1,19 @@
 {
   "exploration_id": "existing-versions-review-1770315544219",
   "results_folder": "existing-versions-review",
-  "status": "running",
+  "status": "complete",
   "pid": 21928,
   "started_at": "2026-02-05T18:19:04.219975",
-  "updated_at": "2026-02-05T18:19:06.264603",
-  "completed_at": null,
+  "updated_at": "2026-02-05T18:22:17.397515",
+  "completed_at": "2026-02-05T18:22:17.397176",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "completed-versions.md",
+    "current-capabilities.md",
+    "planning-analysis.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/existing-versions-review/prompt.md",
   "outbox_path": "comms/outbox/exploration/existing-versions-review"
