@@ -1,10 +1,10 @@
 {
   "exploration_id": "design-v004-001-environment-1770327891185",
   "results_folder": "design-v004-001-environment",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21928,
   "started_at": "2026-02-05T21:44:51.185479",
-  "updated_at": "2026-02-05T21:44:51.185479",
+  "updated_at": "2026-02-05T21:44:53.159070",
   "completed_at": null,
   "error": null,
   "documents": [],
