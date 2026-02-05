@@ -1,0 +1,15 @@
+{
+  "exploration_id": "existing-versions-review-1770315544219",
+  "results_folder": "existing-versions-review",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-05T18:19:04.219975",
+  "updated_at": "2026-02-05T18:19:04.219975",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/existing-versions-review/prompt.md",
+  "outbox_path": "comms/outbox/exploration/existing-versions-review"
+}
