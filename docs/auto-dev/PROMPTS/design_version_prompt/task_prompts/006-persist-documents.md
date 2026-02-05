@@ -56,6 +56,7 @@ themes = [
 - [ ] `themes` is a list (not a string)
 - [ ] Each theme has `name`, `goal`, `features` keys
 - [ ] Each feature has `name`, `goal` keys
+- [ ] Each feature in design_theme call has `number`, `name`, `requirements`, `implementation_plan` keys
 
 ### 4. Call design_version
 
@@ -81,12 +82,28 @@ For EACH theme:
 # Prepare features array
 features = [
     {
+        "number": 1,
         "name": "001-feature-name",
         "requirements": "[Full requirements.md content]",
-        "implementation-plan": "[Full implementation-plan.md content]"
+        "implementation_plan": "[Full implementation-plan.md content]"
+    },
+    {
+        "number": 2,
+        "name": "002-another-feature",
+        "requirements": "[Full requirements.md content]",
+        "implementation_plan": "[Full implementation-plan.md content]"
     },
     # ... repeat for all features in theme
 ]
+
+**CRITICAL - Feature Object Required Fields:**
+Each feature dict MUST contain ALL of these fields:
+- `number` (int): Feature number within the theme, 1-indexed sequential
+- `name` (str): Feature slug (e.g., "001-feature-name")
+- `requirements` (str): Full requirements.md markdown content
+- `implementation_plan` (str): Full implementation-plan.md markdown content (NOTE: underscore, not hyphen)
+
+Missing the `number` field or using `implementation-plan` instead of `implementation_plan` will cause a KeyError.
 
 # Call design_theme
 design_theme(
