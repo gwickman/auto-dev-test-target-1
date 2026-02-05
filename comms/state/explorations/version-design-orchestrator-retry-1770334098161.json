@@ -1,10 +1,10 @@
 {
   "exploration_id": "version-design-orchestrator-retry-1770334098161",
   "results_folder": "version-design-orchestrator-retry",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 18712,
   "started_at": "2026-02-05T23:28:18.161898",
-  "updated_at": "2026-02-05T23:28:18.161898",
+  "updated_at": "2026-02-05T23:28:20.022822",
   "completed_at": null,
   "error": null,
   "documents": [],
