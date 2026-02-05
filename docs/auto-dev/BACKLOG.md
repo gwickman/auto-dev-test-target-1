@@ -1,6 +1,6 @@
 # Project Backlog
 
-*Last updated: 2026-02-04 19:03*
+*Last updated: 2026-02-05 18:29*
 
 **Total completed:** 0 | **Cancelled:** 0
 
@@ -10,7 +10,7 @@
 |----------|------|-------|
 | P0 | Critical | 4 |
 | P1 | High | 4 |
-| P2 | Medium | 7 |
+| P2 | Medium | 27 |
 | P3 | Low | 2 |
 
 ## Quick Reference
@@ -32,6 +32,26 @@
 | <a id="bl-015-ref"></a>[BL-015](#bl-015) | P2 | xs | Updated Test Item | New description |
 | <a id="bl-016-ref"></a>[BL-016](#bl-016) | P2 | xs | Item for Soft Delete | This is a test backlog item that will be soft-deleted to ... |
 | <a id="bl-017-ref"></a>[BL-017](#bl-017) | P2 | xs | Item for Hard Delete | This is a test backlog item that will be hard-deleted to ... |
+| <a id="bl-018-ref"></a>[BL-018](#bl-018) | P2 | m | Add unique() array utility | Create a unique() function that removes duplicate values ... |
+| <a id="bl-019-ref"></a>[BL-019](#bl-019) | P2 | m | Add chunk() array utility | Create a chunk() function that splits an array into chunk... |
+| <a id="bl-020-ref"></a>[BL-020](#bl-020) | P2 | m | Add first() array utility | Create a first() function that returns the first element ... |
+| <a id="bl-021-ref"></a>[BL-021](#bl-021) | P2 | m | Add last() array utility | Create a last() function that returns the last element of... |
+| <a id="bl-022-ref"></a>[BL-022](#bl-022) | P2 | m | Add flatten() array utility | Create a flatten() function that flattens nested arrays t... |
+| <a id="bl-023-ref"></a>[BL-023](#bl-023) | P2 | m | Add compact() array utility | Create a compact() function that removes falsy values (fa... |
+| <a id="bl-024-ref"></a>[BL-024](#bl-024) | P2 | m | Add intersection() array utility | Create an intersection() function that returns an array o... |
+| <a id="bl-025-ref"></a>[BL-025](#bl-025) | P2 | m | Add pick() object utility | Create a pick() function that creates a new object with o... |
+| <a id="bl-026-ref"></a>[BL-026](#bl-026) | P2 | m | Add omit() object utility | Create an omit() function that creates a new object exclu... |
+| <a id="bl-027-ref"></a>[BL-027](#bl-027) | P2 | m | Add isEmpty() utility | Create an isEmpty() function that checks if a value is em... |
+| <a id="bl-028-ref"></a>[BL-028](#bl-028) | P2 | m | Add keys() object utility | Create a keys() function that returns an array of object ... |
+| <a id="bl-029-ref"></a>[BL-029](#bl-029) | P2 | m | Add merge() object utility | Create a merge() function that performs a deep merge of m... |
+| <a id="bl-030-ref"></a>[BL-030](#bl-030) | P2 | m | Add clone() object utility | Create a clone() function that creates a deep copy of an ... |
+| <a id="bl-031-ref"></a>[BL-031](#bl-031) | P2 | m | Add get() nested property utility | Create a get() function that safely retrieves nested prop... |
+| <a id="bl-032-ref"></a>[BL-032](#bl-032) | P2 | m | Add sleep() utility | Create a sleep() function that returns a promise that res... |
+| <a id="bl-033-ref"></a>[BL-033](#bl-033) | P2 | m | Add retry() utility | Create a retry() function that retries an async function ... |
+| <a id="bl-034-ref"></a>[BL-034](#bl-034) | P2 | m | Add timeout() utility | Create a timeout() function that wraps a promise and reje... |
+| <a id="bl-035-ref"></a>[BL-035](#bl-035) | P2 | m | Add debounce() utility | Create a debounce() function that delays invoking a funct... |
+| <a id="bl-036-ref"></a>[BL-036](#bl-036) | P2 | m | Add throttle() utility | Create a throttle() function that ensures a function is o... |
+| <a id="bl-037-ref"></a>[BL-037](#bl-037) | P2 | m | Add once() utility | Create a once() function that wraps a function to ensure ... |
 | <a id="bl-001-ref"></a>[BL-001](#bl-001) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 | <a id="bl-002-ref"></a>[BL-002](#bl-002) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 
@@ -39,7 +59,17 @@
 
 | Tag | Count | Items |
 |-----|-------|-------|
+| utility | 20 | BL-018, BL-019, BL-020, BL-021, ... |
 | logger | 12 | BL-003, BL-004, BL-005, BL-006, ... |
+| v004 | 7 | BL-018, BL-019, BL-020, BL-021, ... |
+| v005 | 7 | BL-025, BL-026, BL-027, BL-028, ... |
+| v006 | 6 | BL-032, BL-033, BL-034, BL-035, ... |
+| array-basics | 4 | BL-018, BL-019, BL-020, BL-021 |
+| object-basics | 4 | BL-025, BL-026, BL-027, BL-028 |
+| array-advanced | 3 | BL-022, BL-023, BL-024 |
+| object-deep | 3 | BL-029, BL-030, BL-031 |
+| promise-utils | 3 | BL-032, BL-033, BL-034 |
+| function-utils | 3 | BL-035, BL-036, BL-037 |
 | test | 2 | BL-001, BL-002 |
 | mcp-testing | 2 | BL-001, BL-002 |
 
@@ -489,6 +519,363 @@ This is a test backlog item that will be hard-deleted to verify hard delete func
 **Use Case:** This feature addresses: Item for Hard Delete. It improves the system by resolving the described requirement.
 
 [↑ Back to list](#bl-017-ref)
+
+#### 📋 BL-018: Add unique() array utility
+
+**Status:** open
+**Tags:** v004, array-basics, utility
+
+Create a unique() function that removes duplicate values from an array. Should handle primitive types and use strict equality. Return type should preserve input array type using generics.
+
+**Use Case:** This feature addresses: Add unique() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: unique<T>(arr: T[]): T[]
+- [ ] Removes duplicate values using Set
+- [ ] Handles empty arrays
+- [ ] Has comprehensive tests
+- [ ] Uses validation for non-array input
+
+[↑ Back to list](#bl-018-ref)
+
+#### 📋 BL-019: Add chunk() array utility
+
+**Status:** open
+**Tags:** v004, array-basics, utility
+
+Create a chunk() function that splits an array into chunks of specified size. The last chunk may contain fewer elements if array length is not evenly divisible by chunk size.
+
+**Use Case:** This feature addresses: Add chunk() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: chunk<T>(arr: T[], size: number): T[][]
+- [ ] Validates size is positive integer
+- [ ] Handles empty arrays
+- [ ] Last chunk contains remaining elements
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-019-ref)
+
+#### 📋 BL-020: Add first() array utility
+
+**Status:** open
+**Tags:** v004, array-basics, utility
+
+Create a first() function that returns the first element of an array. Should handle empty arrays safely and optionally return a default value.
+
+**Use Case:** This feature addresses: Add first() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: first<T>(arr: T[]): T | undefined
+- [ ] Returns undefined for empty arrays
+- [ ] Has comprehensive tests
+- [ ] Uses type guards
+
+[↑ Back to list](#bl-020-ref)
+
+#### 📋 BL-021: Add last() array utility
+
+**Status:** open
+**Tags:** v004, array-basics, utility
+
+Create a last() function that returns the last element of an array. Should handle empty arrays safely and optionally return a default value.
+
+**Use Case:** This feature addresses: Add last() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: last<T>(arr: T[]): T | undefined
+- [ ] Returns undefined for empty arrays
+- [ ] Has comprehensive tests
+- [ ] Uses type guards
+
+[↑ Back to list](#bl-021-ref)
+
+#### 📋 BL-022: Add flatten() array utility
+
+**Status:** open
+**Tags:** v004, array-advanced, utility
+
+Create a flatten() function that flattens nested arrays to a specified depth. Default depth should be 1. Depth of Infinity should flatten all levels.
+
+**Use Case:** This feature addresses: Add flatten() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: flatten(arr: any[], depth?: number): any[]
+- [ ] Default depth is 1
+- [ ] Supports Infinity for full flatten
+- [ ] Validates depth is non-negative
+- [ ] Has comprehensive tests with nested arrays
+
+[↑ Back to list](#bl-022-ref)
+
+#### 📋 BL-023: Add compact() array utility
+
+**Status:** open
+**Tags:** v004, array-advanced, utility
+
+Create a compact() function that removes falsy values (false, null, 0, "", undefined, NaN) from an array. Useful for cleaning up data.
+
+**Use Case:** This feature addresses: Add compact() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: compact<T>(arr: T[]): T[]
+- [ ] Removes all falsy values
+- [ ] Preserves truthy values including empty objects/arrays
+- [ ] Has comprehensive tests
+- [ ] Returns correct types
+
+[↑ Back to list](#bl-023-ref)
+
+#### 📋 BL-024: Add intersection() array utility
+
+**Status:** open
+**Tags:** v004, array-advanced, utility
+
+Create an intersection() function that returns an array of values that appear in all provided arrays. Uses strict equality for comparison.
+
+**Use Case:** This feature addresses: Add intersection() array utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: intersection<T>(...arrays: T[][]): T[]
+- [ ] Returns common elements from all arrays
+- [ ] Uses strict equality
+- [ ] Returns empty array if no common elements
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-024-ref)
+
+#### 📋 BL-025: Add pick() object utility
+
+**Status:** open
+**Tags:** v005, object-basics, utility
+
+Create a pick() function that creates a new object with only the specified keys from the source object. Should preserve types using TypeScript generics.
+
+**Use Case:** This feature addresses: Add pick() object utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>
+- [ ] Returns new object with selected properties
+- [ ] Handles empty keys array
+- [ ] Has comprehensive tests
+- [ ] Preserves types correctly
+
+[↑ Back to list](#bl-025-ref)
+
+#### 📋 BL-026: Add omit() object utility
+
+**Status:** open
+**Tags:** v005, object-basics, utility
+
+Create an omit() function that creates a new object excluding the specified keys from the source object. Complement to pick().
+
+**Use Case:** This feature addresses: Add omit() object utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: omit<T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K>
+- [ ] Returns new object without excluded properties
+- [ ] Handles empty keys array
+- [ ] Has comprehensive tests
+- [ ] Preserves types correctly
+
+[↑ Back to list](#bl-026-ref)
+
+#### 📋 BL-027: Add isEmpty() utility
+
+**Status:** open
+**Tags:** v005, object-basics, utility
+
+Create an isEmpty() function that checks if a value is empty (empty object, array, string, null, or undefined). Handles multiple types.
+
+**Use Case:** This feature addresses: Add isEmpty() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: isEmpty(value: unknown): boolean
+- [ ] Returns true for {}, [], '', null, undefined
+- [ ] Returns false for non-empty values
+- [ ] Has comprehensive tests
+- [ ] Handles edge cases
+
+[↑ Back to list](#bl-027-ref)
+
+#### 📋 BL-028: Add keys() object utility
+
+**Status:** open
+**Tags:** v005, object-basics, utility
+
+Create a keys() function that returns an array of object keys with proper typing. Wrapper around Object.keys() with better TypeScript support.
+
+**Use Case:** This feature addresses: Add keys() object utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: keys<T extends object>(obj: T): (keyof T)[]
+- [ ] Returns typed array of keys
+- [ ] Has comprehensive tests
+- [ ] Better types than Object.keys()
+
+[↑ Back to list](#bl-028-ref)
+
+#### 📋 BL-029: Add merge() object utility
+
+**Status:** open
+**Tags:** v005, object-deep, utility
+
+Create a merge() function that performs a deep merge of multiple objects. Later sources override earlier ones. Handles nested objects recursively.
+
+**Use Case:** This feature addresses: Add merge() object utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: merge<T>(target: T, ...sources: Partial<T>[]): T
+- [ ] Deep merges nested objects
+- [ ] Later sources override earlier
+- [ ] Handles arrays appropriately
+- [ ] Has comprehensive tests with nested objects
+
+[↑ Back to list](#bl-029-ref)
+
+#### 📋 BL-030: Add clone() object utility
+
+**Status:** open
+**Tags:** v005, object-deep, utility
+
+Create a clone() function that creates a deep copy of an object. Handles nested objects and arrays but not functions or special objects.
+
+**Use Case:** This feature addresses: Add clone() object utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: clone<T>(obj: T): T
+- [ ] Creates deep copy of object
+- [ ] Handles nested objects and arrays
+- [ ] Has comprehensive tests
+- [ ] Validates input is cloneable
+
+[↑ Back to list](#bl-030-ref)
+
+#### 📋 BL-031: Add get() nested property utility
+
+**Status:** open
+**Tags:** v005, object-deep, utility
+
+Create a get() function that safely retrieves nested property values using a path string (e.g., 'user.address.city'). Returns undefined if path doesn't exist.
+
+**Use Case:** This feature addresses: Add get() nested property utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: get<T>(obj: any, path: string): T | undefined
+- [ ] Supports dot notation paths
+- [ ] Returns undefined for missing paths
+- [ ] Handles arrays in path
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-031-ref)
+
+#### 📋 BL-032: Add sleep() utility
+
+**Status:** open
+**Tags:** v006, promise-utils, utility
+
+Create a sleep() function that returns a promise that resolves after a specified delay in milliseconds. Useful for testing and rate limiting.
+
+**Use Case:** This feature addresses: Add sleep() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: sleep(ms: number): Promise<void>
+- [ ] Validates ms is non-negative
+- [ ] Returns promise that resolves after delay
+- [ ] Has comprehensive tests
+- [ ] Handles edge cases
+
+[↑ Back to list](#bl-032-ref)
+
+#### 📋 BL-033: Add retry() utility
+
+**Status:** open
+**Tags:** v006, promise-utils, utility
+
+Create a retry() function that retries an async function a specified number of times if it fails. Returns the result on success or throws the last error.
+
+**Use Case:** This feature addresses: Add retry() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: retry<T>(fn: () => Promise<T>, attempts: number): Promise<T>
+- [ ] Retries specified number of times
+- [ ] Returns result on success
+- [ ] Throws last error after all attempts fail
+- [ ] Has comprehensive tests with async functions
+
+[↑ Back to list](#bl-033-ref)
+
+#### 📋 BL-034: Add timeout() utility
+
+**Status:** open
+**Tags:** v006, promise-utils, utility
+
+Create a timeout() function that wraps a promise and rejects if it doesn't resolve within a specified time limit. Useful for preventing hanging operations.
+
+**Use Case:** This feature addresses: Add timeout() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: timeout<T>(promise: Promise<T>, ms: number): Promise<T>
+- [ ] Rejects with timeout error if time exceeded
+- [ ] Resolves with promise result if within time
+- [ ] Validates ms is positive
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-034-ref)
+
+#### 📋 BL-035: Add debounce() utility
+
+**Status:** open
+**Tags:** v006, function-utils, utility
+
+Create a debounce() function that delays invoking a function until after a specified time has elapsed since the last call. Useful for rate limiting event handlers.
+
+**Use Case:** This feature addresses: Add debounce() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: debounce<T extends (...args: any[]) => any>(fn: T, ms: number): T
+- [ ] Delays execution until ms after last call
+- [ ] Handles multiple rapid calls correctly
+- [ ] Validates ms is non-negative
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-035-ref)
+
+#### 📋 BL-036: Add throttle() utility
+
+**Status:** open
+**Tags:** v006, function-utils, utility
+
+Create a throttle() function that ensures a function is only called at most once per specified time period. Useful for rate limiting high-frequency events.
+
+**Use Case:** This feature addresses: Add throttle() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: throttle<T extends (...args: any[]) => any>(fn: T, ms: number): T
+- [ ] Limits invocations to once per ms
+- [ ] Executes immediately on first call
+- [ ] Validates ms is positive
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-036-ref)
+
+#### 📋 BL-037: Add once() utility
+
+**Status:** open
+**Tags:** v006, function-utils, utility
+
+Create a once() function that wraps a function to ensure it can only be called once. Subsequent calls return the cached result from the first call.
+
+**Use Case:** This feature addresses: Add once() utility. It improves the system by resolving the described requirement.
+
+**Acceptance Criteria:**
+- [ ] Function signature: once<T extends (...args: any[]) => any>(fn: T): T
+- [ ] Only executes fn once
+- [ ] Returns cached result on subsequent calls
+- [ ] Preserves function signature
+- [ ] Has comprehensive tests
+
+[↑ Back to list](#bl-037-ref)
 
 ### P3: Low
 
