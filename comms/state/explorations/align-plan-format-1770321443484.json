@@ -1,14 +1,17 @@
 {
   "exploration_id": "align-plan-format-1770321443484",
   "results_folder": "align-plan-format",
-  "status": "running",
+  "status": "complete",
   "pid": 21928,
   "started_at": "2026-02-05T19:57:23.484351",
-  "updated_at": "2026-02-05T19:57:25.385521",
-  "completed_at": null,
+  "updated_at": "2026-02-05T20:01:12.976355",
+  "completed_at": "2026-02-05T20:01:12.975196",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "format-analysis.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/align-plan-format/prompt.md",
   "outbox_path": "comms/outbox/exploration/align-plan-format"
