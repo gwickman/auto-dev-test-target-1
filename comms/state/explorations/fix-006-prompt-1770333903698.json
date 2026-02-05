@@ -1,0 +1,15 @@
+{
+  "exploration_id": "fix-006-prompt-1770333903698",
+  "results_folder": "fix-006-prompt",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-05T23:25:03.698964",
+  "updated_at": "2026-02-05T23:25:03.698964",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/fix-006-prompt/prompt.md",
+  "outbox_path": "comms/outbox/exploration/fix-006-prompt"
+}
