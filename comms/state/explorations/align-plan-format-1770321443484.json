@@ -1,10 +1,10 @@
 {
   "exploration_id": "align-plan-format-1770321443484",
   "results_folder": "align-plan-format",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21928,
   "started_at": "2026-02-05T19:57:23.484351",
-  "updated_at": "2026-02-05T19:57:23.484351",
+  "updated_at": "2026-02-05T19:57:25.385521",
   "completed_at": null,
   "error": null,
   "documents": [],
