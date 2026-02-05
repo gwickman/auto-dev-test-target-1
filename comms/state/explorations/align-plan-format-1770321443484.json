@@ -1,0 +1,15 @@
+{
+  "exploration_id": "align-plan-format-1770321443484",
+  "results_folder": "align-plan-format",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-05T19:57:23.484351",
+  "updated_at": "2026-02-05T19:57:23.484351",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/align-plan-format/prompt.md",
+  "outbox_path": "comms/outbox/exploration/align-plan-format"
+}

@@ -1,14 +1,17 @@
 {
   "exploration_id": "create-development-plan-1770315960049",
   "results_folder": "create-development-plan",
-  "status": "running",
+  "status": "complete",
   "pid": 21928,
   "started_at": "2026-02-05T18:26:00.049503",
-  "updated_at": "2026-02-05T18:26:02.059635",
-  "completed_at": null,
+  "updated_at": "2026-02-05T18:31:50.783986",
+  "completed_at": "2026-02-05T18:31:50.783288",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "analysis.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/create-development-plan/prompt.md",
   "outbox_path": "comms/outbox/exploration/create-development-plan"
