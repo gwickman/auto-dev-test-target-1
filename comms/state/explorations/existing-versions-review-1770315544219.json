@@ -1,10 +1,10 @@
 {
   "exploration_id": "existing-versions-review-1770315544219",
   "results_folder": "existing-versions-review",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21928,
   "started_at": "2026-02-05T18:19:04.219975",
-  "updated_at": "2026-02-05T18:19:04.219975",
+  "updated_at": "2026-02-05T18:19:06.264603",
   "completed_at": null,
   "error": null,
   "documents": [],
