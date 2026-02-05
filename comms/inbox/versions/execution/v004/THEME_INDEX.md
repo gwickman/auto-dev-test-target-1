@@ -7,32 +7,11 @@ Execute themes in order. Each theme must complete before starting the next.
 ### Theme 01: 01-array-basics
 
 **Path:** `comms/inbox/versions/execution/v004/01-01-array-basics/`
-**Goal:** Implement foundational array utility functions that provide safe, type-safe access and transformation operations for arrays. Focus on commonly-needed utilities with straightforward implementations: accessing first/last elements safely, removing duplicates, and splitting arrays into chunks.
+**Goal:** _Theme goal_
 
 **Features:**
 
-- 001-001-first: Get first element of array safely with undefined handling. Returns T | undefined enabling type narrowing. Direct array access pattern (arr[0]). BL-020. ~15 tests covering empty arrays, single elements, multiple elements, type preservation across primitives and objects, type narrowing demonstrations.
-- 002-002-last: Get last element of array safely with undefined handling. Returns T | undefined enabling type narrowing. Uses arr.length-1 indexing. BL-021. ~15 tests covering empty arrays, single elements, multiple elements, type preservation, consistent API with first().
-- 003-003-unique: Remove duplicate values from array using Set. Preserves generic type T through transformation. Set-based deduplication with spread operator [...new Set(arr)]. BL-018. ~18 tests covering primitives, objects (reference equality), NaN handling (Set treats NaN as equal), empty arrays, type preservation. Note: objects use reference equality per strict equality requirement.
-- 004-004-chunk: Split array into fixed-size chunks handling remainder. Validates size is positive integer using isNonNegativeInteger. Returns T[][] preserving element type. For-loop with slice operations. BL-019. ~20 tests covering exact division, remainder handling, empty arrays, validation errors (negative size, zero size, non-integer), type preservation.
-
-**Dependencies:**
-- v003 validation infrastructure (error types, validators)
-- **New validator required**: isNonNegativeInteger must be added to src/validation/index.ts BEFORE implementing chunk()
-
-**Technical Notes:**
-- All functions use generic type <T> to preserve element types
-- Set behavior: reference equality for objects, NaN treated as equal to itself
-- Error handling: InvalidNumberError for size validation in chunk()
-- ESM imports: use .js extensions in all import statements
-
-**Risks:**
-- Generic type complexity: RESOLVED - use single <T> parameter, TypeScript infers automatically
-- Type guards interpretation: RESOLVED - T | undefined return type provides type narrowing capability
-- Validation integration: RESOLVED - add isNonNegativeInteger following v003 validator pattern
-
----
-
+- 001-001-first: _Feature description_
 ### Theme 02: 02-array-advanced
 
 **Path:** `comms/inbox/versions/execution/v004/02-02-array-advanced/`
