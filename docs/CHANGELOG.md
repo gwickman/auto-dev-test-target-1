@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v004] - 2026-02-06
+
+### Added
+
+- Array utility module (`src/array/`) with barrel exports
+  - `first<T>(arr: T[]): T | undefined` — safe first element access with O(1) performance
+  - `last<T>(arr: T[]): T | undefined` — safe last element access with O(1) performance
+  - `unique<T>(arr: T[]): T[]` — array deduplication using Set with O(n) performance
+  - `chunk<T>(arr: T[], size: number): T[][]` — split arrays into fixed-size chunks with validation
+  - `compact<T>(arr: T[]): T[]` — remove all falsy values (false, null, 0, "", undefined, NaN)
+  - `flatten(arr: any[], depth?: number): any[]` — flatten nested arrays with configurable depth (default 1, supports Infinity)
+  - `intersection<T>(...arrays: T[][]): T[]` — find common elements across multiple arrays using strict equality
+- `isNonNegativeInteger()` validation utility for non-negative integer parameter validation
+- 60 new tests covering all array utilities and the new validator (131 total)
+
+### Changed
+
+- Extended validation module with `isNonNegativeInteger()` validator and supporting tests
+- Updated `src/index.ts` to export the new array module
+
+### Fixed
+
+- N/A (new features, no bug fixes)
+
 ## [v003] - 2026-01-30
 
 ### Added
