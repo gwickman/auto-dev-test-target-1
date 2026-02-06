@@ -1,16 +1,16 @@
 # Project Backlog
 
-*Last updated: 2026-02-05 18:29*
+*Last updated: 2026-02-06 20:37*
 
-**Total completed:** 0 | **Cancelled:** 0
+**Total completed:** 7 | **Cancelled:** 0
 
 ## Priority Summary
 
 | Priority | Name | Count |
 |----------|------|-------|
 | P0 | Critical | 4 |
-| P1 | High | 4 |
-| P2 | Medium | 27 |
+| P1 | High | 5 |
+| P2 | Medium | 21 |
 | P3 | Low | 2 |
 
 ## Quick Reference
@@ -25,6 +25,7 @@
 | <a id="bl-008-ref"></a>[BL-008](#bl-008) | P1 | l | Implement case-insensitive search option for get_server_logs | Search parameter is case-sensitive only, which limits usa... |
 | <a id="bl-009-ref"></a>[BL-009](#bl-009) | P1 | l | Add execution_id filtering for CLI logs in get_server_logs | CLI logs use execution_id for tracking but there's no exe... |
 | <a id="bl-010-ref"></a>[BL-010](#bl-010) | P1 | xl | Improve log level classification - validation failures should be ERROR not WARNING | Critical validation failures are logged at WARNING level ... |
+| <a id="bl-039-ref"></a>[BL-039](#bl-039) | P1 | m | Add Windows bash /dev/null guidance to AGENTS.md and nul to .gitignore | Add Windows bash null redirect guidance to AGENTS.md and ... |
 | <a id="bl-011-ref"></a>[BL-011](#bl-011) | P2 | l | Add regex search mode to get_server_logs | Search parameter only supports literal string matching, l... |
 | <a id="bl-012-ref"></a>[BL-012](#bl-012) | P2 | l | Support multiple values per filter parameter in get_server_logs | Current filters only accept single values, requiring mult... |
 | <a id="bl-013-ref"></a>[BL-013](#bl-013) | P2 | xl | Add request correlation IDs for tracking multi-step operations | No mechanism to group related requests together. Multi-st... |
@@ -32,13 +33,6 @@
 | <a id="bl-015-ref"></a>[BL-015](#bl-015) | P2 | xs | Updated Test Item | New description |
 | <a id="bl-016-ref"></a>[BL-016](#bl-016) | P2 | xs | Item for Soft Delete | This is a test backlog item that will be soft-deleted to ... |
 | <a id="bl-017-ref"></a>[BL-017](#bl-017) | P2 | xs | Item for Hard Delete | This is a test backlog item that will be hard-deleted to ... |
-| <a id="bl-018-ref"></a>[BL-018](#bl-018) | P2 | m | Add unique() array utility | Create a unique() function that removes duplicate values ... |
-| <a id="bl-019-ref"></a>[BL-019](#bl-019) | P2 | m | Add chunk() array utility | Create a chunk() function that splits an array into chunk... |
-| <a id="bl-020-ref"></a>[BL-020](#bl-020) | P2 | m | Add first() array utility | Create a first() function that returns the first element ... |
-| <a id="bl-021-ref"></a>[BL-021](#bl-021) | P2 | m | Add last() array utility | Create a last() function that returns the last element of... |
-| <a id="bl-022-ref"></a>[BL-022](#bl-022) | P2 | m | Add flatten() array utility | Create a flatten() function that flattens nested arrays t... |
-| <a id="bl-023-ref"></a>[BL-023](#bl-023) | P2 | m | Add compact() array utility | Create a compact() function that removes falsy values (fa... |
-| <a id="bl-024-ref"></a>[BL-024](#bl-024) | P2 | m | Add intersection() array utility | Create an intersection() function that returns an array o... |
 | <a id="bl-025-ref"></a>[BL-025](#bl-025) | P2 | m | Add pick() object utility | Create a pick() function that creates a new object with o... |
 | <a id="bl-026-ref"></a>[BL-026](#bl-026) | P2 | m | Add omit() object utility | Create an omit() function that creates a new object exclu... |
 | <a id="bl-027-ref"></a>[BL-027](#bl-027) | P2 | m | Add isEmpty() utility | Create an isEmpty() function that checks if a value is em... |
@@ -52,6 +46,7 @@
 | <a id="bl-035-ref"></a>[BL-035](#bl-035) | P2 | m | Add debounce() utility | Create a debounce() function that delays invoking a funct... |
 | <a id="bl-036-ref"></a>[BL-036](#bl-036) | P2 | m | Add throttle() utility | Create a throttle() function that ensures a function is o... |
 | <a id="bl-037-ref"></a>[BL-037](#bl-037) | P2 | m | Add once() utility | Create a once() function that wraps a function to ensure ... |
+| <a id="bl-038-ref"></a>[BL-038](#bl-038) | P2 | l | Create initial architecture documentation | No architecture documentation exists for the project. As ... |
 | <a id="bl-001-ref"></a>[BL-001](#bl-001) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 | <a id="bl-002-ref"></a>[BL-002](#bl-002) | P3 | s | Test backlog item for MCP testing | This is a test backlog item created during MCP tool testing. |
 
@@ -59,19 +54,21 @@
 
 | Tag | Count | Items |
 |-----|-------|-------|
-| utility | 20 | BL-018, BL-019, BL-020, BL-021, ... |
+| utility | 13 | BL-025, BL-026, BL-027, BL-028, ... |
 | logger | 12 | BL-003, BL-004, BL-005, BL-006, ... |
-| v004 | 7 | BL-018, BL-019, BL-020, BL-021, ... |
 | v005 | 7 | BL-025, BL-026, BL-027, BL-028, ... |
 | v006 | 6 | BL-032, BL-033, BL-034, BL-035, ... |
-| array-basics | 4 | BL-018, BL-019, BL-020, BL-021 |
 | object-basics | 4 | BL-025, BL-026, BL-027, BL-028 |
-| array-advanced | 3 | BL-022, BL-023, BL-024 |
 | object-deep | 3 | BL-029, BL-030, BL-031 |
 | promise-utils | 3 | BL-032, BL-033, BL-034 |
 | function-utils | 3 | BL-035, BL-036, BL-037 |
 | test | 2 | BL-001, BL-002 |
 | mcp-testing | 2 | BL-001, BL-002 |
+| architecture | 1 | BL-038 |
+| documentation | 1 | BL-038 |
+| windows | 1 | BL-039 |
+| agents-md | 1 | BL-039 |
+| gitignore | 1 | BL-039 |
 
 ## Item Details
 
@@ -314,6 +311,17 @@ WARNING should indicate: recoverable issues, deprecations, suspicious but non-bl
 
 [↑ Back to list](#bl-010-ref)
 
+#### 📋 BL-039: Add Windows bash /dev/null guidance to AGENTS.md and nul to .gitignore
+
+**Status:** open
+**Tags:** windows, agents-md, gitignore
+
+Add Windows bash null redirect guidance to AGENTS.md and add `nul` to .gitignore. In bash contexts on Windows: Always use `/dev/null` for output redirection (Git Bash correctly translates this to the Windows null device). Never use bare `nul` which gets interpreted as a literal filename in MSYS/Git Bash environments. Correct: `command > /dev/null 2>&1`. Wrong: `command > nul 2>&1`.
+
+**Use Case:** This feature addresses: Add Windows bash /dev/null guidance to AGENTS.md and nul to .gitignore. It improves the system by resolving the described requirement.
+
+[↑ Back to list](#bl-039-ref)
+
 ### P2: Medium
 
 #### 📋 BL-011: Add regex search mode to get_server_logs
@@ -519,130 +527,6 @@ This is a test backlog item that will be hard-deleted to verify hard delete func
 **Use Case:** This feature addresses: Item for Hard Delete. It improves the system by resolving the described requirement.
 
 [↑ Back to list](#bl-017-ref)
-
-#### 📋 BL-018: Add unique() array utility
-
-**Status:** open
-**Tags:** v004, array-basics, utility
-
-Create a unique() function that removes duplicate values from an array. Should handle primitive types and use strict equality. Return type should preserve input array type using generics.
-
-**Use Case:** This feature addresses: Add unique() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: unique<T>(arr: T[]): T[]
-- [ ] Removes duplicate values using Set
-- [ ] Handles empty arrays
-- [ ] Has comprehensive tests
-- [ ] Uses validation for non-array input
-
-[↑ Back to list](#bl-018-ref)
-
-#### 📋 BL-019: Add chunk() array utility
-
-**Status:** open
-**Tags:** v004, array-basics, utility
-
-Create a chunk() function that splits an array into chunks of specified size. The last chunk may contain fewer elements if array length is not evenly divisible by chunk size.
-
-**Use Case:** This feature addresses: Add chunk() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: chunk<T>(arr: T[], size: number): T[][]
-- [ ] Validates size is positive integer
-- [ ] Handles empty arrays
-- [ ] Last chunk contains remaining elements
-- [ ] Has comprehensive tests
-
-[↑ Back to list](#bl-019-ref)
-
-#### 📋 BL-020: Add first() array utility
-
-**Status:** open
-**Tags:** v004, array-basics, utility
-
-Create a first() function that returns the first element of an array. Should handle empty arrays safely and optionally return a default value.
-
-**Use Case:** This feature addresses: Add first() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: first<T>(arr: T[]): T | undefined
-- [ ] Returns undefined for empty arrays
-- [ ] Has comprehensive tests
-- [ ] Uses type guards
-
-[↑ Back to list](#bl-020-ref)
-
-#### 📋 BL-021: Add last() array utility
-
-**Status:** open
-**Tags:** v004, array-basics, utility
-
-Create a last() function that returns the last element of an array. Should handle empty arrays safely and optionally return a default value.
-
-**Use Case:** This feature addresses: Add last() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: last<T>(arr: T[]): T | undefined
-- [ ] Returns undefined for empty arrays
-- [ ] Has comprehensive tests
-- [ ] Uses type guards
-
-[↑ Back to list](#bl-021-ref)
-
-#### 📋 BL-022: Add flatten() array utility
-
-**Status:** open
-**Tags:** v004, array-advanced, utility
-
-Create a flatten() function that flattens nested arrays to a specified depth. Default depth should be 1. Depth of Infinity should flatten all levels.
-
-**Use Case:** This feature addresses: Add flatten() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: flatten(arr: any[], depth?: number): any[]
-- [ ] Default depth is 1
-- [ ] Supports Infinity for full flatten
-- [ ] Validates depth is non-negative
-- [ ] Has comprehensive tests with nested arrays
-
-[↑ Back to list](#bl-022-ref)
-
-#### 📋 BL-023: Add compact() array utility
-
-**Status:** open
-**Tags:** v004, array-advanced, utility
-
-Create a compact() function that removes falsy values (false, null, 0, "", undefined, NaN) from an array. Useful for cleaning up data.
-
-**Use Case:** This feature addresses: Add compact() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: compact<T>(arr: T[]): T[]
-- [ ] Removes all falsy values
-- [ ] Preserves truthy values including empty objects/arrays
-- [ ] Has comprehensive tests
-- [ ] Returns correct types
-
-[↑ Back to list](#bl-023-ref)
-
-#### 📋 BL-024: Add intersection() array utility
-
-**Status:** open
-**Tags:** v004, array-advanced, utility
-
-Create an intersection() function that returns an array of values that appear in all provided arrays. Uses strict equality for comparison.
-
-**Use Case:** This feature addresses: Add intersection() array utility. It improves the system by resolving the described requirement.
-
-**Acceptance Criteria:**
-- [ ] Function signature: intersection<T>(...arrays: T[][]): T[]
-- [ ] Returns common elements from all arrays
-- [ ] Uses strict equality
-- [ ] Returns empty array if no common elements
-- [ ] Has comprehensive tests
-
-[↑ Back to list](#bl-024-ref)
 
 #### 📋 BL-025: Add pick() object utility
 
@@ -876,6 +760,24 @@ Create a once() function that wraps a function to ensure it can only be called o
 - [ ] Has comprehensive tests
 
 [↑ Back to list](#bl-037-ref)
+
+#### 📋 BL-038: Create initial architecture documentation
+
+**Status:** open
+**Tags:** architecture, documentation
+
+No architecture documentation exists for the project. As of v004, the project has 4 modules (string, number, validation/errors, array) with established patterns (module-per-domain, barrel exports, validation-at-boundary). Initial C4 and/or ARCHITECTURE.md documentation should be created to guide future version design and verify alignment.
+
+**Use Case:** This feature addresses: Create initial architecture documentation. It improves the system by providing a reference for future version design.
+
+**Acceptance Criteria:**
+- [ ] ARCHITECTURE.md or C4 documentation exists
+- [ ] Documents all 4 existing modules and their relationships
+- [ ] Documents established patterns (module-per-domain, barrel exports, validation-at-boundary)
+
+**Notes:** Created during v004 retrospective. Architecture task 005 identified this gap.
+
+[↑ Back to list](#bl-038-ref)
 
 ### P3: Low
 
