@@ -112,6 +112,9 @@ For EACH feature, create requirements.md:
 - Test Requirements (from Task 004/005 test strategy)
 - Reference: `See comms/outbox/versions/design/${VERSION}/003-research/ for supporting evidence`
 
+**CRITICAL — Backlog ID Cross-Reference:**
+When writing the "Backlog Item: BL-XXX" line in each feature's requirements.md, you MUST cross-reference the BL number against the backlog analysis (Task 002) or the feature-to-backlog mapping in the logical design (Task 004). Do NOT write BL numbers from memory. Verify that the BL number matches the correct function name. For example, if the backlog analysis says BL-020 is first() and BL-018 is unique(), do not accidentally write BL-018 in the first() requirements.
+
 ### 6. Draft implementation-plan.md (per feature)
 
 For EACH feature, create implementation-plan.md:
@@ -189,6 +192,7 @@ Verification checklist:
 - [ ] All research findings incorporated
 - [ ] Test strategies documented per feature
 - [ ] Design artifact store references are correct paths
+- [ ] Backlog IDs in each requirements.md cross-referenced against Task 002 backlog analysis (no mismatches)
 
 ## Allowed MCP Tools
 
