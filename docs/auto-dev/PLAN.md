@@ -7,7 +7,7 @@
 > **Technology Stack:** TypeScript 5.x, Node.js 20.x (ESM), Jest with ts-jest, GitHub Actions
 >
 > **Strategic Roadmap:** `docs/auto-dev/ROADMAP.md`
-> **Last Updated:** February 5, 2026
+> **Last Updated:** February 6, 2026
 
 ## Roadmap → Version Mapping
 
@@ -169,22 +169,22 @@ Track explorations that must complete before version design.
 
 ### v004 - Array Utilities
 
-**Focus:** Collection manipulation utilities
-**Themes:** 2 themes, ~7 features
-**Prerequisites:** v003 (validation patterns established)
+**Focus:** Array utilities with generics
+**Themes:** 2 themes, 7 features
+**Prerequisites:** v003 (error handling patterns established)
 
 **Themes:**
 - 📋 01-array-basics (4 features)
-  - BL-018: unique() - Remove duplicate values
-  - BL-019: chunk() - Split array into chunks
-  - BL-020: first() - Get first element safely
-  - BL-021: last() - Get last element safely
+  - BL-020: first() - Safe first element access
+  - BL-021: last() - Safe last element access
+  - BL-018: unique() - Array deduplication
+  - BL-019: chunk() - Split arrays into fixed-size chunks
 - 📋 02-array-advanced (3 features)
-  - BL-022: flatten() - Flatten nested arrays
-  - BL-023: compact() - Remove falsy values
-  - BL-024: intersection() - Find common elements
+  - BL-023: compact() - Remove all falsy values
+  - BL-022: flatten() - Flatten nested arrays with depth control
+  - BL-024: intersection() - Find common elements across arrays
 
-**Rationale:** Natural progression from primitive utilities (strings/numbers) to collection utilities. Arrays are fundamental data structures that require generic type handling, making this an excellent test of auto-dev's TypeScript capabilities.
+**Rationale:** Natural progression from primitive utilities to collection utilities. Arrays are fundamental data structures requiring generic type handling, testing auto-dev's TypeScript capabilities. Split into basic/advanced themes to manage complexity.
 
 ---
 
@@ -280,3 +280,4 @@ All versions must meet these standards before completion:
 | 2026-02-05 | Enhanced Completed Versions with retrospective links | Follow template pattern |
 | 2026-02-05 | Added Backlog Integration section | Document tagging strategy |
 | 2026-02-05 | Added Development Principles and Quality Standards | Preserve project-specific guidance |
+

@@ -1,5 +1,5 @@
 {
-  "next_id": 38,
+  "next_id": 39,
   "updated_at": "2026-02-05T18:29:09.368580",
   "items": [
     {
@@ -539,10 +539,10 @@
       "id": "BL-018",
       "title": "Add unique() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:11.080474",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:05:15Z",
       "tags": [
         "v004",
         "array-basics",
@@ -573,17 +573,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add unique() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "01-array-basics"
     },
     {
       "id": "BL-019",
       "title": "Add chunk() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:13.731606",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:05:15Z",
       "tags": [
         "v004",
         "array-basics",
@@ -614,17 +614,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add chunk() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "01-array-basics"
     },
     {
       "id": "BL-020",
       "title": "Add first() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:16.203359",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:05:15Z",
       "tags": [
         "v004",
         "array-basics",
@@ -651,17 +651,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add first() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "01-array-basics"
     },
     {
       "id": "BL-021",
       "title": "Add last() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:18.137691",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:05:15Z",
       "tags": [
         "v004",
         "array-basics",
@@ -688,17 +688,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add last() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "01-array-basics"
     },
     {
       "id": "BL-022",
       "title": "Add flatten() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:21.397464",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:16:52Z",
       "tags": [
         "v004",
         "array-advanced",
@@ -729,17 +729,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add flatten() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "02-array-advanced"
     },
     {
       "id": "BL-023",
       "title": "Add compact() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:23.491980",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:16:52Z",
       "tags": [
         "v004",
         "array-advanced",
@@ -770,17 +770,17 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add compact() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "02-array-advanced"
     },
     {
       "id": "BL-024",
       "title": "Add intersection() array utility",
       "priority": "P2",
-      "status": "open",
+      "status": "completed",
       "size": "m",
       "added": "2026-02-05T18:28:25.441331",
-      "completed_at": null,
+      "completed_at": "2026-02-06T12:16:52Z",
       "tags": [
         "v004",
         "array-advanced",
@@ -811,8 +811,8 @@
       ],
       "notes": null,
       "use_case": "This feature addresses: Add intersection() array utility. It improves the system by resolving the described requirement.",
-      "implemented_in_version": null,
-      "implemented_in_theme": null
+      "implemented_in_version": "v004",
+      "implemented_in_theme": "02-array-advanced"
     },
     {
       "id": "BL-025",
@@ -1342,8 +1342,40 @@
       "use_case": "This feature addresses: Add once() utility. It improves the system by resolving the described requirement.",
       "implemented_in_version": null,
       "implemented_in_theme": null
+    },
+    {
+      "id": "BL-038",
+      "title": "Create initial architecture documentation",
+      "priority": "P2",
+      "status": "open",
+      "size": "l",
+      "added": "2026-02-06T14:00:00Z",
+      "completed_at": null,
+      "tags": [
+        "architecture",
+        "documentation"
+      ],
+      "description": "No architecture documentation exists for the project. As of v004, the project has 4 modules (string, number, validation/errors, array) with established patterns (module-per-domain, barrel exports, validation-at-boundary). Initial C4 and/or ARCHITECTURE.md documentation should be created to guide future version design and verify alignment.",
+      "acceptance_criteria": [
+        {
+          "text": "ARCHITECTURE.md or C4 documentation exists",
+          "done": false
+        },
+        {
+          "text": "Documents all 4 existing modules and their relationships",
+          "done": false
+        },
+        {
+          "text": "Documents established patterns (module-per-domain, barrel exports, validation-at-boundary)",
+          "done": false
+        }
+      ],
+      "notes": "Created during v004 retrospective. Architecture task 005 identified this gap.",
+      "use_case": "This feature addresses: Create initial architecture documentation. It improves the system by providing a reference for future version design.",
+      "implemented_in_version": null,
+      "implemented_in_theme": null
     }
   ],
-  "completed_count": 0,
+  "completed_count": 7,
   "cancelled_count": 0
 }
