@@ -8,7 +8,7 @@ Verify the design environment is ready and gather essential context about the pr
 
 ## Context
 
-This is the first step in a multi-phase version design process for `${PROJECT}` version `${VERSION}`.
+This is the first step in a multi-phase version design process for `${PROJECT}` version `${VERSION}`. Outputs are saved to the centralized design artifact store, not exploration folders.
 
 ## Tasks
 
@@ -52,7 +52,7 @@ Read `docs/auto-dev/PLAN.md` to understand:
 
 ## Output Requirements
 
-Create findings in `comms/outbox/exploration/design-${VERSION}-001-environment/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/001-environment/`:
 
 ### README.md (required)
 
@@ -73,13 +73,12 @@ Detailed results from all health and status checks.
 
 Complete context from PLAN.md including:
 - Version goals and description
-- All referenced backlog items (IDs only, full details in next task)
+- All referenced backlog items (IDs only, full details in Task 002)
 - Constraints and assumptions
 - Deferred items to be aware of
 
 ## Allowed MCP Tools
 
-This exploration needs the following tools:
 - `health_check`
 - `get_project_info`
 - `git_read`
@@ -90,11 +89,4 @@ This exploration needs the following tools:
 - Keep documents focused and under 200 lines each
 - If environment checks fail, clearly document blockers
 - Do not fetch full backlog item details here (that's Task 002)
-
-## When Complete
-
-```bash
-git add comms/outbox/exploration/design-${VERSION}-001-environment/
-git commit -m "exploration: design-${VERSION}-001-environment - environment verification complete"
-git push
-```
+- Do NOT commit — the master prompt handles commits after Phase 2

@@ -1,4 +1,4 @@
-# Task 006: Persist Documents
+# Task 007: Persist Documents
 
 Read AGENTS.md first and follow all instructions there.
 
@@ -8,22 +8,47 @@ Call the MCP design tools to persist all drafted documents to the inbox folder s
 
 ## Context
 
-This is Phase 3 (Persist Documents) for `${PROJECT}` version `${VERSION}`.
+This is Phase 3 (Document Drafts & Persistence) for `${PROJECT}` version `${VERSION}`.
 
-Phase 2 (Task 005) created all document drafts. Now persist them using MCP tools.
+Task 006 created all document drafts. Now persist them using MCP tools.
+
+**WARNING:** Do NOT modify any files in `comms/outbox/versions/design/${VERSION}/`. These are the reference artifacts. If you find errors, document them and STOP.
+
+## CRITICAL: Machine-Parseable Format Requirements
+
+The following files are machine-parsed and require EXACT format preservation:
+
+### THEME_INDEX.md - Feature List Format
+
+**Parser regex:** `- (\d+)-([\w-]+):`
+
+**REQUIRED format for feature lists:**
+```
+**Features:**
+
+- 001-feature-name: Brief description text here
+- 002-another-feature: Another description text
+```
+
+**FORBIDDEN formats that break parser:**
+- Numbered lists: `1.` `2.` `3.`
+- Bold feature identifiers: `**001-feature-name**`
+- Metadata before colon: `001-feature (BL-123, P0, XL)`
+- Multi-line feature entries
+- Missing colon after feature name
 
 ## Tasks
 
-### 1. Read Phase 2 Drafts
+### 1. Read Phase 3 Drafts
 
-Read the complete document drafts from Task 005:
-- `comms/outbox/exploration/design-${VERSION}-005-drafts/phase-2-document-drafts.md`
+Read the complete document drafts from Task 006:
+- `comms/outbox/exploration/design-${VERSION}-006-drafts/document-drafts.md`
 
 Extract the content for each document type.
 
 ### 2. Prepare Context Object
 
-From PLAN.md and Phase 1 outputs, prepare the context object:
+From the design artifact store and drafts, prepare the context object:
 
 ```python
 context = {
@@ -36,7 +61,7 @@ context = {
 
 ### 3. Prepare Themes Array
 
-From the logical design, prepare the themes structure:
+From the drafts, prepare the themes structure:
 
 ```python
 themes = [
@@ -66,7 +91,7 @@ design_version(
     version="${VERSION}",
     description="[Version description from VERSION_DESIGN.md]",
     themes=themes,
-    backlog_ids=["BL-XXX", "BL-YYY", ...],  # All backlog IDs from scope
+    backlog_ids=["BL-XXX", "BL-YYY", ...],
     context=context,
     overwrite=false
 )
@@ -79,22 +104,26 @@ Document the result (success or error).
 For EACH theme:
 
 ```python
-# Prepare features array
 features = [
     {
         "number": 1,
         "name": "001-feature-name",
-        "requirements": "[Full requirements.md content]",
-        "implementation_plan": "[Full implementation-plan.md content]"
+        "requirements": "[Lean requirements.md content with artifact store references]",
+        "implementation_plan": "[Lean implementation-plan.md content with artifact store references]"
     },
-    {
-        "number": 2,
-        "name": "002-another-feature",
-        "requirements": "[Full requirements.md content]",
-        "implementation_plan": "[Full implementation-plan.md content]"
-    },
-    # ... repeat for all features in theme
+    # ... repeat for all features
 ]
+
+design_theme(
+    project="${PROJECT}",
+    version="${VERSION}",
+    theme_number=1,
+    theme_name="01-theme-name",
+    theme_design="[Lean THEME_DESIGN.md content with artifact store references]",
+    features=features,
+    mode="full"
+)
+```
 
 **CRITICAL - Feature Object Required Fields:**
 Each feature dict MUST contain ALL of these fields:
@@ -104,20 +133,6 @@ Each feature dict MUST contain ALL of these fields:
 - `implementation_plan` (str): Full implementation-plan.md markdown content (NOTE: underscore, not hyphen)
 
 Missing the `number` field or using `implementation-plan` instead of `implementation_plan` will cause a KeyError.
-
-# Call design_theme
-design_theme(
-    project="${PROJECT}",
-    version="${VERSION}",
-    theme_number=1,  # Theme sequence number
-    theme_name="01-theme-name",
-    theme_design="[Full THEME_DESIGN.md content]",
-    features=features,
-    mode="full"
-)
-```
-
-Document the result for each theme.
 
 ### 6. Validate Design Completeness
 
@@ -130,13 +145,11 @@ validate_version_design(
 )
 ```
 
-Expected result: All documents exist, no missing files.
-
-Document validation result and any missing documents.
+Expected: All documents exist, no missing files.
 
 ## Output Requirements
 
-Create findings in `comms/outbox/exploration/design-${VERSION}-006-persist/`:
+Create in `comms/outbox/exploration/design-${VERSION}-007-persist/`:
 
 ### README.md (required)
 
@@ -147,7 +160,6 @@ Then:
 - **Design Theme Calls**: Result for each theme
 - **Validation Result**: Output from validate_version_design
 - **Missing Documents**: Any documents not created (should be none)
-- **Next Steps**: Ready for critical thinking check
 
 ### persistence-log.md
 
@@ -155,25 +167,14 @@ Detailed log of all MCP calls:
 
 ```markdown
 ## design_version Call
-
-**Parameters**:
-- project: ${PROJECT}
-- version: ${VERSION}
-- themes count: X
-- backlog_ids count: Y
-
+**Parameters**: project, version, themes count, backlog_ids count
 **Result**: [success/error]
 **Output**: [tool output]
 
 ---
 
 ## design_theme Call - Theme 01
-
-**Parameters**:
-- theme_number: 1
-- theme_name: 01-theme-name
-- features count: Z
-
+**Parameters**: theme_number, theme_name, features count
 **Result**: [success/error]
 **Output**: [tool output]
 
@@ -182,7 +183,6 @@ Detailed log of all MCP calls:
 ---
 
 ## validate_version_design Call
-
 **Result**: [success/error]
 **Output**: [tool output]
 **Missing Documents**: [list or "None"]
@@ -193,16 +193,12 @@ Detailed log of all MCP calls:
 Document existence verification:
 - [ ] `comms/inbox/versions/execution/${VERSION}/VERSION_DESIGN.md` exists
 - [ ] `comms/inbox/versions/execution/${VERSION}/THEME_INDEX.md` exists
-- [ ] `comms/inbox/versions/execution/${VERSION}/01-theme-name/THEME_DESIGN.md` exists
-- [ ] `comms/inbox/versions/execution/${VERSION}/01-theme-name/001-feature/requirements.md` exists
-- [ ] `comms/inbox/versions/execution/${VERSION}/01-theme-name/001-feature/implementation-plan.md` exists
 - [ ] [... all documents listed]
 
 Use `read_document` to verify each file exists.
 
 ## Allowed MCP Tools
 
-This exploration needs:
 - `read_document`
 - `design_version`
 - `design_theme`
@@ -210,11 +206,12 @@ This exploration needs:
 
 ## Guidelines
 
+- ALL backlog items from PLAN.md are MANDATORY — verify all items appear in persisted documents before completing
 - Verify array structure before calling design_version (see Step 3)
-- Include complete document content in design_theme calls (not summaries)
+- Content passed to MCP tools should be the lean referenced versions from Task 006
 - If any MCP call fails, document the error clearly and STOP
 - Validate that ALL documents were created successfully
-- Keep documents under 200 lines each
+- Do NOT modify the design artifact store
 
 ## Error Handling
 
@@ -227,7 +224,7 @@ If any MCP call fails:
 ## When Complete
 
 ```bash
-git add comms/outbox/exploration/design-${VERSION}-006-persist/
-git commit -m "exploration: design-${VERSION}-006-persist - documents persisted to inbox"
+git add comms/outbox/exploration/design-${VERSION}-007-persist/
+git commit -m "exploration: design-${VERSION}-007-persist - documents persisted to inbox"
 git push
 ```

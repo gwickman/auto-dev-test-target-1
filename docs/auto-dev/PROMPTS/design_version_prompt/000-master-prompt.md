@@ -1,11 +1,11 @@
-# Version Design Orchestrator - Master Prompt
+# Version Design Orchestrator v2 - Master Prompt
 
 **PROJECT CONFIGURATION:**
 ```
 PROJECT=[SET_PROJECT_NAME_HERE]
 ```
 
-**CRITICAL:** Before proceeding, you must set the PROJECT variable above to the actual project name.
+**CRITICAL:** Set the PROJECT variable above before proceeding.
 
 ---
 
@@ -14,9 +14,8 @@ PROJECT=[SET_PROJECT_NAME_HERE]
 **STEP 1:** Verify PROJECT variable is set.
 
 ```python
-# Check PROJECT is set
 if PROJECT == "[SET_PROJECT_NAME_HERE]" or not PROJECT or PROJECT.strip() == "":
-    print("ERROR: PROJECT variable not set. Edit this prompt and set PROJECT=[your-project-name]")
+    print("ERROR: PROJECT variable not set.")
     STOP IMMEDIATELY
 ```
 
@@ -26,82 +25,89 @@ if PROJECT == "[SET_PROJECT_NAME_HERE]" or not PROJECT or PROJECT.strip() == "":
 # Find "Planned Versions" section
 # Extract the FIRST planned version entry (format: ### vXXX - Title)
 # If no planned versions exist, ERROR and STOP
-# Set: VERSION = "vXXX" (the derived version number)
+# Set: VERSION = "vXXX"
 ```
 
 **STEP 3:** Verify version folder does NOT exist.
 
 ```python
 # Check: comms/inbox/versions/execution/{VERSION}/ must NOT exist
-# If it exists, ERROR: "Version {VERSION} already has design documents. Cannot overwrite."
+# If it exists, ERROR: "Version {VERSION} already has design documents."
 # STOP IMMEDIATELY
 ```
 
-**If ANY validation fails, output a clear error message and STOP. Do not proceed to task execution.**
+**STEP 4:** Create the design artifact store.
+
+```python
+# Create: comms/outbox/versions/design/{VERSION}/
+# Subfolders created by individual tasks:
+#   001-environment/
+#   002-backlog/
+#   003-research/
+#   004-logical-design/
+#   005-critical-thinking/
+```
+
+**If ANY validation fails, output a clear error message and STOP.**
 
 ---
 
 ## Task Execution Flow
 
-Once validation passes, execute the following task prompts sequentially:
+### Phase 1: Environment & Investigation (Tasks 001-003)
 
-### Phase 1: Environment & Investigation
+**Task 001:** Environment verification
+- Read: `prompts/task_prompts/001-environment-verification.md`
+- Output: `comms/outbox/versions/design/{VERSION}/001-environment/`
+- Start exploration → poll → verify
 
-**Task 001:** Environment verification and context gathering
-- Read task prompt: `prompts/task_prompts/001-environment-verification.md`
-- Start exploration with `start_exploration`
-- Poll with `get_exploration_status` until complete
-- Verify success before continuing
+**Task 002:** Backlog analysis
+- Read: `prompts/task_prompts/002-backlog-analysis.md`
+- Output: `comms/outbox/versions/design/{VERSION}/002-backlog/`
+- Start exploration → poll → verify
 
-**Task 002:** Backlog analysis and retrospective review
-- Read task prompt: `prompts/task_prompts/002-backlog-analysis.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+**Task 003:** Research investigation
+- Read: `prompts/task_prompts/003-research-investigation.md`
+- Output: `comms/outbox/versions/design/{VERSION}/003-research/`
+- Start exploration → poll → verify
 
-**Task 003:** Research and investigation
-- Read task prompt: `prompts/task_prompts/003-research-investigation.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+### Phase 2: Logical Design & Critical Thinking (Tasks 004-005)
 
 **Task 004:** Logical design proposal
-- Read task prompt: `prompts/task_prompts/004-logical-design.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+- Read: `prompts/task_prompts/004-logical-design.md`
+- Output: `comms/outbox/versions/design/{VERSION}/004-logical-design/`
+- Start exploration → poll → verify
 
-### Phase 2: Document Drafts
+**Task 005:** Critical thinking and risk investigation
+- Read: `prompts/task_prompts/005-critical-thinking.md`
+- Output: `comms/outbox/versions/design/{VERSION}/005-critical-thinking/`
+- Start exploration → poll → verify
 
-**Task 005:** Draft all design documents
-- Read task prompt: `prompts/task_prompts/005-document-drafts.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+**COMMIT:** After Task 005, commit the design artifact store:
+```bash
+git add comms/outbox/versions/design/{VERSION}/
+git commit -m "design: {VERSION} design artifacts (phases 1-2)"
+git push
+```
 
-### Phase 3: Persist Documents
+### Phase 3: Document Drafts & Persistence (Tasks 006-007)
 
-**Task 006:** Persist design documents to inbox
-- Read task prompt: `prompts/task_prompts/006-persist-documents.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+**Task 006:** Document drafts
+- Read: `prompts/task_prompts/006-document-drafts.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-006-drafts/`
+- Start exploration → poll → verify
 
-### Critical Thinking Check
+**Task 007:** Persist documents to inbox
+- Read: `prompts/task_prompts/007-persist-documents.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-007-persist/`
+- Start exploration → poll → verify
 
-**Task 007:** Design validation and enhancement
-- Read task prompt: `prompts/task_prompts/007-critical-thinking-check.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success before continuing
+### Phase 4: Validation (Task 008)
 
-### Phase 4: Pre-Execution Validation
-
-**Task 008:** Complete pre-execution checklist
-- Read task prompt: `prompts/task_prompts/008-pre-execution-validation.md`
-- Start exploration with `start_exploration`
-- Poll until complete
-- Verify success
+**Task 008:** Pre-execution validation (READ-ONLY)
+- Read: `prompts/task_prompts/008-pre-execution-validation.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-008-validation/`
+- Start exploration → poll → verify
 
 ---
 
@@ -109,45 +115,43 @@ Once validation passes, execute the following task prompts sequentially:
 
 Between each task:
 1. Check exploration status
-2. If status is "failed", document the failure and STOP
-3. If status is "complete", read the exploration result to verify output documents exist
-4. Only proceed to next task if current task succeeded
+2. If "failed", document the failure and STOP
+3. If "complete", read result to verify output documents exist
+4. Only proceed if current task succeeded
 
 ---
 
 ## Progress Tracking
 
-Track completed tasks in a markdown checklist:
-
 - [ ] Validation: PROJECT set
 - [ ] Validation: VERSION derived from PLAN.md
 - [ ] Validation: Version folder does not exist
+- [ ] Validation: Design artifact store created
 - [ ] Task 001: Environment verification
 - [ ] Task 002: Backlog analysis
 - [ ] Task 003: Research investigation
 - [ ] Task 004: Logical design
-- [ ] Task 005: Document drafts
-- [ ] Task 006: Persist documents
-- [ ] Task 007: Critical thinking check
+- [ ] Task 005: Critical thinking
+- [ ] COMMIT: Design artifacts (phases 1-2)
+- [ ] Task 006: Document drafts
+- [ ] Task 007: Persist documents
 - [ ] Task 008: Pre-execution validation
 
 ---
 
 ## Completion
 
-When all tasks complete successfully:
-1. Verify all design documents exist in `comms/inbox/versions/execution/{VERSION}/`
+When all tasks complete:
+1. Verify design documents exist in `comms/inbox/versions/execution/{VERSION}/`
 2. Run `validate_version_design(project=PROJECT, version=VERSION)`
 3. If validation passes, output success message
 4. If validation fails, document missing items and require manual intervention
 
 ---
 
-## Usage Instructions
+## Usage
 
-1. **Set PROJECT variable** at the top of this prompt
-2. **Run this prompt** via an exploration or directly in Claude Code
-3. **Monitor progress** - the orchestrator will execute all 8 tasks sequentially
-4. **Handle failures** - if any task fails, investigate and fix before retrying
-
-**Note:** This orchestrator requires approximately 2-4 hours to complete all phases, depending on project complexity and research requirements.
+1. Set PROJECT variable at the top
+2. Run this prompt via exploration or directly in Claude Code
+3. Monitor progress — orchestrator executes all 8 tasks sequentially
+4. Handle failures — investigate and fix before retrying

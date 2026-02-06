@@ -4,11 +4,11 @@ Read AGENTS.md first and follow all instructions there.
 
 ## Objective
 
-Research unknowns, investigate prior art, and gather evidence for all concrete design decisions.
+Research unknowns, investigate prior art, and gather evidence for design decisions that affect version STRUCTURE (not implementation details Claude Code can figure out).
 
 ## Context
 
-This is part of Phase 1 (Logical Design) for `${PROJECT}` version `${VERSION}`.
+This is Phase 1 (Environment & Investigation) for `${PROJECT}` version `${VERSION}`.
 
 Tasks 001-002 gathered context. This task resolves unknowns before proposing solutions.
 
@@ -16,7 +16,7 @@ Tasks 001-002 gathered context. This task resolves unknowns before proposing sol
 
 ### 1. Identify Research Questions
 
-Based on backlog items from Task 002, identify:
+Based on backlog items from Task 002 (read from `comms/outbox/versions/design/${VERSION}/002-backlog/`), identify:
 - Technologies or libraries requiring investigation
 - Unclear areas of existing codebase
 - Patterns needed but not yet understood
@@ -38,12 +38,11 @@ For questions about external libraries, patterns, or best practices:
 
 **DeepWiki Research:**
 - Use `ask_question` from mcp__deepwiki to query relevant repositories
-- Example: "How does [library] handle [pattern]?"
 - Document sources and specific implementation details found
 
 **Web Search:**
 - Use web search for official documentation, guides, GitHub issues
-- Priority: Official docs → Library tests → GitHub issues
+- Priority: Official docs > Library tests > GitHub issues
 - Document URLs and relevant excerpts
 
 ### 4. Sub-Explorations for Complex Investigation
@@ -52,7 +51,7 @@ If investigation is complex or can be parallelized:
 - You MAY spawn sub-explorations using `start_exploration`
 - Each sub-exploration should have a focused question
 - Monitor with `get_exploration_status` and retrieve results
-- Integrate findings into this exploration's output
+- Integrate findings into this task's output
 
 ### 5. Evidence Gathering for Concrete Values
 
@@ -72,7 +71,7 @@ Document:
 
 ## Output Requirements
 
-Create findings in `comms/outbox/exploration/design-${VERSION}-003-research/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/003-research/`:
 
 ### README.md (required)
 
@@ -102,12 +101,6 @@ Findings from DeepWiki and web research:
 ### evidence-log.md
 
 For all concrete values needed:
-- Value/parameter name
-- Source of evidence (codebase query, exploration, config file)
-- Actual data found
-- Rationale for chosen value
-
-Format:
 ```
 ## [Parameter Name]
 - **Value**: [concrete value]
@@ -126,7 +119,6 @@ Analysis of implementation impact:
 
 ## Allowed MCP Tools
 
-This exploration needs:
 - `request_clarification`
 - `read_document`
 - `start_exploration` (for sub-investigations)
@@ -141,17 +133,11 @@ Plus DeepWiki tools:
 
 ## Guidelines
 
-- Research is the designer's responsibility - resolve all queryable unknowns NOW
+- ALL backlog items from PLAN.md are MANDATORY — research must cover all of them, no deferrals
+- Research is the designer's responsibility — resolve all queryable unknowns NOW
 - Document sources for all findings (file paths, URLs, repo names)
 - Mark items as "TBD - requires [X]" only if truly not determinable pre-implementation
 - Never defer research to Claude Code with phrases like "Check if..." or "Investigate..."
 - Sub-explorations are encouraged for parallel investigation work
 - Keep each document under 200 lines
-
-## When Complete
-
-```bash
-git add comms/outbox/exploration/design-${VERSION}-003-research/
-git commit -m "exploration: design-${VERSION}-003-research - research and investigation complete"
-git push
-```
+- Do NOT commit — the master prompt handles commits after Phase 2

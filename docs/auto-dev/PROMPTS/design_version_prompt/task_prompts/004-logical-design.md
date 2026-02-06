@@ -8,13 +8,20 @@ Synthesize findings from Tasks 001-003 into a coherent logical design proposal w
 
 ## Context
 
-This is the final task of Phase 1 (Logical Design) for `${PROJECT}` version `${VERSION}`.
+This is Phase 2 (Logical Design & Critical Thinking) for `${PROJECT}` version `${VERSION}`.
 
-All context is gathered. Now propose the structure.
+All context is gathered. Now propose the structure. This proposal feeds into Task 005 (Critical Thinking) for risk review before document drafting begins.
 
 ## Tasks
 
-### 1. Theme Groupings
+### 1. Read Phase 1 Outputs
+
+Read all design artifacts from the centralized store:
+- `comms/outbox/versions/design/${VERSION}/001-environment/` — environment and version scope
+- `comms/outbox/versions/design/${VERSION}/002-backlog/` — backlog details and retrospective
+- `comms/outbox/versions/design/${VERSION}/003-research/` — research findings and evidence
+
+### 2. Theme Groupings
 
 Based on backlog items and research findings, propose logical themes:
 - Group related features together
@@ -27,7 +34,7 @@ For each theme:
 - Theme goal (one paragraph)
 - Features included (with backlog mappings)
 
-### 2. Feature Breakdown
+### 3. Feature Breakdown
 
 For each feature within themes:
 - Feature name (slug format: `NNN-descriptive-name`)
@@ -35,14 +42,14 @@ For each feature within themes:
 - Backlog item(s) addressed (BL-XXX references)
 - Dependencies (features or themes that must complete first)
 
-### 3. Execution Order
+### 4. Execution Order
 
 Propose the order for theme and feature execution:
 - Document dependencies between themes
 - Document dependencies between features within themes
 - Provide rationale for ordering decisions
 
-### 4. Test Strategy
+### 5. Test Strategy
 
 For each feature, identify test requirements:
 - **Unit tests**: New service/handler logic requiring unit tests
@@ -51,26 +58,33 @@ For each feature, identify test requirements:
 - **Contract tests**: New DTO models requiring round-trip tests
 - **Replay fixtures**: New execution patterns requiring replay scenarios
 
-Document which test types apply to each feature.
-
-### 5. Research Sources Adopted
+### 6. Research Sources Adopted
 
 Document which research findings inform the design:
 - Libraries or patterns selected
 - Architectural decisions made
 - Configuration values chosen
-- Link to evidence in Task 003 outputs
+- Reference evidence by path: `comms/outbox/versions/design/${VERSION}/003-research/[file]`
 
-### 6. Open Questions
+### 7. Risks and Unknowns
 
-List any remaining questions that require user input:
-- Decisions with multiple valid approaches
-- User preferences needed
-- Scope clarifications required
+**IMPORTANT:** This section feeds directly into Task 005 (Critical Thinking).
+
+List all identified risks and unknowns:
+- Technical risks (e.g., "unclear how X integrates with Y")
+- Scope risks (e.g., "BL-XXX may be larger than estimated")
+- Dependency risks (e.g., "theme 02 depends on theme 01 pattern")
+- Any assumptions made that need validation
+
+For each, provide:
+- Description
+- Severity (high/medium/low)
+- What investigation would help resolve it
+- Current best guess if unresolved
 
 ## Output Requirements
 
-Create findings in `comms/outbox/exploration/design-${VERSION}-004-logical-design/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/004-logical-design/`:
 
 ### README.md (required)
 
@@ -80,9 +94,9 @@ Then:
 - **Theme Overview**: List of themes with goals
 - **Key Decisions**: Major architectural or grouping decisions
 - **Dependencies**: High-level execution order rationale
-- **Open Questions**: Items needing user input
+- **Risks and Unknowns**: Items needing investigation in Task 005
 
-### phase-1-logical-design.md
+### logical-design.md
 
 Complete logical design proposal:
 
@@ -97,11 +111,9 @@ For each theme:
 ## Theme N: [name]
 
 **Goal**: [one paragraph]
-
 **Backlog Items**: BL-XXX, BL-YYY
 
 **Features**:
-
 | # | Feature | Goal | Backlog | Dependencies |
 |---|---------|------|---------|--------------|
 | 1 | NNN-feature-name | [goal] | BL-XXX | None |
@@ -110,72 +122,42 @@ For each theme:
 #### Execution Order
 - Theme dependencies
 - Feature dependencies
-- Rationale for ordering
+- Rationale
 
 #### Research Sources
-- Key findings adopted (link to Task 003 evidence)
+- Key findings adopted (reference 003-research/ by path)
 - Patterns selected
 - Values chosen with sources
 
-#### Impact Analysis
-- Dependencies and affected systems
-- Breaking changes identified
-- Test infrastructure needs
-- Documentation updates required
-
 ### test-strategy.md
 
-Test requirements per feature:
+Test requirements per feature (same format as v1).
 
-For each feature:
+### risks-and-unknowns.md
+
+All identified risks and unknowns for Task 005:
+
 ```markdown
-## Feature NNN-feature-name
-
-**Unit Tests**:
-- [ ] `tests/test_module.py` - [what it validates]
-
-**Golden Scenarios**:
-- [ ] Scenario affected: [A/B/C/D or None]
-- [ ] New scenario needed: [Yes/No - reason]
-
-**Parity Tests** (if API/MCP changes):
-- [ ] Parity scenario: [name or N/A]
-
-**Contract Tests** (if new DTOs):
-- [ ] DTO: [model name] added to `test_dto_roundtrip.py`
-
-**Replay Fixtures** (if execution patterns change):
-- [ ] Fixture: [name or "Uses existing"]
+## Risk: [title]
+- **Severity**: [high/medium/low]
+- **Description**: [what the risk is]
+- **Investigation needed**: [what to check]
+- **Current assumption**: [best guess]
 ```
-
-### open-questions.md
-
-Questions requiring user input:
-- Each question with context
-- Options available (if applicable)
-- Recommendation (if any)
 
 ## Allowed MCP Tools
 
-This exploration needs:
 - `read_document`
 
-(All data should come from previous tasks 001-003 outputs)
+(All data should come from design artifact store, tasks 001-003)
 
 ## Guidelines
 
 - Theme names should be descriptive and URL-friendly
 - Feature names should be action-oriented
-- All backlog items from Task 002 must be included in some feature
+- ALL backlog items from PLAN.md are MANDATORY and must be mapped to a feature — no deferrals, no descoping
 - Dependencies must be clear and explicit
-- Test strategy should be comprehensive but realistic
-- Keep the main logical design document under 300 lines
 - Evidence must come from Task 003, not new assumptions
-
-## When Complete
-
-```bash
-git add comms/outbox/exploration/design-${VERSION}-004-logical-design/
-git commit -m "exploration: design-${VERSION}-004-logical-design - logical design proposal complete"
-git push
-```
+- Reference the design artifact store by path, not by inlining
+- Keep the main logical design document under 300 lines
+- Do NOT commit — the master prompt handles commits after Phase 2

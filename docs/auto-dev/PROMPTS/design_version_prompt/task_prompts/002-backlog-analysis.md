@@ -8,7 +8,7 @@ Gather complete details for all backlog items in the version scope and learn fro
 
 ## Context
 
-This is part of Phase 1 (Logical Design) for `${PROJECT}` version `${VERSION}`.
+This is Phase 1 (Environment & Investigation) for `${PROJECT}` version `${VERSION}`.
 
 Task 001 identified the backlog item IDs. This task gathers full details.
 
@@ -21,7 +21,7 @@ For each backlog ID identified in Task 001:
 - Extract full details: title, description, acceptance criteria, priority, tags, notes
 - Document any missing or incomplete backlog items
 
-**CRITICAL:** Read ALL backlog items BEFORE making any scope recommendations. Never defer items based on title alone.
+**MANDATORY SCOPE:** ALL backlog items listed in PLAN.md for this version are mandatory. No items may be deferred, descoped, or deprioritized. PLAN.md defines the version scope — it is not a suggestion. Read ALL backlog items and include ALL of them.
 
 ### 2. Identify Previous Version
 
@@ -47,7 +47,7 @@ Review any learnings that might inform the design approach for `${VERSION}`.
 
 ## Output Requirements
 
-Create findings in `comms/outbox/exploration/design-${VERSION}-002-backlog/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/002-backlog/`:
 
 ### README.md (required)
 
@@ -86,7 +86,6 @@ Relevant learnings from project learning repository:
 
 ## Allowed MCP Tools
 
-This exploration needs:
 - `get_backlog_item`
 - `list_versions`
 - `read_document`
@@ -96,15 +95,9 @@ This exploration needs:
 
 ## Guidelines
 
+- ALL backlog items from PLAN.md are MANDATORY — no deferrals, no descoping
 - Quote actual backlog text when documenting items
 - Distinguish title complexity from implementation complexity
 - Connect retrospective insights to current backlog items where possible
 - Keep documents under 200 lines each
-
-## When Complete
-
-```bash
-git add comms/outbox/exploration/design-${VERSION}-002-backlog/
-git commit -m "exploration: design-${VERSION}-002-backlog - backlog analysis complete"
-git push
-```
+- Do NOT commit — the master prompt handles commits after Phase 2

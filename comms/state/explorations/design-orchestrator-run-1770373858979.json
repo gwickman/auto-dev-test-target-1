@@ -1,0 +1,15 @@
+{
+  "exploration_id": "design-orchestrator-run-1770373858979",
+  "results_folder": "design-orchestrator-run",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-06T10:30:58.979120",
+  "updated_at": "2026-02-06T10:30:58.979120",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/design-orchestrator-run/prompt.md",
+  "outbox_path": "comms/outbox/exploration/design-orchestrator-run"
+}
