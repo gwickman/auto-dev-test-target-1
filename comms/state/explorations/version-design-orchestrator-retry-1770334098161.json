@@ -1,14 +1,17 @@
 {
   "exploration_id": "version-design-orchestrator-retry-1770334098161",
   "results_folder": "version-design-orchestrator-retry",
-  "status": "running",
+  "status": "complete",
   "pid": 18712,
   "started_at": "2026-02-05T23:28:18.161898",
-  "updated_at": "2026-02-05T23:28:20.022822",
-  "completed_at": null,
+  "updated_at": "2026-02-05T23:38:16.880458",
+  "completed_at": "2026-02-05T23:38:16.879612",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "orchestration-log.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/version-design-orchestrator-retry/prompt.md",
   "outbox_path": "comms/outbox/exploration/version-design-orchestrator-retry"
