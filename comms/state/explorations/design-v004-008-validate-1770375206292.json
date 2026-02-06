@@ -1,0 +1,15 @@
+{
+  "exploration_id": "design-v004-008-validate-1770375206292",
+  "results_folder": "design-v004-008-validate",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-06T10:53:26.292819",
+  "updated_at": "2026-02-06T10:53:26.292819",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/design-v004-008-validate/prompt.md",
+  "outbox_path": "comms/outbox/exploration/design-v004-008-validate"
+}
