@@ -1,10 +1,10 @@
 {
   "exploration_id": "cleanup-stale-v002-branches-1770410632094",
   "results_folder": "cleanup-stale-v002-branches",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 21776,
   "started_at": "2026-02-06T20:43:52.094407",
-  "updated_at": "2026-02-06T20:43:52.094407",
+  "updated_at": "2026-02-06T20:43:53.872101",
   "completed_at": null,
   "error": null,
   "documents": [],
