@@ -12,6 +12,13 @@ export function isInRange(value: number, min: number, max: number): boolean {
   return value >= min && value <= max;
 }
 
+export function isNonNegativeInteger(value: unknown): value is number {
+  return typeof value === 'number' &&
+         Number.isInteger(value) &&
+         Number.isFinite(value) &&
+         value >= 0;
+}
+
 export function assertNonEmptyString(value: unknown, field?: string): asserts value is string {
   if (!isNonEmptyString(value)) {
     throw new EmptyStringError(field);
