@@ -3,6 +3,7 @@ import {
   isNonEmptyString,
   isPositiveNumber,
   isInRange,
+  isNonNegativeInteger,
   assertNonEmptyString,
   EmptyStringError,
 } from '../../src/index.js';
@@ -97,6 +98,46 @@ describe('isInRange', () => {
   it('handles decimal values', () => {
     expect(isInRange(5.5, 5.0, 6.0)).toBe(true);
     expect(isInRange(4.9, 5.0, 6.0)).toBe(false);
+  });
+});
+
+describe('isNonNegativeInteger', () => {
+  it('returns true for non-negative integers', () => {
+    expect(isNonNegativeInteger(0)).toBe(true);
+    expect(isNonNegativeInteger(1)).toBe(true);
+    expect(isNonNegativeInteger(100)).toBe(true);
+    expect(isNonNegativeInteger(Number.MAX_SAFE_INTEGER)).toBe(true);
+  });
+
+  it('returns false for negative integers', () => {
+    expect(isNonNegativeInteger(-1)).toBe(false);
+    expect(isNonNegativeInteger(-100)).toBe(false);
+  });
+
+  it('returns false for decimals', () => {
+    expect(isNonNegativeInteger(0.5)).toBe(false);
+    expect(isNonNegativeInteger(1.1)).toBe(false);
+  });
+
+  it('returns false for non-finite numbers', () => {
+    expect(isNonNegativeInteger(Infinity)).toBe(false);
+    expect(isNonNegativeInteger(-Infinity)).toBe(false);
+    expect(isNonNegativeInteger(NaN)).toBe(false);
+  });
+
+  it('returns false for non-number types', () => {
+    expect(isNonNegativeInteger(null)).toBe(false);
+    expect(isNonNegativeInteger(undefined)).toBe(false);
+    expect(isNonNegativeInteger('1')).toBe(false);
+    expect(isNonNegativeInteger({})).toBe(false);
+  });
+
+  it('narrows type correctly', () => {
+    const value: unknown = 5;
+    if (isNonNegativeInteger(value)) {
+      const doubled: number = value * 2;
+      expect(doubled).toBe(10);
+    }
   });
 });
 
