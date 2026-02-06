@@ -1,10 +1,10 @@
 {
   "exploration_id": "design-v004-007-persist-1770374566813",
   "results_folder": "design-v004-007-persist",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 15820,
   "started_at": "2026-02-06T10:42:46.813175",
-  "updated_at": "2026-02-06T10:42:46.813175",
+  "updated_at": "2026-02-06T10:42:48.685651",
   "completed_at": null,
   "error": null,
   "documents": [],
