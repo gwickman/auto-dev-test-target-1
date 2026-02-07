@@ -142,56 +142,86 @@ Then:
 - **Completeness Check**: All backlog items covered
 - **Format Verification**: Machine-parseable formats validated
 
-### document-drafts.md
+### drafts/ folder (structured output)
 
-Complete document drafts organized by type:
+Write each document as an individual file under `drafts/`:
 
-```markdown
-# Document Drafts - ${VERSION}
+1. Create `drafts/manifest.json` with version metadata, theme/feature numbering, and goals
+2. Write `drafts/VERSION_DESIGN.md` with version-level design
+3. Write `drafts/THEME_INDEX.md` with machine-parseable theme/feature index
+4. For each theme: create `drafts/{theme-slug}/THEME_DESIGN.md`
+5. For each feature: create `drafts/{theme-slug}/{feature-slug}/requirements.md`
+   and `drafts/{theme-slug}/{feature-slug}/implementation-plan.md`
 
-## VERSION_DESIGN.md
-[Full draft content]
+#### manifest.json schema
 
----
+```json
+{
+  "version": "${VERSION}",
+  "description": "Version description text here",
+  "backlog_ids": ["BL-XXX", "BL-YYY"],
+  "context": {
+    "rationale": "...",
+    "constraints": ["..."],
+    "assumptions": ["..."],
+    "deferred_items": []
+  },
+  "themes": [
+    {
+      "number": 1,
+      "slug": "config-and-guidance",
+      "goal": "Theme goal text here",
+      "features": [
+        {"number": 1, "slug": "windows-bash-guidance", "goal": "Feature goal text"}
+      ]
+    }
+  ]
+}
+```
 
-## THEME_INDEX.md
-[Full draft content]
+The manifest is the single source of truth for numbering and metadata that Task 007 needs.
 
----
+**CRITICAL — Slug Naming:**
+- Theme slugs must NOT include number prefixes (use `config-and-guidance`, not `01-config-and-guidance`)
+- Feature slugs must NOT include number prefixes (use `windows-bash-guidance`, not `001-windows-bash-guidance`)
+- The MCP tools add number prefixes automatically — passing prefixed names causes double-numbering
 
-## Theme 01: [name]
+#### Folder layout example
 
-### THEME_DESIGN.md
-[Full draft content]
-
-### Feature 001-[name]
-
-#### requirements.md
-[Full draft content]
-
-#### implementation-plan.md
-[Full draft content]
-
-[Repeat for all features in theme]
-
----
-
-[Repeat for all themes]
+```
+comms/outbox/exploration/design-${VERSION}-006-drafts/
+├── README.md
+├── draft-checklist.md
+└── drafts/
+    ├── manifest.json
+    ├── VERSION_DESIGN.md
+    ├── THEME_INDEX.md
+    ├── config-and-guidance/
+    │   ├── THEME_DESIGN.md
+    │   └── windows-bash-guidance/
+    │       ├── requirements.md
+    │       └── implementation-plan.md
+    └── critical-bug-fixes/
+        ├── THEME_DESIGN.md
+        ├── expose-missing-crud-tools/
+        │   ├── requirements.md
+        │   └── implementation-plan.md
+        └── fix-model-config-propagation/
+            ├── requirements.md
+            └── implementation-plan.md
 ```
 
 ### draft-checklist.md
 
 Verification checklist:
-- [ ] VERSION_DESIGN.md drafted
-- [ ] THEME_INDEX.md drafted (format verified)
-- [ ] Theme NN THEME_DESIGN.md drafted (for each theme)
-- [ ] Feature NNN requirements.md drafted (for each feature)
-- [ ] Feature NNN implementation-plan.md drafted (for each feature)
-- [ ] All backlog items referenced
-- [ ] All acceptance criteria included
-- [ ] All research findings incorporated
-- [ ] Test strategies documented per feature
-- [ ] Design artifact store references are correct paths
+- [ ] manifest.json is valid JSON with all required fields
+- [ ] Every theme in manifest has a corresponding folder under drafts/
+- [ ] Every feature in manifest has a corresponding folder with both requirements.md and implementation-plan.md
+- [ ] VERSION_DESIGN.md and THEME_INDEX.md exist in drafts/
+- [ ] THEME_INDEX.md feature lines match format `- \d{3}-[\w-]+: .+`
+- [ ] No placeholder text in any draft (`_Theme goal_`, `_Feature description_`, `[FILL IN]`, `TODO`)
+- [ ] All backlog IDs from manifest appear in at least one requirements.md
+- [ ] No theme or feature slug starts with a digit prefix (`^\d+-`)
 - [ ] Backlog IDs in each requirements.md cross-referenced against Task 002 backlog analysis (no mismatches)
 
 ## Allowed MCP Tools
@@ -208,7 +238,8 @@ Verification checklist:
 - Include all acceptance criteria from backlog items
 - Test requirements should match Task 004/005 test strategy
 - Implementation plans should reference specific files based on research
-- The consolidated document-drafts.md may be LONG (1000+ lines) — that's expected
+- Theme/feature slugs in the drafts/ folder must NOT include number prefixes — the MCP tools add them
+- The consolidated document-drafts.md is no longer produced — use individual files with manifest.json
 - Do NOT modify the design artifact store
 
 ## When Complete

@@ -39,60 +39,79 @@ The following files are machine-parsed and require EXACT format preservation:
 
 ## Tasks
 
-### 1. Read Phase 3 Drafts
+### 1. Read Task 006 Output
 
-Read the complete document drafts from Task 006:
-- `comms/outbox/exploration/design-${VERSION}-006-drafts/document-drafts.md`
+Read the manifest and individual draft files from Task 006:
 
-Extract the content for each document type.
+```
+drafts_dir = comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/
+```
+
+1. Read `{drafts_dir}/manifest.json` — contains version metadata, theme/feature
+   numbering, goals, backlog IDs, and context
+2. Read `{drafts_dir}/VERSION_DESIGN.md`
+3. Read `{drafts_dir}/THEME_INDEX.md`
+4. For each theme in manifest: read `{drafts_dir}/{theme_slug}/THEME_DESIGN.md`
+5. For each feature in manifest: read `{drafts_dir}/{theme_slug}/{feature_slug}/requirements.md`
+   and `{drafts_dir}/{theme_slug}/{feature_slug}/implementation-plan.md`
+
+**CRITICAL — Use Slugs from Manifest:**
+- Pass `theme["slug"]` as the `theme_name` parameter to `design_theme` and in the themes array for `design_version`
+- Pass `feature["slug"]` as the feature `name` parameter
+- Do NOT add number prefixes — the MCP tools add them automatically
+- Passing pre-numbered names like `"01-config-and-guidance"` causes double-numbering bugs
+
+**Error Handling:** If any file referenced by the manifest is missing:
+1. List all missing files
+2. Report which themes/features are affected
+3. STOP without calling any MCP tools
+4. Recommend re-running Task 006
 
 ### 2. Prepare Context Object
 
-From the design artifact store and drafts, prepare the context object:
+Read the context object directly from `manifest.json`:
 
 ```python
-context = {
-    "rationale": "[Design rationale from VERSION_DESIGN.md]",
-    "constraints": ["[constraint 1]", "[constraint 2]", ...],
-    "assumptions": ["[assumption 1]", "[assumption 2]", ...],
-    "deferred_items": ["[item 1]", "[item 2]", ...]
-}
+manifest = read_json(f"{drafts_dir}/manifest.json")
+context = manifest["context"]
 ```
 
 ### 3. Prepare Themes Array
 
-From the drafts, prepare the themes structure:
+Build the themes structure from the manifest. Use slugs (NOT numbered names):
 
 ```python
+manifest = read_json(f"{drafts_dir}/manifest.json")
 themes = [
     {
-        "name": "01-theme-name",
-        "goal": "[Theme goal from THEME_INDEX.md]",
+        "name": theme["slug"],          # slug only, tool adds prefix
+        "goal": theme["goal"],
         "features": [
-            {"name": "001-feature-name", "goal": "[Feature goal]"},
-            {"name": "002-another-feature", "goal": "[Feature goal]"}
+            {"name": f["slug"], "goal": f["goal"]}
+            for f in theme["features"]
         ]
-    },
-    # ... repeat for all themes
+    }
+    for theme in manifest["themes"]
 ]
 ```
 
 **CRITICAL:** Verify structure:
 - [ ] `themes` is a list (not a string)
+- [ ] Each theme `name` is a slug WITHOUT number prefix
+- [ ] Each feature `name` is a slug WITHOUT number prefix
 - [ ] Each theme has `name`, `goal`, `features` keys
 - [ ] Each feature has `name`, `goal` keys
-- [ ] Each feature in design_theme call has `number`, `name`, `requirements`, `implementation_plan` keys
 
 ### 4. Call design_version
 
 ```python
 design_version(
     project="${PROJECT}",
-    version="${VERSION}",
-    description="[Version description from VERSION_DESIGN.md]",
+    version=manifest["version"],
+    description=manifest["description"],
     themes=themes,
-    backlog_ids=["BL-XXX", "BL-YYY", ...],
-    context=context,
+    backlog_ids=manifest["backlog_ids"],
+    context=manifest["context"],
     overwrite=false
 )
 ```
@@ -101,34 +120,37 @@ Document the result (success or error).
 
 ### 5. Call design_theme for Each Theme
 
-For EACH theme:
+For EACH theme, use a manifest-driven loop:
 
 ```python
-features = [
-    {
-        "number": 1,
-        "name": "001-feature-name",
-        "requirements": "[Lean requirements.md content with artifact store references]",
-        "implementation_plan": "[Lean implementation-plan.md content with artifact store references]"
-    },
-    # ... repeat for all features
-]
+for theme in manifest["themes"]:
+    theme_design = read_file(f"{drafts_dir}/{theme['slug']}/THEME_DESIGN.md")
+    features = []
+    for f in theme["features"]:
+        req = read_file(f"{drafts_dir}/{theme['slug']}/{f['slug']}/requirements.md")
+        plan = read_file(f"{drafts_dir}/{theme['slug']}/{f['slug']}/implementation-plan.md")
+        features.append({
+            "number": f["number"],
+            "name": f["slug"],              # slug only, tool adds prefix
+            "requirements": req,
+            "implementation_plan": plan      # underscore, not hyphen
+        })
 
-design_theme(
-    project="${PROJECT}",
-    version="${VERSION}",
-    theme_number=1,
-    theme_name="01-theme-name",
-    theme_design="[Lean THEME_DESIGN.md content with artifact store references]",
-    features=features,
-    mode="full"
-)
+    design_theme(
+        project="${PROJECT}",
+        version=manifest["version"],
+        theme_number=theme["number"],
+        theme_name=theme["slug"],           # slug only, tool adds prefix
+        theme_design=theme_design,
+        features=features,
+        mode="full"
+    )
 ```
 
 **CRITICAL - Feature Object Required Fields:**
 Each feature dict MUST contain ALL of these fields:
 - `number` (int): Feature number within the theme, 1-indexed sequential
-- `name` (str): Feature slug (e.g., "001-feature-name")
+- `name` (str): Feature slug WITHOUT number prefix (e.g., "feature-name", NOT "001-feature-name")
 - `requirements` (str): Full requirements.md markdown content
 - `implementation_plan` (str): Full implementation-plan.md markdown content (NOTE: underscore, not hyphen)
 

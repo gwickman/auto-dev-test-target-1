@@ -32,7 +32,23 @@ For questions about existing code:
 - Read relevant source files to understand current implementation
 - Document findings with file paths and line references
 
-### 3. External Research
+### 3. Verify Referenced Learnings
+
+If any backlog items, previous version retrospectives, or research findings reference learnings (LRN-XXX):
+
+1. Read the learning: `get_learning(learning_id="LRN-XXX", project="${PROJECT}")`
+2. Verify the condition it describes still exists in the codebase (quick check — run relevant command or read relevant file)
+3. If the condition has been fixed or changed since the learning was created, mark the learning as **STALE** and note that design decisions should NOT rely on it
+4. If the condition persists, mark as **VERIFIED** and incorporate into design
+
+Document all learning verifications in the research output with a table:
+
+| Learning | Status | Evidence |
+|----------|--------|----------|
+| LRN-031 | STALE | All 7 test failures resolved in v048 commits |
+| LRN-024 | VERIFIED | Pattern still present in version_design.py |
+
+### 4. External Research
 
 For questions about external libraries, patterns, or best practices:
 
@@ -45,7 +61,7 @@ For questions about external libraries, patterns, or best practices:
 - Priority: Official docs > Library tests > GitHub issues
 - Document URLs and relevant excerpts
 
-### 4. Sub-Explorations for Complex Investigation
+### 5. Sub-Explorations for Complex Investigation
 
 If investigation is complex or can be parallelized:
 - You MAY spawn sub-explorations using `start_exploration`
@@ -53,7 +69,7 @@ If investigation is complex or can be parallelized:
 - Monitor with `get_exploration_status` and retrieve results
 - Integrate findings into this task's output
 
-### 5. Evidence Gathering for Concrete Values
+### 6. Evidence Gathering for Concrete Values
 
 For any concrete values needed (timeouts, limits, thresholds):
 - Query existing codebase for current values
@@ -61,7 +77,7 @@ For any concrete values needed (timeouts, limits, thresholds):
 - If not determinable pre-implementation, mark as "TBD - requires runtime testing"
 - NEVER guess or use "typical" values without evidence
 
-### 6. Impact Analysis
+### 7. Impact Analysis
 
 Document:
 - **Dependencies**: What existing code/tools/configs will change?
@@ -125,6 +141,8 @@ Analysis of implementation impact:
 - `get_exploration_status`
 - `get_exploration_result`
 - `list_explorations`
+- `get_learning`
+- `search_learnings`
 
 Plus DeepWiki tools:
 - `mcp__deepwiki__ask_question`

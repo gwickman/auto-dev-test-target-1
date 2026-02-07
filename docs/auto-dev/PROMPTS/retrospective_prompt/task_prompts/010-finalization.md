@@ -31,16 +31,22 @@ Read the README.md from each task folder and verify it exists and indicates succ
 
 If any required task is missing or reports failure, document the gap and STOP.
 
-### 2. Run Final Quality Gates
+### 2. Run Final Quality Gates and Verify Resolution
 
 ```python
 run_quality_gates(project="${PROJECT}")
 ```
 
-All checks must pass. If any fail:
-- Document the failure
-- Do NOT attempt fixes at this stage (should have been handled in Task 004)
-- STOP — finalization cannot proceed with failing gates
+If ALL checks pass → proceed to step 3.
+
+If any checks fail:
+1. For each failure, check if it was classified as a "code problem" in Task 004 and has a corresponding backlog item created by Task 007
+2. If ALL failures have backlog item references → proceed to step 3
+   (Log: "Version completing with N documented code-problem deferrals: BL-XXX, BL-YYY")
+3. If ANY failure lacks a backlog item reference → **STOP**
+   ("Cannot complete version: unclassified test failures remain. Re-run Task 004 classification or create missing backlog items.")
+
+This ensures a clean exit: either all tests pass, or every failure is explicitly accounted for with a backlog item.
 
 ### 3. Commit All Closure Changes
 

@@ -21,7 +21,8 @@ All design documents have been persisted. This task validates completeness witho
 ### 1. Content Completeness Check
 
 Compare Task 006 drafts against persisted inbox documents:
-- Read `comms/outbox/exploration/design-${VERSION}-006-drafts/document-drafts.md`
+- Read `comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/manifest.json`
+- Read individual draft files under `comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/`
 - Read all documents in `comms/inbox/versions/execution/${VERSION}/`
 - Check for truncation or missing content
 - Document any discrepancies
@@ -102,6 +103,28 @@ Review VERSION_DESIGN.md and THEME_DESIGN.md files:
 - Breaking changes documented
 - Test impact assessed
 
+### 12. Naming Convention Validation
+
+Verify all theme and feature folders match expected naming patterns:
+- Theme folders: `^\d{2}-[a-z][a-z0-9-]*[a-z0-9]$`
+- Feature folders: `^\d{3}-[a-z][a-z0-9-]*[a-z0-9]$`
+- THEME_INDEX feature lines: `^- \d{3}-[a-z][a-z0-9-]*[a-z0-9]: .+$`
+
+**CRITICAL:** Check for double-numbered prefixes (`\d{2,3}-\d{2,3}-`). Any match is a BLOCKING FAILURE — double-numbering is always a bug.
+
+Report every folder and index entry that violates these patterns.
+
+### 13. Cross-Reference Consistency
+
+Parse THEME_INDEX.md and compare against actual folder structure:
+- Every theme in the index must have a matching folder on disk
+- Every theme folder on disk must appear in the index
+- Every feature in the index must have a matching folder
+- Every feature folder must appear in the index
+- Names must match EXACTLY (case-sensitive)
+
+Any mismatch is a BLOCKING FAILURE.
+
 ## Output Requirements
 
 Create in `comms/outbox/exploration/design-${VERSION}-008-validation/`:
@@ -111,7 +134,7 @@ Create in `comms/outbox/exploration/design-${VERSION}-008-validation/`:
 First paragraph: Summary of validation result (PASS/FAIL) with confidence level.
 
 Then:
-- **Checklist Status**: X/11 items passed
+- **Checklist Status**: X/13 items passed
 - **Blocking Issues**: Any failures requiring fix
 - **Warnings**: Non-blocking concerns
 - **Ready for Execution**: Yes/No with rationale
@@ -167,6 +190,14 @@ Then:
   - Status: [PASS/FAIL]
   - Notes: [findings]
 
+- [ ] **Naming convention** — Theme/feature folders match patterns, no double-numbering.
+  - Status: [PASS/FAIL]
+  - Notes: [findings]
+
+- [ ] **Cross-reference consistency** — THEME_INDEX matches folder structure exactly.
+  - Status: [PASS/FAIL]
+  - Notes: [findings]
+
 ## Summary
 
 **Overall Status**: [PASS/FAIL]
@@ -201,15 +232,19 @@ Document any issues found. If none: "No discrepancies identified."
 ## Success Criteria
 
 Validation PASSES only if:
-- ALL 11 checklist items pass (or N/A with justification)
+- ALL 13 checklist items pass (or N/A with justification)
 - `validate_version_design` returns 0 missing documents
 - No blocking issues identified
 - Design documents and artifact store are committed
+- No naming convention violations
+- THEME_INDEX exactly matches folder structure
 
 Validation FAILS if:
 - Any checklist item fails
 - Missing or invalid documents found
 - Unresolved dependencies or broken references
+- Naming convention violations detected (especially double-numbering)
+- THEME_INDEX/folder cross-reference mismatches found
 
 **If validation fails:** Document the failure and STOP. Remediation is to re-run from the appropriate earlier step, not to patch documents in place.
 

@@ -34,7 +34,41 @@ From each task, extract items that need remediation:
 - **005**: Architecture drift items (already handled via backlog — reference only)
 - **006**: Learning extraction issues (unlikely but check)
 
-### 3. Create Proposals Document
+### 3. Create Backlog Items for Quality Gate Code Problems
+
+For each failure classified as a "code problem" in Task 004's README.md:
+
+1. Create a backlog item:
+   ```python
+   add_backlog_item(
+       project="${PROJECT}",
+       title="Fix: <test_name> — <brief description of the bug>",
+       priority="P1",
+       description="""
+   ## Bug Description
+   Test `<test_file>::<test_name>` correctly identifies a bug in `<production_file>`.
+
+   **Expected behavior:** <what the test expects>
+   **Actual behavior:** <what happens>
+   **Root cause:** <analysis from Task 004>
+
+   ## Evidence
+   Identified during ${VERSION} retrospective quality gate analysis.
+   Classification: code problem (test is correct, production code has a bug).
+
+   ## Resolution
+   Fix the production code to match the expected behavior.
+   """,
+       tags=["bug", "quality-gate", "retrospective"]
+   )
+   ```
+
+2. Document the backlog item ID (BL-XXX) in the proposals output
+3. Reference the backlog item ID in the Task 010 finalization summary
+
+If Task 004 reports no code problems, skip this section and note "No quality gate backlog items needed."
+
+### 4. Create Proposals Document
 
 For each finding, use this exact format:
 
@@ -65,14 +99,14 @@ For each finding, use this exact format:
 
 Every action must specify: exact file path, exact change, no ambiguity.
 
-### 4. Categorize Proposals
+### 5. Categorize Proposals
 
 Group proposals by type:
 - **Immediate Fixes**: Can be executed by the remediation exploration
 - **Backlog Items**: Already created by previous tasks (reference only)
 - **User Action Required**: Items requiring human intervention
 
-### 5. Summary Statistics
+### 6. Summary Statistics
 
 Count:
 - Total findings across all tasks
@@ -102,6 +136,7 @@ Complete proposals document with all findings in Crystal Clear Actions format. T
 ## Allowed MCP Tools
 
 - `read_document`
+- `add_backlog_item`
 
 ## Guidelines
 
