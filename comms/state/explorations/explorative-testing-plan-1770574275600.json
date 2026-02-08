@@ -1,10 +1,10 @@
 {
   "exploration_id": "explorative-testing-plan-1770574275600",
   "results_folder": "explorative-testing-plan",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 7964,
   "started_at": "2026-02-08T18:11:15.600197",
-  "updated_at": "2026-02-08T18:11:15.600197",
+  "updated_at": "2026-02-08T18:11:17.614820",
   "completed_at": null,
   "error": null,
   "documents": [],
