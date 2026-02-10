@@ -1,0 +1,15 @@
+{
+  "exploration_id": "c4-prompt-v2-fixes-1770719910421",
+  "results_folder": "c4-prompt-v2-fixes",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-10T10:38:30.421669",
+  "updated_at": "2026-02-10T10:38:30.421669",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/c4-prompt-v2-fixes/prompt.md",
+  "outbox_path": "comms/outbox/exploration/c4-prompt-v2-fixes"
+}
