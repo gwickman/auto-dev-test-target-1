@@ -1,14 +1,16 @@
 {
   "exploration_id": "c4-v003-005-context-1770706580570",
   "results_folder": "c4-v003-005-context",
-  "status": "running",
+  "status": "complete",
   "pid": 10960,
   "started_at": "2026-02-10T06:56:20.570542",
-  "updated_at": "2026-02-10T06:56:22.481119",
-  "completed_at": null,
+  "updated_at": "2026-02-10T06:58:42.264280",
+  "completed_at": "2026-02-10T06:58:42.263868",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/c4-v003-005-context/prompt.md",
   "outbox_path": "comms/outbox/exploration/c4-v003-005-context"
