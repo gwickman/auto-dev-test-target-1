@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-v003-review-1770713491779",
   "results_folder": "c4-v003-review",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 22380,
   "started_at": "2026-02-10T08:51:31.779297",
-  "updated_at": "2026-02-10T08:51:31.779297",
+  "updated_at": "2026-02-10T08:51:34.069073",
   "completed_at": null,
   "error": null,
   "documents": [],
