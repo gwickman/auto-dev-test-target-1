@@ -5,6 +5,7 @@
 PROJECT=[SET_PROJECT_NAME_HERE]
 VERSION=[SET_VERSION_HERE]
 MODE=auto
+PUSH=true        # Set to false to commit locally without pushing
 ```
 
 **MODE options:**
@@ -42,8 +43,10 @@ prompt = task_template
     .replace("${BATCH_NUMBER}", str(batch_num))
     .replace("${BATCH_COUNT}", str(total_batches))
     .replace("${BATCH_DIRECTORIES}", batch_directory_list)
-start_exploration(project=PROJECT, prompt=prompt, results_folder=f"c4-{VERSION}-002-code-batch-{batch_num}")
+start_exploration(project=PROJECT, prompt=prompt, results_folder=f"c4-{VERSION}-002-batch{batch_num}")
 ```
+
+NOTE: results_folder must have at most 5 hyphen-separated parts. Use compact names like "c4-v003-002-batch1".
 
 **Variables used across tasks:**
 | Variable | Source | Used In |
@@ -128,7 +131,7 @@ elif MODE == "delta":
     PREVIOUS_C4_COMMIT = c4_commit
 ```
 
-**Note:** Delta mode depends on the standardized commit message `docs(c4): ${VERSION} C4 documentation finalized` produced by Task 006. If the previous generation used a different commit message format, delta mode will fall back to full.
+**CRITICAL:** The final commit message MUST use the exact format `docs(c4): ${VERSION} C4 documentation finalized (${MODE} mode)`. Delta mode detection depends on matching the pattern `docs(c4):.*finalized` in git log. Do not modify, reword, squash, or amend these commit messages — doing so will silently break delta mode for future runs.
 
 **STEP 5:** Log mode decision.
 
@@ -172,7 +175,7 @@ Current Version: {VERSION}
 
 - Read: `docs/auto-dev/PROMPTS/c4_documentation_prompt/task_prompts/002-code-level-analysis.md`
 - Substitute: `${PROJECT}`, `${VERSION}`, `${BATCH_NUMBER}`, `${BATCH_DIRECTORIES}` (from manifest)
-- Results folder: `c4-${VERSION}-002-code-batch-${N}`
+- Results folder: `c4-${VERSION}-002-batch${N}`
 - Start exploration (do NOT wait — launch all batches)
 
 **After launching all batches:**
@@ -191,10 +194,8 @@ for eid in exploration_ids:
 **Parallel write safety:** Each batch writes to distinct files (`c4-code-[different-dir-name].md`) so parallel explorations do not conflict. The commit occurs only after all batches complete, ensuring all files are captured atomically.
 
 **COMMIT after all batches complete:**
-```bash
-git add docs/C4-Documentation/c4-code-*
-git commit -m "docs(c4): ${VERSION} code-level analysis complete"
-git push
+```python
+git_write(project=PROJECT, message="docs(c4): ${VERSION} code-level analysis complete", push=PUSH)
 ```
 
 ---
@@ -224,10 +225,8 @@ git push
 - Start exploration → poll → verify
 
 **COMMIT after Phase 4:**
-```bash
-git add docs/C4-Documentation/
-git commit -m "docs(c4): ${VERSION} component/container/context synthesis complete"
-git push
+```python
+git_write(project=PROJECT, message="docs(c4): ${VERSION} component/container/context synthesis complete", push=PUSH)
 ```
 
 ---
@@ -241,12 +240,8 @@ git push
 - Start exploration → poll → verify
 
 **FINAL COMMIT after Task 006:**
-```bash
-git add docs/C4-Documentation/README.md
-git add docs/C4-Documentation/validation-report.md
-git add comms/outbox/exploration/c4-${VERSION}-*/
-git commit -m "docs(c4): ${VERSION} C4 documentation finalized (${MODE} mode)"
-git push
+```python
+git_write(project=PROJECT, message="docs(c4): ${VERSION} C4 documentation finalized (${MODE} mode)", push=PUSH)
 ```
 
 ---
@@ -307,7 +302,7 @@ docs/C4-Documentation/
 ├── c4-component.md            # Level 3: Master component index
 ├── c4-component-*.md          # Level 3: Individual components
 ├── c4-code-*.md               # Level 4: Code-level docs (one per directory)
-└── apis/                      # OpenAPI specs
+└── apis/                      # OpenAPI specs (only created if network APIs exist)
     └── *.yaml
 ```
 
@@ -317,11 +312,14 @@ docs/C4-Documentation/
 
 ```
 # Full regeneration
-PROJECT=auto-dev-test-target-1 VERSION=v005 MODE=full
+PROJECT=auto-dev-test-target-1 VERSION=v005 MODE=full PUSH=true
 
 # Delta update after a version
-PROJECT=auto-dev-test-target-1 VERSION=v006 MODE=auto
+PROJECT=auto-dev-test-target-1 VERSION=v006 MODE=auto PUSH=true
 
 # Force delta only
-PROJECT=auto-dev-test-target-1 VERSION=v006 MODE=delta
+PROJECT=auto-dev-test-target-1 VERSION=v006 MODE=delta PUSH=true
+
+# Local-only (commit without pushing to remote)
+PROJECT=auto-dev-test-target-1 VERSION=v005 MODE=full PUSH=false
 ```

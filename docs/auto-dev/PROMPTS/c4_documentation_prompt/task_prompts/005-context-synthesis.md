@@ -193,6 +193,7 @@ Then:
 - **User journeys should be concrete** — not abstract workflows but specific step sequences
 - **Test-driven feature discovery** — test names are often the most honest feature list
 - **Don't invent personas** — if you can only identify one user type, that's fine
+- **Qualify deployment status in user journeys** — when writing user journeys, cross-reference the container doc for deployment status. If a package is not published or a service is not deployed, qualify installation/access steps accordingly (e.g., "after publishing" or "via local installation"). Do not imply public availability unless the container doc confirms it.
 - **External systems must be real** — infer from imports, configs, and API calls, not speculation
 - **Keep under 200 lines** — this is the highest-level, most accessible C4 document; brevity is a feature
 - Do NOT commit — the master prompt handles commits

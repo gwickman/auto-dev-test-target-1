@@ -152,7 +152,7 @@ flowchart TB
 | Procedural (structs + functions) | `flowchart TB` | Call graphs and function dependencies |
 | Mixed | Best fit for dominant pattern | Use multiple diagrams if needed |
 
-Omit diagram entirely if the directory has <3 elements or relationships are trivial (e.g., utility functions with no interdependencies).
+Every c4-code-*.md file MUST include a Mermaid diagram. For simple modules with few elements, use a classDiagram showing the module's exported interface. Do NOT skip diagrams — consistency across all code-level docs is required.
 ```
 
 ### 3. Save to C4-Documentation
@@ -171,7 +171,7 @@ docs/C4-Documentation/c4-code-[sanitized-directory-name].md
 
 ## Output Requirements
 
-Save outputs to `comms/outbox/exploration/c4-${VERSION}-002-code-batch-${BATCH_NUMBER}/`:
+Save outputs to `comms/outbox/exploration/c4-${VERSION}-002-batch${BATCH_NUMBER}/`:
 
 ### README.md (required)
 
@@ -197,6 +197,7 @@ Each `c4-code-*.md` file written directly to `docs/C4-Documentation/` (NOT to th
 - **Complete function signatures** — include all parameters with types where available
 - **Keep each code doc under 300 lines** — summarize if a directory has 50+ functions, prioritizing public API and key abstractions
 - **Skip test files** unless the directory contains ONLY test files (then document the test structure)
+- **For test directories, include:** total test count (number of `it()` or `test()` calls), test file inventory with per-file counts, and coverage summary showing which source functions have test coverage
 - **Skip generated files** (auto-generated code, compiled output, etc.)
 - **Link to source** — use relative paths from repo root for all file references
 - Do NOT synthesize components — that's Task 003's job

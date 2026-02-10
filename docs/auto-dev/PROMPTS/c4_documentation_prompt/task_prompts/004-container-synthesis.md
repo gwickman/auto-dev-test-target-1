@@ -142,7 +142,9 @@ Then:
 ### Container files
 
 - `docs/C4-Documentation/c4-container.md` — main container doc
-- `docs/C4-Documentation/apis/*.yaml` — OpenAPI specs (create `apis/` directory)
+- `docs/C4-Documentation/apis/*.yaml` — OpenAPI specs (create `apis/` directory only if network APIs exist)
+
+**Library projects without network APIs:** If the system has no network APIs (e.g., it is a library consumed via imports, not a running service), do NOT create an `apis/` directory. Instead, note in the container doc: "No API specifications — this system is a library consumed via direct imports."
 
 ## Allowed MCP Tools
 
