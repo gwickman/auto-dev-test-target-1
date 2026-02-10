@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-v003-004-containers-1770706390173",
   "results_folder": "c4-v003-004-containers",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 10960,
   "started_at": "2026-02-10T06:53:10.173812",
-  "updated_at": "2026-02-10T06:53:10.173812",
+  "updated_at": "2026-02-10T06:53:12.223935",
   "completed_at": null,
   "error": null,
   "documents": [],
