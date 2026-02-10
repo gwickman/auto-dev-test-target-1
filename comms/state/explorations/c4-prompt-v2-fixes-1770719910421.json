@@ -1,14 +1,17 @@
 {
   "exploration_id": "c4-prompt-v2-fixes-1770719910421",
   "results_folder": "c4-prompt-v2-fixes",
-  "status": "running",
+  "status": "complete",
   "pid": 22380,
   "started_at": "2026-02-10T10:38:30.421669",
-  "updated_at": "2026-02-10T10:38:32.386057",
-  "completed_at": null,
+  "updated_at": "2026-02-10T10:43:23.543695",
+  "completed_at": "2026-02-10T10:43:23.543073",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md",
+    "changes-detail.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/c4-prompt-v2-fixes/prompt.md",
   "outbox_path": "comms/outbox/exploration/c4-prompt-v2-fixes"
