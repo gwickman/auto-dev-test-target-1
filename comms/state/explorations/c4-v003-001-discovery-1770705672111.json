@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-v003-001-discovery-1770705672111",
   "results_folder": "c4-v003-001-discovery",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 10960,
   "started_at": "2026-02-10T06:41:12.111350",
-  "updated_at": "2026-02-10T06:41:12.111350",
+  "updated_at": "2026-02-10T06:41:13.997106",
   "completed_at": null,
   "error": null,
   "documents": [],
