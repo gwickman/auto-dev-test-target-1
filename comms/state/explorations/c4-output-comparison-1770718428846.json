@@ -1,0 +1,15 @@
+{
+  "exploration_id": "c4-output-comparison-1770718428846",
+  "results_folder": "c4-output-comparison",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-10T10:13:48.846304",
+  "updated_at": "2026-02-10T10:13:48.846304",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/c4-output-comparison/prompt.md",
+  "outbox_path": "comms/outbox/exploration/c4-output-comparison"
+}
