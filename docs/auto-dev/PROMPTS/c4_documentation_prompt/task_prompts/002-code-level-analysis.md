@@ -71,15 +71,88 @@ Produce a markdown file following this structure:
 
 ## Relationships
 
-[Mermaid diagram if relationships are complex enough to warrant one]
+[Mermaid diagram if there are 3+ elements with non-trivial relationships]
 
-Choose diagram type based on code paradigm:
-- OOP → classDiagram
-- FP/pipelines → flowchart (data flow)
-- Modules → classDiagram with <<module>> stereotype
-- Mixed → whichever best represents the dominant pattern
+Choose diagram type based on the programming paradigm:
 
-Only include a diagram if there are 3+ elements with non-trivial relationships.
+**OOP (classes, interfaces, inheritance) → classDiagram:**
+\`\`\`mermaid
+---
+title: Code Diagram for [Directory Name]
+---
+classDiagram
+    class ClassName {
+        +attribute1 Type
+        +method1(param Type) ReturnType
+    }
+    class InterfaceName {
+        <<interface>>
+        +requiredMethod() ReturnType
+    }
+    ClassName ..|> InterfaceName : implements
+    ClassName --> OtherClass : uses
+\`\`\`
+
+**FP/pipelines (data transformations, function composition) → flowchart:**
+\`\`\`mermaid
+---
+title: Data Pipeline for [Directory Name]
+---
+flowchart LR
+    subgraph Input
+        A[readFile]
+    end
+    subgraph Transform
+        B[parseJSON] --> C[validate] --> D[normalize]
+    end
+    subgraph Output
+        E[writeFile]
+    end
+    A -->|raw| B
+    D -->|clean data| E
+\`\`\`
+
+**Modules with exports (FP/procedural) → classDiagram with <<module>>:**
+\`\`\`mermaid
+classDiagram
+    class validators {
+        <<module>>
+        +validateInput(data) Result
+        +sanitize(input) string
+    }
+    class transformers {
+        <<module>>
+        +normalize(data) NormalizedData
+        +aggregate(items) Summary
+    }
+    transformers --> validators : uses
+\`\`\`
+
+**Function dependency graph (procedural/mixed) → flowchart TB:**
+\`\`\`mermaid
+flowchart TB
+    subgraph Public API
+        processData
+        exportReport
+    end
+    subgraph Internal
+        validate
+        transform
+    end
+    processData --> validate --> transform
+    exportReport --> processData
+\`\`\`
+
+**Decision table:**
+| Code Style | Diagram | When |
+|-----------|---------|------|
+| OOP (classes, interfaces) | `classDiagram` | Inheritance, composition, interface implementation |
+| FP (pure functions, pipelines) | `flowchart LR` | Data transformations and function composition |
+| FP (modules with exports) | `classDiagram` + `<<module>>` | Module structure and dependencies |
+| Procedural (structs + functions) | `flowchart TB` | Call graphs and function dependencies |
+| Mixed | Best fit for dominant pattern | Use multiple diagrams if needed |
+
+Omit diagram entirely if the directory has <3 elements or relationships are trivial (e.g., utility functions with no interdependencies).
 ```
 
 ### 3. Save to C4-Documentation
@@ -116,20 +189,15 @@ Each `c4-code-*.md` file written directly to `docs/C4-Documentation/` (NOT to th
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 
 ## Guidelines
 
 - **Accuracy over completeness** — if you can't determine a return type, say "unknown" rather than guess
 - **Complete function signatures** — include all parameters with types where available
-- **Keep each code doc under 300 lines** — summarize if a directory has 50+ functions
+- **Keep each code doc under 300 lines** — summarize if a directory has 50+ functions, prioritizing public API and key abstractions
 - **Skip test files** unless the directory contains ONLY test files (then document the test structure)
 - **Skip generated files** (auto-generated code, compiled output, etc.)
 - **Link to source** — use relative paths from repo root for all file references
 - Do NOT synthesize components — that's Task 003's job
 - Do NOT commit — the master prompt handles commits after all batches complete
-
-## When Complete
-git add docs/C4-Documentation/c4-code-*
-git add comms/outbox/exploration/c4-${VERSION}-002-code-batch-${BATCH_NUMBER}/
-git commit -m "exploration: c4-${VERSION}-002-code-batch-${BATCH_NUMBER} complete"

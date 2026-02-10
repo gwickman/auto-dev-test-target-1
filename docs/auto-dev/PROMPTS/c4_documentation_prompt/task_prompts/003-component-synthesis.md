@@ -40,7 +40,7 @@ Group code-level elements into logical components based on:
 
 **Rules:**
 - Every `c4-code-*.md` file must belong to exactly one component
-- A component should contain 2-8 code-level elements (not 1, not 20)
+- Target 2-8 code-level elements per component. Single-element components are acceptable for standalone modules. Components exceeding 8 elements should be reviewed for possible splitting, but are acceptable when the domain justifies it
 - If a directory doesn't fit anywhere, it becomes its own component
 
 ### 3. Document Each Component
@@ -149,7 +149,7 @@ All `c4-component-*.md` and `c4-component.md` written directly to `docs/C4-Docum
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 
 ## Guidelines
 
@@ -161,8 +161,3 @@ All `c4-component-*.md` and `c4-component.md` written directly to `docs/C4-Docum
 - **Master index should fit on one screen** — summary view, not exhaustive detail
 - Do NOT map to containers — that's Task 004's job
 - Do NOT commit — the master prompt handles commits
-
-## When Complete
-git add docs/C4-Documentation/c4-component*
-git add comms/outbox/exploration/c4-${VERSION}-003-components/
-git commit -m "exploration: c4-${VERSION}-003-components complete"

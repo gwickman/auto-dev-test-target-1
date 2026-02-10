@@ -10,7 +10,8 @@ Discover all code directories in the project, determine which need processing (f
 
 This is the first step in C4 architecture documentation generation for `${PROJECT}` version `${VERSION}`.
 - **Mode:** `${MODE}` (full = all directories; delta = only changed since `${PREVIOUS_VERSION}`)
-- If mode is `delta`, only directories containing files changed since `${PREVIOUS_VERSION}` will be processed.
+- **Previous C4 commit:** `${PREVIOUS_C4_COMMIT}` (git SHA; empty if MODE is full)
+- If mode is `delta`, only directories containing files changed since `${PREVIOUS_C4_COMMIT}` will be processed.
 
 ## Tasks
 
@@ -37,11 +38,8 @@ Sort discovered directories by depth (deepest first) for bottom-up processing.
 Use git to find files changed since the previous C4 generation:
 
 ```bash
-# Find the commit where previous C4 docs were generated
-git log --oneline --all -- docs/C4-Documentation/README.md | head -5
-
-# Get changed files since that point
-git diff --name-only <previous-c4-commit> HEAD -- src/ tests/ lib/
+# Get changed files since the previous C4 commit (SHA provided by master prompt)
+git diff --name-only ${PREVIOUS_C4_COMMIT} HEAD -- src/ tests/ lib/
 ```
 
 Map changed files to their parent directories. Only these directories (and their ancestors up to the source root) need reprocessing.
@@ -128,7 +126,7 @@ List of all directories found and whether they were included or excluded, with r
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 - `git_read`
 
 ## Guidelines
@@ -138,7 +136,3 @@ List of all directories found and whether they were included or excluded, with r
 - In delta mode, be conservative — if unsure whether a directory changed, include it
 - Do NOT create any C4 documentation in this task — discovery only
 - Do NOT commit — the master prompt handles commits
-
-## When Complete
-git add comms/outbox/exploration/c4-${VERSION}-001-discovery/
-git commit -m "exploration: c4-${VERSION}-001-discovery complete"

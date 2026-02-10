@@ -92,7 +92,8 @@ Create `docs/C4-Documentation/README.md`:
 
 To regenerate, run the C4 documentation prompt:
 - **Full:** Set MODE=full to regenerate everything
-- **Delta:** Set MODE=delta to update only changed directories
+- **Delta:** Set MODE=delta to update only changed directories (requires existing C4 docs from a previous full run)
+- **Auto:** Set MODE=auto to let the prompt decide (uses delta if possible, falls back to full)
 - **Prompt location:** docs/auto-dev/PROMPTS/c4_documentation_prompt/
 ```
 
@@ -136,18 +137,12 @@ Detailed validation results:
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 
 ## Guidelines
 
-- **This is a verification task** — do not create or modify C4 level documents (only README.md)
+- **This is a verification task** — do not create or modify C4 level documents (only README.md and validation-report.md)
 - **Be honest about gaps** — if files are missing, say so clearly
 - **Validation is best-effort** — spot-checks, not exhaustive parsing
 - **README should be useful** — someone new to the project should understand what's here
 - Do NOT commit — the master prompt handles the final commit
-
-## When Complete
-git add docs/C4-Documentation/README.md
-git add comms/outbox/exploration/c4-${VERSION}-006-finalize/
-git commit -m "docs(c4): ${VERSION} C4 documentation finalized (${MODE} mode)"
-git push

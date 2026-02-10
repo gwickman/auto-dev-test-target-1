@@ -16,6 +16,49 @@ MODE=auto
 
 ---
 
+## MCP Tool Authorization
+
+Extract the autoDevToolKey from your initial prompt if present:
+- Pattern: `autoDevToolKey: ([a-f0-9-]{36})`
+- Include in all MCP tool calls to auto-dev-mcp
+
+---
+
+## Variable Substitution
+
+Task prompts use `${VARIABLE}` placeholders. Before passing a task prompt to `start_exploration()`, the orchestrator MUST:
+
+1. Read the task prompt file content
+2. Replace all `${VARIABLE}` tokens with actual values using string replacement
+3. For `${BATCH_DIRECTORIES}`, insert the actual directory list from the manifest as a markdown list
+4. Pass the fully-resolved prompt string to `start_exploration(prompt=resolved_prompt)`
+
+**Example for Task 002 batch launch:**
+```python
+task_template = read_document("docs/auto-dev/PROMPTS/c4_documentation_prompt/task_prompts/002-code-level-analysis.md")
+prompt = task_template
+    .replace("${PROJECT}", PROJECT)
+    .replace("${VERSION}", VERSION)
+    .replace("${BATCH_NUMBER}", str(batch_num))
+    .replace("${BATCH_COUNT}", str(total_batches))
+    .replace("${BATCH_DIRECTORIES}", batch_directory_list)
+start_exploration(project=PROJECT, prompt=prompt, results_folder=f"c4-{VERSION}-002-code-batch-{batch_num}")
+```
+
+**Variables used across tasks:**
+| Variable | Source | Used In |
+|----------|--------|---------|
+| `${PROJECT}` | Config block | All tasks |
+| `${VERSION}` | Config block | All tasks |
+| `${MODE}` | Determined in Step 4 | 001, 003, 006 |
+| `${PREVIOUS_VERSION}` | Extracted from existing README.md | 001 |
+| `${PREVIOUS_C4_COMMIT}` | Git SHA from Step 4 | 001 |
+| `${BATCH_NUMBER}` | Loop counter (1..N) | 002 |
+| `${BATCH_COUNT}` | From manifest | 002 |
+| `${BATCH_DIRECTORIES}` | From manifest, per-batch | 002 |
+
+---
+
 ## Overview
 
 This prompt orchestrates C4 architecture documentation generation using the exploration framework. It follows the C4 model (Code → Component → Container → Context) with bottom-up analysis.
@@ -62,15 +105,30 @@ c4_readme = read_document(project=PROJECT, path="docs/C4-Documentation/README.md
 
 if MODE == "auto":
     if c4_readme exists and has "Generated for Version" field:
-        previous_version = extract version from c4_readme
-        # Check if there are code changes since previous version
-        MODE = "delta"  # will be validated in Task 001
+        previous_version = extract version string from c4_readme (e.g., "v005")
+        # Find the commit SHA where C4 docs were last generated
+        # Search by the standardized commit message format
+        c4_commit = git_read output of:
+            git log --oneline --format="%H" --grep="docs(c4):.*finalized" -1 -- docs/C4-Documentation/README.md
+        if c4_commit found:
+            PREVIOUS_C4_COMMIT = c4_commit
+            MODE = "delta"
+        else:
+            # Can't find previous commit reliably — fall back to full
+            MODE = "full"
     else:
         MODE = "full"
 elif MODE == "delta":
     if c4_readme does not exist:
         STOP: "ERROR: Delta mode requires existing C4 documentation."
+    previous_version = extract version string from c4_readme
+    c4_commit = git log --oneline --format="%H" --grep="docs(c4):.*finalized" -1 -- docs/C4-Documentation/README.md
+    if not c4_commit:
+        STOP: "ERROR: Cannot find previous C4 generation commit. Use MODE=full."
+    PREVIOUS_C4_COMMIT = c4_commit
 ```
+
+**Note:** Delta mode depends on the standardized commit message `docs(c4): ${VERSION} C4 documentation finalized` produced by Task 006. If the previous generation used a different commit message format, delta mode will fall back to full.
 
 **STEP 5:** Log mode decision.
 
@@ -90,7 +148,7 @@ Current Version: {VERSION}
 
 **Task 001:** Discovery and directory manifest
 - Read: `docs/auto-dev/PROMPTS/c4_documentation_prompt/task_prompts/001-discovery-and-planning.md`
-- Substitute: `${PROJECT}`, `${VERSION}`, `${MODE}`, `${PREVIOUS_VERSION}`
+- Substitute: `${PROJECT}`, `${VERSION}`, `${MODE}`, `${PREVIOUS_VERSION}`, `${PREVIOUS_C4_COMMIT}`
 - Output: `comms/outbox/exploration/c4-${VERSION}-001-discovery/`
 - Start exploration → poll → verify
 
@@ -129,6 +187,8 @@ for eid in exploration_ids:
 ```
 
 **If any batch fails:** Document the failure, note which directories were in that batch, and continue with remaining batches. Failed directories will be missing from component synthesis.
+
+**Parallel write safety:** Each batch writes to distinct files (`c4-code-[different-dir-name].md`) so parallel explorations do not conflict. The commit occurs only after all batches complete, ensuring all files are captured atomically.
 
 **COMMIT after all batches complete:**
 ```bash
@@ -179,6 +239,15 @@ git push
 - Substitute: `${PROJECT}`, `${VERSION}`, `${MODE}`
 - Output: `comms/outbox/exploration/c4-${VERSION}-006-finalize/`
 - Start exploration → poll → verify
+
+**FINAL COMMIT after Task 006:**
+```bash
+git add docs/C4-Documentation/README.md
+git add docs/C4-Documentation/validation-report.md
+git add comms/outbox/exploration/c4-${VERSION}-*/
+git commit -m "docs(c4): ${VERSION} C4 documentation finalized (${MODE} mode)"
+git push
+```
 
 ---
 

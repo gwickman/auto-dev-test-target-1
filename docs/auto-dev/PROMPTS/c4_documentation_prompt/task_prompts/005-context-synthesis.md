@@ -183,7 +183,7 @@ Then:
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 - `list_backlog_items` (to understand planned features and system direction)
 
 ## Guidelines
@@ -194,10 +194,5 @@ Then:
 - **Test-driven feature discovery** — test names are often the most honest feature list
 - **Don't invent personas** — if you can only identify one user type, that's fine
 - **External systems must be real** — infer from imports, configs, and API calls, not speculation
-- **Keep under 300 lines** — this is a high-level document
+- **Keep under 200 lines** — this is the highest-level, most accessible C4 document; brevity is a feature
 - Do NOT commit — the master prompt handles commits
-
-## When Complete
-git add docs/C4-Documentation/c4-context.md
-git add comms/outbox/exploration/c4-${VERSION}-005-context/
-git commit -m "exploration: c4-${VERSION}-005-context complete"

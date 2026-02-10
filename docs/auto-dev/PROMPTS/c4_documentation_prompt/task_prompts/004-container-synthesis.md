@@ -146,7 +146,7 @@ Then:
 
 ## Allowed MCP Tools
 
-- `read_document`
+- `read_document` (file creation uses Claude Code's native file system capabilities)
 
 ## Guidelines
 
@@ -158,9 +158,3 @@ Then:
 - **Keep under 300 lines** — split into separate files if the system has 5+ containers
 - Do NOT document personas or user journeys — that's Task 005's job
 - Do NOT commit — the master prompt handles commits
-
-## When Complete
-git add docs/C4-Documentation/c4-container.md
-git add docs/C4-Documentation/apis/
-git add comms/outbox/exploration/c4-${VERSION}-004-containers/
-git commit -m "exploration: c4-${VERSION}-004-containers complete"
