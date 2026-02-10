@@ -1,4 +1,4 @@
-# Task 003: Research and Investigation
+# Task 004: Research and Investigation
 
 Read AGENTS.md first and follow all instructions there.
 
@@ -10,7 +10,7 @@ Research unknowns, investigate prior art, and gather evidence for design decisio
 
 This is Phase 1 (Environment & Investigation) for `${PROJECT}` version `${VERSION}`.
 
-Tasks 001-002 gathered context. This task resolves unknowns before proposing solutions.
+Tasks 001-003 gathered context. This task resolves unknowns before proposing solutions.
 
 ## Tasks
 
@@ -87,7 +87,7 @@ Document:
 
 ## Output Requirements
 
-Save outputs to `comms/outbox/versions/design/${VERSION}/003-research/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/004-research/`:
 
 ### README.md (required)
 

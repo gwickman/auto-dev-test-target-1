@@ -1,4 +1,4 @@
-# Task 008: Pre-Execution Validation
+# Task 009: Pre-Execution Validation
 
 Read AGENTS.md first and follow all instructions there.
 
@@ -20,9 +20,9 @@ All design documents have been persisted. This task validates completeness witho
 
 ### 1. Content Completeness Check
 
-Compare Task 006 drafts against persisted inbox documents:
-- Read `comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/manifest.json`
-- Read individual draft files under `comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/`
+Compare Task 007 drafts against persisted inbox documents:
+- Read `comms/outbox/exploration/design-${VERSION}-007-drafts/drafts/manifest.json`
+- Read individual draft files under `comms/outbox/exploration/design-${VERSION}-007-drafts/drafts/`
 - Read all documents in `comms/inbox/versions/execution/${VERSION}/`
 - Check for truncation or missing content
 - Document any discrepancies
@@ -127,7 +127,7 @@ Any mismatch is a BLOCKING FAILURE.
 
 ## Output Requirements
 
-Create in `comms/outbox/exploration/design-${VERSION}-008-validation/`:
+Create in `comms/outbox/exploration/design-${VERSION}-009-validation/`:
 
 ### README.md (required)
 
@@ -251,8 +251,8 @@ Validation FAILS if:
 ## When Complete
 
 ```bash
-git add comms/outbox/exploration/design-${VERSION}-008-validation/
-git commit -m "exploration: design-${VERSION}-008-validation complete - [PASS/FAIL]"
+git add comms/outbox/exploration/design-${VERSION}-009-validation/
+git commit -m "exploration: design-${VERSION}-009-validation complete - [PASS/FAIL]"
 git push
 ```
 

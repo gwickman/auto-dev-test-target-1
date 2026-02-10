@@ -78,7 +78,8 @@ Compare the changes from step 2 against the documentation from step 3:
       title="Update C4/architecture documentation for ${VERSION} changes",
       priority="P2",
       description="Architecture drift detected during ${VERSION} retrospective:\n- [list of drift items]",
-      tags=["architecture", "c4", "documentation"]
+      tags=["architecture", "c4", "documentation"],
+      quality_assertion='{"problem_structured": true, "ac_testable": true, "no_formulaic": true, "duplicate_checked": true}'
   )
   ```
 

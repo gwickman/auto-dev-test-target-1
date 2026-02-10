@@ -1,4 +1,4 @@
-# Task 006: Document Drafts
+# Task 007: Document Drafts
 
 Read AGENTS.md first and follow all instructions there.
 
@@ -10,7 +10,7 @@ Draft the complete content for all design documents: VERSION_DESIGN.md, THEME_IN
 
 This is Phase 3 (Document Drafts & Persistence) for `${PROJECT}` version `${VERSION}`.
 
-The refined logical design from Phase 2 (Task 005) is complete. Now create the actual document content that will be persisted to the inbox.
+The refined logical design from Phase 2 (Task 006) is complete. Now create the actual document content that will be persisted to the inbox.
 
 **WARNING:** Do NOT modify any files in `comms/outbox/versions/design/${VERSION}/`. These are the reference artifacts. If you find errors, document them and STOP.
 
@@ -21,11 +21,11 @@ The refined logical design from Phase 2 (Task 005) is complete. Now create the a
 Read all outputs from the centralized store:
 - `comms/outbox/versions/design/${VERSION}/001-environment/` — environment context
 - `comms/outbox/versions/design/${VERSION}/002-backlog/` — backlog details
-- `comms/outbox/versions/design/${VERSION}/003-research/` — research findings
-- `comms/outbox/versions/design/${VERSION}/004-logical-design/` — original logical design
-- `comms/outbox/versions/design/${VERSION}/005-critical-thinking/` — refined design and risk assessment
+- `comms/outbox/versions/design/${VERSION}/004-research/` — research findings
+- `comms/outbox/versions/design/${VERSION}/005-logical-design/` — original logical design
+- `comms/outbox/versions/design/${VERSION}/006-critical-thinking/` — refined design and risk assessment
 
-Use Task 005's `refined-logical-design.md` as the primary design source.
+Use Task 006's `refined-logical-design.md` as the primary design source.
 
 ### 2. Draft VERSION_DESIGN.md
 
@@ -44,7 +44,7 @@ Full design analysis available at: `comms/outbox/versions/design/${VERSION}/`
 [Brief list — see 001-environment/version-context.md for full context]
 
 ## Key Design Decisions
-[Brief list — see 005-critical-thinking/risk-assessment.md for rationale]
+[Brief list — see 006-critical-thinking/risk-assessment.md for rationale]
 
 ## Theme Overview
 [Brief table of themes — see THEME_INDEX.md for details]
@@ -82,7 +82,7 @@ For EACH theme, create a lean THEME_DESIGN.md:
 [Theme objective — one paragraph]
 
 ## Design Artifacts
-See `comms/outbox/versions/design/${VERSION}/005-critical-thinking/` for full risk analysis.
+See `comms/outbox/versions/design/${VERSION}/006-critical-thinking/` for full risk analysis.
 
 ## Features
 | # | Feature | Backlog | Goal |
@@ -93,12 +93,12 @@ See `comms/outbox/versions/design/${VERSION}/005-critical-thinking/` for full ri
 [What must exist before this theme]
 
 ## Technical Approach
-[High-level approach — reference 003-research/ for evidence]
+[High-level approach — reference 004-research/ for evidence]
 
 ## Risks
 | Risk | Mitigation |
 |------|------------|
-| [Risk] | [See 005-critical-thinking/risk-assessment.md] |
+| [Risk] | [See 006-critical-thinking/risk-assessment.md] |
 ```
 
 ### 5. Draft requirements.md (per feature)
@@ -109,11 +109,11 @@ For EACH feature, create requirements.md:
 - Functional Requirements (FR-001, FR-002, etc. with acceptance criteria)
 - Non-Functional Requirements (NFR-001, etc. with metrics)
 - Out of Scope (explicit boundaries)
-- Test Requirements (from Task 004/005 test strategy)
-- Reference: `See comms/outbox/versions/design/${VERSION}/003-research/ for supporting evidence`
+- Test Requirements (from Task 005/006 test strategy)
+- Reference: `See comms/outbox/versions/design/${VERSION}/004-research/ for supporting evidence`
 
 **CRITICAL — Backlog ID Cross-Reference:**
-When writing the "Backlog Item: BL-XXX" line in each feature's requirements.md, you MUST cross-reference the BL number against the backlog analysis (Task 002) or the feature-to-backlog mapping in the logical design (Task 004). Do NOT write BL numbers from memory. Verify that the BL number matches the correct function name. For example, if the backlog analysis says BL-020 is first() and BL-018 is unique(), do not accidentally write BL-018 in the first() requirements.
+When writing the "Backlog Item: BL-XXX" line in each feature's requirements.md, you MUST cross-reference the BL number against the backlog analysis (Task 002) or the feature-to-backlog mapping in the logical design (Task 005). Do NOT write BL numbers from memory. Verify that the BL number matches the correct function name. For example, if the backlog analysis says BL-020 is first() and BL-018 is unique(), do not accidentally write BL-018 in the first() requirements.
 
 ### 6. Draft implementation-plan.md (per feature)
 
@@ -123,14 +123,28 @@ For EACH feature, create implementation-plan.md:
 - Implementation Stages (Stage 1, Stage 2, etc. with verification commands)
 - Test Infrastructure Updates (from test strategy)
 - Quality Gates (standard commands)
-- Risks (reference 005-critical-thinking/risk-assessment.md)
+- Risks (reference 006-critical-thinking/risk-assessment.md)
 - Commit Message (template)
 
-Use evidence from Task 003 research for specific approaches and values.
+Use evidence from Task 004 research for specific approaches and values.
+
+### 6a. Verify All File Paths (MANDATORY)
+
+After drafting all implementation plans, you MUST verify every path in every "Files to Modify" table:
+
+1. Collect all unique source file paths from all implementation plan "Files to Modify" tables
+2. Call `request_clarification` with a `structure` query to list all files under the relevant source directories (e.g., `src/auto_dev_mcp/**/*.py`)
+3. Compare each "Files to Modify" path against the structure listing
+4. Any path NOT found in the listing must be corrected using the actual path from the listing
+5. "Files to Create" paths are exempt — for these, verify only that the parent directory exists in the listing
+
+You MUST NOT finalize implementation plans until all "Files to Modify" paths have been verified. Skipping this step has caused recurring errors in prior versions (v058: 6/10 plans had incorrect paths).
+
+**Constraint:** `request_clarification` may ONLY be used for file path verification in this task. Do not use it for codebase research — that is Task 004's responsibility.
 
 ## Output Requirements
 
-Create in `comms/outbox/exploration/design-${VERSION}-006-drafts/`:
+Create in `comms/outbox/exploration/design-${VERSION}-007-drafts/`:
 
 ### README.md (required)
 
@@ -179,7 +193,7 @@ Write each document as an individual file under `drafts/`:
 }
 ```
 
-The manifest is the single source of truth for numbering and metadata that Task 007 needs.
+The manifest is the single source of truth for numbering and metadata that Task 008 needs.
 
 **CRITICAL — Slug Naming:**
 - Theme slugs must NOT include number prefixes (use `config-and-guidance`, not `01-config-and-guidance`)
@@ -189,7 +203,7 @@ The manifest is the single source of truth for numbering and metadata that Task 
 #### Folder layout example
 
 ```
-comms/outbox/exploration/design-${VERSION}-006-drafts/
+comms/outbox/exploration/design-${VERSION}-007-drafts/
 ├── README.md
 ├── draft-checklist.md
 └── drafts/
@@ -223,12 +237,14 @@ Verification checklist:
 - [ ] All backlog IDs from manifest appear in at least one requirements.md
 - [ ] No theme or feature slug starts with a digit prefix (`^\d+-`)
 - [ ] Backlog IDs in each requirements.md cross-referenced against Task 002 backlog analysis (no mismatches)
+- [ ] All "Files to Modify" paths verified via `request_clarification` structure query (no unverified paths)
 
 ## Allowed MCP Tools
 
 - `read_document`
+- `request_clarification` (path verification only — see Section 6a)
 
-(All content should come from the design artifact store)
+(All content should come from the design artifact store. request_clarification is permitted solely for verifying file paths in implementation plans.)
 
 ## Guidelines
 
@@ -236,7 +252,7 @@ Verification checklist:
 - Documents must be LEAN — reference the artifact store, don't duplicate it
 - Follow machine-parseable format for THEME_INDEX.md (see Section 3)
 - Include all acceptance criteria from backlog items
-- Test requirements should match Task 004/005 test strategy
+- Test requirements should match Task 005/006 test strategy
 - Implementation plans should reference specific files based on research
 - Theme/feature slugs in the drafts/ folder must NOT include number prefixes — the MCP tools add them
 - The consolidated document-drafts.md is no longer produced — use individual files with manifest.json
@@ -245,7 +261,7 @@ Verification checklist:
 ## When Complete
 
 ```bash
-git add comms/outbox/exploration/design-${VERSION}-006-drafts/
-git commit -m "exploration: design-${VERSION}-006-drafts - document drafts complete"
+git add comms/outbox/exploration/design-${VERSION}-007-drafts/
+git commit -m "exploration: design-${VERSION}-007-drafts - document drafts complete"
 git push
 ```

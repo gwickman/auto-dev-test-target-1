@@ -43,9 +43,10 @@ if PROJECT == "[SET_PROJECT_NAME_HERE]" or not PROJECT or PROJECT.strip() == "":
 # Subfolders created by individual tasks:
 #   001-environment/
 #   002-backlog/
-#   003-research/
-#   004-logical-design/
-#   005-critical-thinking/
+#   003-impact-assessment/
+#   004-research/
+#   005-logical-design/
+#   006-critical-thinking/
 ```
 
 **If ANY validation fails, output a clear error message and STOP.**
@@ -54,7 +55,7 @@ if PROJECT == "[SET_PROJECT_NAME_HERE]" or not PROJECT or PROJECT.strip() == "":
 
 ## Task Execution Flow
 
-### Phase 1: Environment & Investigation (Tasks 001-003)
+### Phase 1: Environment & Investigation (Tasks 001-004)
 
 **Task 001:** Environment verification
 - Read: `prompts/task_prompts/001-environment-verification.md`
@@ -66,47 +67,52 @@ if PROJECT == "[SET_PROJECT_NAME_HERE]" or not PROJECT or PROJECT.strip() == "":
 - Output: `comms/outbox/versions/design/{VERSION}/002-backlog/`
 - Start exploration → poll → verify
 
-**Task 003:** Research investigation
-- Read: `prompts/task_prompts/003-research-investigation.md`
-- Output: `comms/outbox/versions/design/{VERSION}/003-research/`
+**Task 003:** Impact assessment
+- Read: `prompts/task_prompts/003-impact-assessment.md`
+- Output: `comms/outbox/versions/design/{VERSION}/003-impact-assessment/`
 - Start exploration → poll → verify
 
-### Phase 2: Logical Design & Critical Thinking (Tasks 004-005)
-
-**Task 004:** Logical design proposal
-- Read: `prompts/task_prompts/004-logical-design.md`
-- Output: `comms/outbox/versions/design/{VERSION}/004-logical-design/`
+**Task 004:** Research investigation
+- Read: `prompts/task_prompts/004-research-investigation.md`
+- Output: `comms/outbox/versions/design/{VERSION}/004-research/`
 - Start exploration → poll → verify
 
-**Task 005:** Critical thinking and risk investigation
-- Read: `prompts/task_prompts/005-critical-thinking.md`
-- Output: `comms/outbox/versions/design/{VERSION}/005-critical-thinking/`
+### Phase 2: Logical Design & Critical Thinking (Tasks 005-006)
+
+**Task 005:** Logical design proposal
+- Read: `prompts/task_prompts/005-logical-design.md`
+- Output: `comms/outbox/versions/design/{VERSION}/005-logical-design/`
 - Start exploration → poll → verify
 
-**COMMIT:** After Task 005, commit the design artifact store:
+**Task 006:** Critical thinking and risk investigation
+- Read: `prompts/task_prompts/006-critical-thinking.md`
+- Output: `comms/outbox/versions/design/{VERSION}/006-critical-thinking/`
+- Start exploration → poll → verify
+
+**COMMIT:** After Task 006, commit the design artifact store:
 ```bash
 git add comms/outbox/versions/design/{VERSION}/
 git commit -m "design: {VERSION} design artifacts (phases 1-2)"
 git push
 ```
 
-### Phase 3: Document Drafts & Persistence (Tasks 006-007)
+### Phase 3: Document Drafts & Persistence (Tasks 007-008)
 
-**Task 006:** Document drafts
-- Read: `prompts/task_prompts/006-document-drafts.md`
-- Output: `comms/outbox/exploration/design-{VERSION}-006-drafts/`
+**Task 007:** Document drafts
+- Read: `prompts/task_prompts/007-document-drafts.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-007-drafts/`
 - Start exploration → poll → verify
 
-**Task 007:** Persist documents to inbox
-- Read: `prompts/task_prompts/007-persist-documents.md`
-- Output: `comms/outbox/exploration/design-{VERSION}-007-persist/`
+**Task 008:** Persist documents to inbox
+- Read: `prompts/task_prompts/008-persist-documents.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-008-persist/`
 - Start exploration → poll → verify
 
-### Phase 4: Validation (Task 008)
+### Phase 4: Validation (Task 009)
 
-**Task 008:** Pre-execution validation (READ-ONLY)
-- Read: `prompts/task_prompts/008-pre-execution-validation.md`
-- Output: `comms/outbox/exploration/design-{VERSION}-008-validation/`
+**Task 009:** Pre-execution validation (READ-ONLY)
+- Read: `prompts/task_prompts/009-pre-execution-validation.md`
+- Output: `comms/outbox/exploration/design-{VERSION}-009-validation/`
 - Start exploration → poll → verify
 
 ---
@@ -129,13 +135,14 @@ Between each task:
 - [ ] Validation: Design artifact store created
 - [ ] Task 001: Environment verification
 - [ ] Task 002: Backlog analysis
-- [ ] Task 003: Research investigation
-- [ ] Task 004: Logical design
-- [ ] Task 005: Critical thinking
+- [ ] Task 003: Impact assessment
+- [ ] Task 004: Research investigation
+- [ ] Task 005: Logical design
+- [ ] Task 006: Critical thinking
 - [ ] COMMIT: Design artifacts (phases 1-2)
-- [ ] Task 006: Document drafts
-- [ ] Task 007: Persist documents
-- [ ] Task 008: Pre-execution validation
+- [ ] Task 007: Document drafts
+- [ ] Task 008: Persist documents
+- [ ] Task 009: Pre-execution validation
 
 ---
 
@@ -153,5 +160,5 @@ When all tasks complete:
 
 1. Set PROJECT variable at the top
 2. Run this prompt via exploration or directly in Claude Code
-3. Monitor progress — orchestrator executes all 8 tasks sequentially
+3. Monitor progress — orchestrator executes all 9 tasks sequentially
 4. Handle failures — investigate and fix before retrying

@@ -23,11 +23,41 @@ For each backlog ID identified in Task 001:
 
 **MANDATORY SCOPE:** ALL backlog items listed in PLAN.md for this version are mandatory. No items may be deferred, descoped, or deprioritized. PLAN.md defines the version scope — it is not a suggestion. Read ALL backlog items and include ALL of them.
 
-### 2. Identify Previous Version
+### 2. Quality Assessment for Selected Items
+
+For each backlog item fetched in Task 1, assess quality across three dimensions.
+This assessment is advisory — document findings but proceed even if refinement is not practical.
+
+#### 2a. Description Depth
+- Count approximate words in the item's description
+- Consider reviewing items with descriptions under ~50 words — these may be too thin for design and could lead to scope invention
+- If description is thin, use `update_backlog_item` to expand it with problem context, impact statement, and specific gaps, including `quality_assertion: {"quality_maintained": true, "change_justified": true}`
+
+#### 2b. Acceptance Criteria Testability
+- For each acceptance criterion, check for the presence of an action verb
+- Consider reviewing criteria that are noun phrases without verbs (e.g., "User authentication" vs. "User can authenticate with email and password") — these may not be testable
+- If AC is non-testable, use `update_backlog_item` to rewrite with specific, verifiable actions, including `quality_assertion`
+
+#### 2c. Use Case Authenticity
+- Check use_case text against known formulaic patterns:
+  - "This feature addresses: {title}. It improves the system by resolving the described requirement."
+  - "Implementing {title} improves the {area} by providing better {noun}."
+- Consider reviewing items with formulaic use cases — they add no information beyond the title
+- If formulaic, use `update_backlog_item` to write an authentic user scenario describing who benefits, what they do, and why it matters, including `quality_assertion`
+
+#### 2d. Assessment Summary
+Document the assessment results for each item in the task output:
+- Item ID, title
+- Description depth: word count, flagged (yes/no)
+- AC testability: flagged criteria count
+- Use case authenticity: formulaic (yes/no)
+- Refinement action taken (if any)
+
+### 3. Identify Previous Version
 
 Call `list_versions(project="${PROJECT}")` to find the most recent completed version before `${VERSION}`.
 
-### 3. Review Previous Retrospective
+### 4. Review Previous Retrospective
 
 Locate and read the previous version's retrospective:
 - Check `docs/versions/vXXX/README.md`
@@ -39,7 +69,7 @@ Extract insights relevant to current design:
 - Tech debt to address
 - Recommendations for future work
 
-### 4. Search Project Learnings
+### 5. Search Project Learnings
 
 Run `search_learnings(project="${PROJECT}", tags=["design", "architecture"])` to find relevant documented learnings.
 
@@ -87,6 +117,7 @@ Relevant learnings from project learning repository:
 ## Allowed MCP Tools
 
 - `get_backlog_item`
+- `update_backlog_item`
 - `list_versions`
 - `read_document`
 - `search_learnings`

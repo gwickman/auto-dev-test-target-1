@@ -1,16 +1,16 @@
-# Task 004: Logical Design Proposal
+# Task 005: Logical Design Proposal
 
 Read AGENTS.md first and follow all instructions there.
 
 ## Objective
 
-Synthesize findings from Tasks 001-003 into a coherent logical design proposal with theme groupings, feature breakdowns, and test strategy.
+Synthesize findings from Tasks 001-004 into a coherent logical design proposal with theme groupings, feature breakdowns, and test strategy.
 
 ## Context
 
 This is Phase 2 (Logical Design & Critical Thinking) for `${PROJECT}` version `${VERSION}`.
 
-All context is gathered. Now propose the structure. This proposal feeds into Task 005 (Critical Thinking) for risk review before document drafting begins.
+All context is gathered. Now propose the structure. This proposal feeds into Task 006 (Critical Thinking) for risk review before document drafting begins.
 
 ## Tasks
 
@@ -19,7 +19,7 @@ All context is gathered. Now propose the structure. This proposal feeds into Tas
 Read all design artifacts from the centralized store:
 - `comms/outbox/versions/design/${VERSION}/001-environment/` — environment and version scope
 - `comms/outbox/versions/design/${VERSION}/002-backlog/` — backlog details and retrospective
-- `comms/outbox/versions/design/${VERSION}/003-research/` — research findings and evidence
+- `comms/outbox/versions/design/${VERSION}/004-research/` — research findings and evidence
 
 ### 2. Theme Groupings
 
@@ -64,11 +64,11 @@ Document which research findings inform the design:
 - Libraries or patterns selected
 - Architectural decisions made
 - Configuration values chosen
-- Reference evidence by path: `comms/outbox/versions/design/${VERSION}/003-research/[file]`
+- Reference evidence by path: `comms/outbox/versions/design/${VERSION}/004-research/[file]`
 
 ### 7. Risks and Unknowns
 
-**IMPORTANT:** This section feeds directly into Task 005 (Critical Thinking).
+**IMPORTANT:** This section feeds directly into Task 006 (Critical Thinking).
 
 List all identified risks and unknowns:
 - Technical risks (e.g., "unclear how X integrates with Y")
@@ -84,7 +84,7 @@ For each, provide:
 
 ## Output Requirements
 
-Save outputs to `comms/outbox/versions/design/${VERSION}/004-logical-design/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/005-logical-design/`:
 
 ### README.md (required)
 
@@ -94,7 +94,7 @@ Then:
 - **Theme Overview**: List of themes with goals
 - **Key Decisions**: Major architectural or grouping decisions
 - **Dependencies**: High-level execution order rationale
-- **Risks and Unknowns**: Items needing investigation in Task 005
+- **Risks and Unknowns**: Items needing investigation in Task 006
 
 ### logical-design.md
 
@@ -125,7 +125,7 @@ For each theme:
 - Rationale
 
 #### Research Sources
-- Key findings adopted (reference 003-research/ by path)
+- Key findings adopted (reference 004-research/ by path)
 - Patterns selected
 - Values chosen with sources
 
@@ -135,7 +135,7 @@ Test requirements per feature (same format as v1).
 
 ### risks-and-unknowns.md
 
-All identified risks and unknowns for Task 005:
+All identified risks and unknowns for Task 006:
 
 ```markdown
 ## Risk: [title]
@@ -149,7 +149,7 @@ All identified risks and unknowns for Task 005:
 
 - `read_document`
 
-(All data should come from design artifact store, tasks 001-003)
+(All data should come from design artifact store, tasks 001-004)
 
 ## Guidelines
 
@@ -157,7 +157,7 @@ All identified risks and unknowns for Task 005:
 - Feature names should be action-oriented
 - ALL backlog items from PLAN.md are MANDATORY and must be mapped to a feature — no deferrals, no descoping
 - Dependencies must be clear and explicit
-- Evidence must come from Task 003, not new assumptions
+- Evidence must come from Task 004, not new assumptions
 - Reference the design artifact store by path, not by inlining
 - Keep the main logical design document under 300 lines
 - Do NOT commit — the master prompt handles commits after Phase 2

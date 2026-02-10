@@ -1,31 +1,31 @@
-# Task 005: Critical Thinking and Risk Investigation
+# Task 006: Critical Thinking and Risk Investigation
 
 Read AGENTS.md first and follow all instructions there.
 
 ## Objective
 
-Review the logical design from Task 004, investigate all identified risks and unknowns, and produce a refined design with mitigations. This step ensures the design is robust BEFORE document drafting begins.
+Review the logical design from Task 005, investigate all identified risks and unknowns, and produce a refined design with mitigations. This step ensures the design is robust BEFORE document drafting begins.
 
 ## Context
 
 This is Phase 2 (Logical Design & Critical Thinking) for `${PROJECT}` version `${VERSION}`.
 
-Task 004 produced a logical design with a "Risks and Unknowns" section. This task investigates each risk, resolves unknowns where possible, and produces an updated design that incorporates findings.
+Task 005 produced a logical design with a "Risks and Unknowns" section. This task investigates each risk, resolves unknowns where possible, and produces an updated design that incorporates findings.
 
-**IMPORTANT:** This task builds EXCLUSIVELY on Task 004's output and the existing design artifact store (001-003). Do NOT re-gather environment context, re-read backlogs, or duplicate work from Tasks 001-003.
+**IMPORTANT:** This task builds EXCLUSIVELY on Task 005's output and the existing design artifact store (001-004). Do NOT re-gather environment context, re-read backlogs, or duplicate work from Tasks 001-004.
 
 ## Tasks
 
 ### 1. Read the Logical Design
 
 Read from the design artifact store:
-- `comms/outbox/versions/design/${VERSION}/004-logical-design/logical-design.md`
-- `comms/outbox/versions/design/${VERSION}/004-logical-design/risks-and-unknowns.md`
-- `comms/outbox/versions/design/${VERSION}/004-logical-design/test-strategy.md`
+- `comms/outbox/versions/design/${VERSION}/005-logical-design/logical-design.md`
+- `comms/outbox/versions/design/${VERSION}/005-logical-design/risks-and-unknowns.md`
+- `comms/outbox/versions/design/${VERSION}/005-logical-design/test-strategy.md`
 
 ### 2. Triage Risks
 
-Categorize each risk/unknown from Task 004:
+Categorize each risk/unknown from Task 005:
 - **Investigate now**: Can be resolved with codebase queries, web search, or DeepWiki
 - **Accept with mitigation**: Cannot be fully resolved, but a mitigation strategy exists
 - **TBD - requires runtime testing**: Genuinely cannot be determined pre-implementation
@@ -63,7 +63,7 @@ Review the refined design for:
 
 ## Output Requirements
 
-Save outputs to `comms/outbox/versions/design/${VERSION}/005-critical-thinking/`:
+Save outputs to `comms/outbox/versions/design/${VERSION}/006-critical-thinking/`:
 
 ### README.md (required)
 
@@ -72,17 +72,17 @@ First paragraph: Summary of critical thinking review — risks investigated, res
 Then:
 - **Risks Investigated**: Count and categories
 - **Resolutions**: Key findings that changed the design
-- **Design Changes**: What changed from Task 004's proposal
+- **Design Changes**: What changed from Task 005's proposal
 - **Remaining TBDs**: Items that require runtime testing
 - **Confidence Assessment**: Overall confidence in the refined design
 
 ### risk-assessment.md
 
-For each risk from Task 004:
+For each risk from Task 005:
 
 ```markdown
 ## Risk: [title]
-- **Original severity**: [from Task 004]
+- **Original severity**: [from Task 005]
 - **Category**: [investigate now / accept with mitigation / TBD]
 - **Investigation**: [what was done]
 - **Finding**: [what was discovered]
@@ -92,7 +92,7 @@ For each risk from Task 004:
 
 ### refined-logical-design.md
 
-Updated logical design incorporating all findings. Same structure as Task 004's `logical-design.md` but with:
+Updated logical design incorporating all findings. Same structure as Task 005's `logical-design.md` but with:
 - Risk resolutions integrated
 - Updated theme/feature structures (if changed)
 - Updated execution order (if changed)
@@ -121,8 +121,8 @@ Plus DeepWiki tools:
 ## Guidelines
 
 - ALL backlog items from PLAN.md are MANDATORY — risk investigation must not result in deferrals or descoping
-- Do NOT re-read backlogs, re-check environment, or duplicate Tasks 001-003
-- Build exclusively on Task 004's output and the design artifact store
+- Do NOT re-read backlogs, re-check environment, or duplicate Tasks 001-004
+- Build exclusively on Task 005's output and the design artifact store
 - Document ALL investigation work — even dead ends are valuable
 - If a risk investigation reveals a design-breaking issue, update the design
 - If investigation cannot resolve a risk, document it as TBD with clear markers

@@ -1,4 +1,4 @@
-# Task 007: Persist Documents
+# Task 008: Persist Documents
 
 Read AGENTS.md first and follow all instructions there.
 
@@ -10,7 +10,7 @@ Call the MCP design tools to persist all drafted documents to the inbox folder s
 
 This is Phase 3 (Document Drafts & Persistence) for `${PROJECT}` version `${VERSION}`.
 
-Task 006 created all document drafts. Now persist them using MCP tools.
+Task 007 created all document drafts. Now persist them using MCP tools.
 
 **WARNING:** Do NOT modify any files in `comms/outbox/versions/design/${VERSION}/`. These are the reference artifacts. If you find errors, document them and STOP.
 
@@ -39,12 +39,12 @@ The following files are machine-parsed and require EXACT format preservation:
 
 ## Tasks
 
-### 1. Read Task 006 Output
+### 1. Read Task 007 Output
 
-Read the manifest and individual draft files from Task 006:
+Read the manifest and individual draft files from Task 007:
 
 ```
-drafts_dir = comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/
+drafts_dir = comms/outbox/exploration/design-${VERSION}-007-drafts/drafts/
 ```
 
 1. Read `{drafts_dir}/manifest.json` — contains version metadata, theme/feature
@@ -65,7 +65,7 @@ drafts_dir = comms/outbox/exploration/design-${VERSION}-006-drafts/drafts/
 1. List all missing files
 2. Report which themes/features are affected
 3. STOP without calling any MCP tools
-4. Recommend re-running Task 006
+4. Recommend re-running Task 007
 
 ### 2. Prepare Context Object
 
@@ -171,7 +171,7 @@ Expected: All documents exist, no missing files.
 
 ## Output Requirements
 
-Create in `comms/outbox/exploration/design-${VERSION}-007-persist/`:
+Create in `comms/outbox/exploration/design-${VERSION}-008-persist/`:
 
 ### README.md (required)
 
@@ -230,7 +230,7 @@ Use `read_document` to verify each file exists.
 
 - ALL backlog items from PLAN.md are MANDATORY — verify all items appear in persisted documents before completing
 - Verify array structure before calling design_version (see Step 3)
-- Content passed to MCP tools should be the lean referenced versions from Task 006
+- Content passed to MCP tools should be the lean referenced versions from Task 007
 - If any MCP call fails, document the error clearly and STOP
 - Validate that ALL documents were created successfully
 - Do NOT modify the design artifact store
@@ -246,7 +246,7 @@ If any MCP call fails:
 ## When Complete
 
 ```bash
-git add comms/outbox/exploration/design-${VERSION}-007-persist/
-git commit -m "exploration: design-${VERSION}-007-persist - documents persisted to inbox"
+git add comms/outbox/exploration/design-${VERSION}-008-persist/
+git commit -m "exploration: design-${VERSION}-008-persist - documents persisted to inbox"
 git push
 ```

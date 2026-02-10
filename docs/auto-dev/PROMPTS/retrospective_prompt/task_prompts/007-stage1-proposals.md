@@ -59,7 +59,8 @@ For each failure classified as a "code problem" in Task 004's README.md:
    ## Resolution
    Fix the production code to match the expected behavior.
    """,
-       tags=["bug", "quality-gate", "retrospective"]
+       tags=["bug", "quality-gate", "retrospective"],
+       quality_assertion='{"problem_structured": true, "ac_testable": true, "no_formulaic": true, "duplicate_checked": true}'
    )
    ```
 

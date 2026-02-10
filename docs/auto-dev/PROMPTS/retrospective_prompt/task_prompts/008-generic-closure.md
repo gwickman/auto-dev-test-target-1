@@ -4,7 +4,7 @@ Read AGENTS.md first and follow all instructions there, including the mandatory 
 
 ## Objective
 
-Execute mandatory version closure tasks that apply to all auto-dev-mcp managed projects: plan updates, CHANGELOG verification, README review, repository cleanup, and documentation review.
+Execute mandatory version closure tasks that apply to all auto-dev-mcp managed projects: plan updates, CHANGELOG verification, README review, and repository cleanup.
 
 ## Context
 
@@ -56,24 +56,8 @@ git_read(project="${PROJECT}", operation="status")
 
 If stale branches exist, document them for cleanup.
 
-### 5. Documentation Review
-
-**CRITICAL**: This is not optional. Every document that references changed functionality must be checked.
-
-Read the version and theme retrospectives to identify what changed in `${VERSION}`:
-- `comms/outbox/versions/execution/${VERSION}/retrospective.md`
-
-For each changed area, check the relevant documentation files:
-- `docs/ARCHITECTURE.md` — if architecture changed
-- `docs/DEVELOPER.md` — if developer workflow changed
-- `docs/USER_MANUAL.md` — if user-facing behavior changed
-- `docs/CI.md` — if CI pipeline changed
-- Any other docs referenced by changes
-
-For each document checked:
-- If content is current: note "verified current"
-- If content needs update: make the specific update
-- If document doesn't exist: note "does not exist" (not a gap unless it should exist)
+<!-- Documentation review moved to design-phase impact assessment (003-impact-assessment.md).
+     See docs/auto-dev/IMPACT_ASSESSMENT.md for project-specific checks. -->
 
 ## Output Requirements
 
@@ -88,7 +72,6 @@ Then:
 - **CHANGELOG**: Verified complete / entries added
 - **README**: Updated / no changes needed
 - **Repository**: Clean / stale branches found
-- **Documentation Review**: Table of document → status (current/updated/not found)
 
 ### closure-report.md
 
@@ -96,7 +79,6 @@ Detailed report of all changes made:
 - Exact diffs for plan.md changes
 - Exact diffs for CHANGELOG changes
 - Exact diffs for README changes
-- List of documents reviewed with findings
 - Repository cleanup actions taken
 
 ## Allowed MCP Tools
