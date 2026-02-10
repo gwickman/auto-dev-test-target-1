@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-v003-002-batch1-1770705870890",
   "results_folder": "c4-v003-002-batch1",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 10960,
   "started_at": "2026-02-10T06:44:30.890096",
-  "updated_at": "2026-02-10T06:44:30.890096",
+  "updated_at": "2026-02-10T06:44:33.077644",
   "completed_at": null,
   "error": null,
   "documents": [],
