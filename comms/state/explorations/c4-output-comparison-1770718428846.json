@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-output-comparison-1770718428846",
   "results_folder": "c4-output-comparison",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 22380,
   "started_at": "2026-02-10T10:13:48.846304",
-  "updated_at": "2026-02-10T10:13:48.846304",
+  "updated_at": "2026-02-10T10:13:51.080874",
   "completed_at": null,
   "error": null,
   "documents": [],
