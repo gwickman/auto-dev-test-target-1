@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-prompt-review-1770703963093",
   "results_folder": "c4-prompt-review",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 10960,
   "started_at": "2026-02-10T06:12:43.093453",
-  "updated_at": "2026-02-10T06:12:43.093453",
+  "updated_at": "2026-02-10T06:12:51.450716",
   "completed_at": null,
   "error": null,
   "documents": [],
