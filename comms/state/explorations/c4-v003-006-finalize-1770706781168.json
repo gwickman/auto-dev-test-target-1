@@ -1,10 +1,10 @@
 {
   "exploration_id": "c4-v003-006-finalize-1770706781168",
   "results_folder": "c4-v003-006-finalize",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 10960,
   "started_at": "2026-02-10T06:59:41.168205",
-  "updated_at": "2026-02-10T06:59:41.168205",
+  "updated_at": "2026-02-10T06:59:43.009927",
   "completed_at": null,
   "error": null,
   "documents": [],
