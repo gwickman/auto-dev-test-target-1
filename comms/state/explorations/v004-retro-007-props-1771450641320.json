@@ -1,14 +1,16 @@
 {
   "exploration_id": "v004-retro-007-props-1771450641320",
   "results_folder": "v004-retro-007-props",
-  "status": "running",
+  "status": "complete",
   "pid": 16308,
   "started_at": "2026-02-18T21:37:21.320096",
-  "updated_at": "2026-02-18T21:37:23.255077",
-  "completed_at": null,
+  "updated_at": "2026-02-18T21:40:15.899427",
+  "completed_at": "2026-02-18T21:40:15.899021",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/v004-retro-007-props/prompt.md",
   "outbox_path": "comms/outbox/exploration/v004-retro-007-props"
