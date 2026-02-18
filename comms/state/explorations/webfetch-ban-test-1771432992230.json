@@ -1,14 +1,16 @@
 {
   "exploration_id": "webfetch-ban-test-1771432992230",
   "results_folder": "webfetch-ban-test",
-  "status": "running",
+  "status": "complete",
   "pid": 30580,
   "started_at": "2026-02-18T16:43:12.230707",
-  "updated_at": "2026-02-18T16:43:41.696849",
-  "completed_at": null,
+  "updated_at": "2026-02-18T16:47:00.369221",
+  "completed_at": "2026-02-18T16:47:00.367715",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/webfetch-ban-test/prompt.md",
   "outbox_path": "comms/outbox/exploration/webfetch-ban-test"
