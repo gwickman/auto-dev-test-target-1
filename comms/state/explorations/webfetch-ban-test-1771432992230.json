@@ -1,10 +1,10 @@
 {
   "exploration_id": "webfetch-ban-test-1771432992230",
   "results_folder": "webfetch-ban-test",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 30580,
   "started_at": "2026-02-18T16:43:12.230707",
-  "updated_at": "2026-02-18T16:43:12.230707",
+  "updated_at": "2026-02-18T16:43:41.696849",
   "completed_at": null,
   "error": null,
   "documents": [],
