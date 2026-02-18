@@ -1,10 +1,10 @@
 {
   "exploration_id": "v004-retro-007-props-1771450641320",
   "results_folder": "v004-retro-007-props",
-  "status": "pending",
-  "pid": null,
+  "status": "running",
+  "pid": 16308,
   "started_at": "2026-02-18T21:37:21.320096",
-  "updated_at": "2026-02-18T21:37:21.320096",
+  "updated_at": "2026-02-18T21:37:23.255077",
   "completed_at": null,
   "error": null,
   "documents": [],
