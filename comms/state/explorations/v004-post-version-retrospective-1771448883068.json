@@ -1,0 +1,15 @@
+{
+  "exploration_id": "v004-post-version-retrospective-1771448883068",
+  "results_folder": "v004-post-version-retrospective",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-18T21:08:03.068301",
+  "updated_at": "2026-02-18T21:08:03.068301",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/v004-post-version-retrospective/prompt.md",
+  "outbox_path": "comms/outbox/exploration/v004-post-version-retrospective"
+}
