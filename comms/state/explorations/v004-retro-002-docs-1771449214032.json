@@ -1,14 +1,16 @@
 {
   "exploration_id": "v004-retro-002-docs-1771449214032",
   "results_folder": "v004-retro-002-docs",
-  "status": "running",
+  "status": "complete",
   "pid": 16308,
   "started_at": "2026-02-18T21:13:34.033041",
-  "updated_at": "2026-02-18T21:13:43.509263",
-  "completed_at": null,
+  "updated_at": "2026-02-18T21:16:30.808830",
+  "completed_at": "2026-02-18T21:16:30.807931",
   "error": null,
-  "documents": [],
-  "committed": false,
+  "documents": [
+    "README.md"
+  ],
+  "committed": true,
   "commit_error": null,
   "prompt_path": "comms/inbox/exploration/v004-retro-002-docs/prompt.md",
   "outbox_path": "comms/outbox/exploration/v004-retro-002-docs"
