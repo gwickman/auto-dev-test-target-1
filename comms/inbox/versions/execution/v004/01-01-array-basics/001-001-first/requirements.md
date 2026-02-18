@@ -8,7 +8,7 @@ Create a `first()` function that returns the first element of an array safely, h
 
 This is part of v004 Theme 01 (array-basics) implementing foundational array utilities. The function provides type-safe access to the first array element without throwing errors on empty arrays.
 
-**Backlog Item:** BL-018 - Add first() array utility
+**Backlog Item:** BL-020 - Add first() array utility
 
 **Acceptance Criteria from Backlog:**
 - Function signature: `first<T>(arr: T[]): T | undefined`

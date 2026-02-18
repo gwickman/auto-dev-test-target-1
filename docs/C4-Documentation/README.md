@@ -1,7 +1,7 @@
 # C4 Architecture Documentation
 
 **Last Updated:** 2026-02-10 UTC
-**Generated for Version:** v003
+**Generated for Version:** v004
 **Generation Mode:** full
 **Generator:** auto-dev-mcp C4 documentation prompt
 
