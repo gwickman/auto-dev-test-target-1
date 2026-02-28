@@ -1,0 +1,15 @@
+{
+  "exploration_id": "post-migration-smoke-test-2-1772281172463",
+  "results_folder": "post-migration-smoke-test-2",
+  "status": "pending",
+  "pid": null,
+  "started_at": "2026-02-28T12:19:32.463814",
+  "updated_at": "2026-02-28T12:19:32.463814",
+  "completed_at": null,
+  "error": null,
+  "documents": [],
+  "committed": false,
+  "commit_error": null,
+  "prompt_path": "comms/inbox/exploration/post-migration-smoke-test-2/prompt.md",
+  "outbox_path": "comms/outbox/exploration/post-migration-smoke-test-2"
+}
