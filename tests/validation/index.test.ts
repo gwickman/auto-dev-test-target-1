@@ -5,6 +5,7 @@ import {
   isInRange,
   isNonNegativeInteger,
   assertNonEmptyString,
+  isPlainObject,
   EmptyStringError,
 } from '../../src/index.js';
 
@@ -172,5 +173,34 @@ describe('assertNonEmptyString', () => {
     assertNonEmptyString(value);
     const length: number = value.length;
     expect(length).toBe(4);
+  });
+});
+
+describe('isPlainObject', () => {
+  it('returns true for plain object', () => {
+    expect(isPlainObject({})).toBe(true);
+    expect(isPlainObject({ a: 1, b: 'hello' })).toBe(true);
+  });
+
+  it('returns true for Object.create(null)', () => {
+    expect(isPlainObject(Object.create(null))).toBe(true);
+  });
+
+  it('returns false for null', () => {
+    expect(isPlainObject(null)).toBe(false);
+  });
+
+  it('returns false for array', () => {
+    expect(isPlainObject([])).toBe(false);
+    expect(isPlainObject([1, 2, 3])).toBe(false);
+  });
+
+  it('returns false for Date', () => {
+    expect(isPlainObject(new Date())).toBe(false);
+  });
+
+  it('returns false for class instance', () => {
+    class MyClass { value = 1; }
+    expect(isPlainObject(new MyClass())).toBe(false);
   });
 });
