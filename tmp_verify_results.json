@@ -1,0 +1,97 @@
+[
+  {
+    "label": "VERSION_DESIGN.md",
+    "path": "v005/VERSION_DESIGN.md",
+    "exists": true
+  },
+  {
+    "label": "THEME_INDEX.md",
+    "path": "v005/THEME_INDEX.md",
+    "exists": true
+  },
+  {
+    "label": "STARTER_PROMPT.md",
+    "path": "v005/STARTER_PROMPT.md",
+    "exists": true
+  },
+  {
+    "label": "Theme 1 THEME_DESIGN.md",
+    "path": "v005/01-object-basics/THEME_DESIGN.md",
+    "exists": true
+  },
+  {
+    "label": "001-keys requirements.md",
+    "path": "v005/01-object-basics/001-keys/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "001-keys implementation-plan.md",
+    "path": "v005/01-object-basics/001-keys/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "002-pick requirements.md",
+    "path": "v005/01-object-basics/002-pick/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "002-pick implementation-plan.md",
+    "path": "v005/01-object-basics/002-pick/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "003-omit requirements.md",
+    "path": "v005/01-object-basics/003-omit/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "003-omit implementation-plan.md",
+    "path": "v005/01-object-basics/003-omit/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "004-is-empty requirements.md",
+    "path": "v005/01-object-basics/004-is-empty/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "004-is-empty implementation-plan.md",
+    "path": "v005/01-object-basics/004-is-empty/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "Theme 2 THEME_DESIGN.md",
+    "path": "v005/02-object-deep/THEME_DESIGN.md",
+    "exists": true
+  },
+  {
+    "label": "001-get requirements.md",
+    "path": "v005/02-object-deep/001-get/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "001-get implementation-plan.md",
+    "path": "v005/02-object-deep/001-get/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "002-clone requirements.md",
+    "path": "v005/02-object-deep/002-clone/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "002-clone implementation-plan.md",
+    "path": "v005/02-object-deep/002-clone/implementation-plan.md",
+    "exists": true
+  },
+  {
+    "label": "003-merge requirements.md",
+    "path": "v005/02-object-deep/003-merge/requirements.md",
+    "exists": true
+  },
+  {
+    "label": "003-merge implementation-plan.md",
+    "path": "v005/02-object-deep/003-merge/implementation-plan.md",
+    "exists": true
+  }
+]
