@@ -7,7 +7,7 @@
 - **Location**: tests
 - **Language**: TypeScript (Jest with @jest/globals)
 - **Purpose**: Provides smoke tests and integration tests for the package's main entry point to ensure all public exports are correctly exposed and functional.
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Structure
 

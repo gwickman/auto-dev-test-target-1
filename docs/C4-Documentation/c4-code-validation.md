@@ -7,7 +7,7 @@
 - **Location**: src/validation
 - **Language**: TypeScript
 - **Purpose**: Provides type-safe runtime validation functions with TypeScript type guards for defensive programming and data validation.
-- **Parent Component**: TBD
+- **Parent Component**: [Validation Utilities](./c4-component-validation-utilities.md)
 
 ## Code Elements
 

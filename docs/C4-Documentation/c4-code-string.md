@@ -7,7 +7,7 @@
 - **Location**: src/string
 - **Language**: TypeScript
 - **Purpose**: Provides functional utilities for common string transformations with error handling and type safety.
-- **Parent Component**: TBD
+- **Parent Component**: [String Utilities](./c4-component-string-utilities.md)
 
 ## Code Elements
 

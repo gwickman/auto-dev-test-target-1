@@ -7,7 +7,7 @@
 - **Location**: tests/string
 - **Language**: TypeScript (Jest with @jest/globals)
 - **Purpose**: Ensures correctness and reliability of string manipulation utilities through systematic testing of normal cases, edge cases, and error conditions.
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Structure
 

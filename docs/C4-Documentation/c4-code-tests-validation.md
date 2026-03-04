@@ -7,7 +7,7 @@
 - **Location**: tests/validation
 - **Language**: TypeScript (Jest with @jest/globals)
 - **Purpose**: Ensures correctness and reliability of validation utilities through extensive testing of type guards, assertions, and edge cases across all supported types.
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Structure
 

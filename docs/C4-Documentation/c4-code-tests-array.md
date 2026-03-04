@@ -7,7 +7,7 @@
 - **Location**: `tests/array`
 - **Language**: TypeScript 5.x (Jest/ts-jest)
 - **Purpose**: Validates correct behavior of array utility functions across various input scenarios and error conditions
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Files & Coverage
 

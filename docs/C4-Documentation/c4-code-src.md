@@ -7,7 +7,7 @@
 - **Location**: `src/`
 - **Language**: TypeScript 5.x (ESM)
 - **Purpose**: Provides the public API surface for the entire utility library, enabling simple single-import statements
-- **Parent Component**: TBD
+- **Parent Component**: [Library Shell](./c4-component-library-shell.md)
 
 ## Code Elements
 

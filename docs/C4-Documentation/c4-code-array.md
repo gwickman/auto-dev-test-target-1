@@ -7,7 +7,7 @@
 - **Location**: `src/array`
 - **Language**: TypeScript 5.x (ESM)
 - **Purpose**: Provides type-safe, utility functions for array transformations and operations
-- **Parent Component**: TBD
+- **Parent Component**: [Array Utilities](./c4-component-array-utilities.md)
 
 ## Code Elements
 

@@ -7,7 +7,7 @@
 - **Location**: `tests/errors`
 - **Language**: TypeScript 5.x (Jest/ts-jest)
 - **Purpose**: Validates correct instantiation, inheritance chain, and property handling of custom error classes
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Files & Coverage
 

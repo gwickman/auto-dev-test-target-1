@@ -7,7 +7,7 @@
 - **Location**: tests/object
 - **Language**: TypeScript (Jest with @jest/globals)
 - **Purpose**: Ensures correctness and reliability of all object manipulation utilities through extensive test coverage including edge cases and error conditions.
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Structure
 

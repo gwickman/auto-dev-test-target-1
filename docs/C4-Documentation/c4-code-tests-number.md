@@ -7,7 +7,7 @@
 - **Location**: `tests/number`
 - **Language**: TypeScript 5.x (Jest/ts-jest)
 - **Purpose**: Validates correct behavior of number operations under normal and error conditions
-- **Parent Component**: TBD
+- **Parent Component**: [Test Suite](./c4-component-test-suite.md)
 
 ## Test Files & Coverage
 

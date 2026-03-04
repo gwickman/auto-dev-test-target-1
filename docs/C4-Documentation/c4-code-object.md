@@ -7,7 +7,7 @@
 - **Location**: src/object
 - **Language**: TypeScript
 - **Purpose**: Provides functional utilities for object manipulation with type safety and comprehensive error handling.
-- **Parent Component**: TBD
+- **Parent Component**: [Object Utilities](./c4-component-object-utilities.md)
 
 ## Code Elements
 

@@ -7,7 +7,7 @@
 - **Location**: `src/number`
 - **Language**: TypeScript 5.x (ESM)
 - **Purpose**: Provides type-safe, validated functions for common numeric operations with proper error handling
-- **Parent Component**: TBD
+- **Parent Component**: [Number Utilities](./c4-component-number-utilities.md)
 
 ## Code Elements
 

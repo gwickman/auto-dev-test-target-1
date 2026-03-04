@@ -7,7 +7,7 @@
 - **Location**: `src/errors`
 - **Language**: TypeScript 5.x (ESM)
 - **Purpose**: Provides domain-specific exceptions that extend Error with contextual field information for better error handling and debugging
-- **Parent Component**: TBD
+- **Parent Component**: [Error Framework](./c4-component-error-framework.md)
 
 ## Code Elements
 
