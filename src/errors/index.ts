@@ -25,3 +25,10 @@ export class OutOfRangeError extends ValidationError {
     this.name = 'OutOfRangeError';
   }
 }
+
+export class TimeoutError extends ValidationError {
+  constructor(ms: number) {
+    super(`Operation timed out after ${ms}ms`, 'timeout');
+    this.name = 'TimeoutError';
+  }
+}
