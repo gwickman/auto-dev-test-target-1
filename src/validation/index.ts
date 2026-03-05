@@ -25,6 +25,10 @@ export function assertNonEmptyString(value: unknown, field?: string): asserts va
   }
 }
 
+export function isNonNegative(value: unknown): value is number {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0;
+}
+
 export function isPlainObject(value: unknown): value is Record<string, unknown> {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
     return false;
