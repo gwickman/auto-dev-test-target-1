@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v005] - 2026-03-04
+
+### Added
+
+- Object utility module (`src/object/`) with barrel exports
+  - `keys<T>(obj: T): (keyof T)[]` -- typed wrapper around `Object.keys()` returning `(keyof T)[]`
+  - `pick<T, K>(obj: T, keys: K[]): Pick<T, K>` -- create new object with only specified properties
+  - `omit<T, K>(obj: T, keys: K[]): Omit<T, K>` -- create new object excluding specified properties
+  - `isEmpty(value: unknown): boolean` -- check if a value is empty across multiple types (null, undefined, empty string, empty array, empty plain object)
+  - `get(obj: object, path: string, defaultValue?: unknown): unknown` -- safely retrieve nested properties via dot-path string with array index support
+  - `clone<T>(obj: T): T` -- deep copy using native `structuredClone` with `ValidationError` for non-cloneable types
+  - `merge(target: object, ...sources: object[]): object` -- deep merge multiple objects recursively with index-based array strategy
+- `isPlainObject()` type guard in validation module for plain-object detection
+- 92 new tests covering all object utilities and the new validator (224 total)
+
+### Changed
+
+- Extended validation module with `isPlainObject()` type guard and supporting tests
+- Updated `src/index.ts` to export the new object module
+
+### Fixed
+
+- N/A (new features, no bug fixes)
+
 ## [v004] - 2026-02-06
 
 ### Added
