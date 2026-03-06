@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v006] - 2026-03-06
+
+### Added
+
+- Promise utility module (`src/promise/`) with barrel exports
+  - `sleep(ms: number): Promise<void>` -- promise-based delay that resolves after specified milliseconds
+  - `retry<T>(fn: () => Promise<T>, attempts: number): Promise<T>` -- retry wrapper that retries a failed async function a specified number of times, preserving the last error
+  - `timeout<T>(promise: Promise<T>, ms: number): Promise<T>` -- timeout wrapper using `Promise.race` with `.finally()` cleanup that rejects with `TimeoutError` if the promise does not resolve in time
+- Function utility module (`src/function/`) with barrel exports
+  - `once<T>(fn: (...args: any[]) => T): (...args: any[]) => T` -- single-execution wrapper that caches and returns the result of the first call
+  - `debounce<T>(fn: (...args: any[]) => T, ms: number): (...args: any[]) => void` -- delays execution until after a specified time since the last call, using clearTimeout/setTimeout coalescing
+  - `throttle<T>(fn: (...args: any[]) => T, ms: number): (...args: any[]) => void` -- limits function calls to once per specified time period with leading-edge execution
+- `isNonNegative()` validation utility for non-negative number parameter validation
+- `TimeoutError` error class extending `ValidationError` for timeout-specific error handling
+- 61 new tests covering all promise and function utilities (285 total)
+
+### Changed
+
+- Extended validation module with `isNonNegative()` validator
+- Extended error hierarchy with `TimeoutError`
+- Updated `src/index.ts` to export the new promise and function modules
+
+### Fixed
+
+- N/A (new features, no bug fixes)
+
 ## [v005] - 2026-03-04
 
 ### Added
