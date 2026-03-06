@@ -6,7 +6,7 @@
 - **Location**: `src/function`
 - **Language**: TypeScript
 - **Purpose**: Provides wrappers to control how and when functions execute — single execution (once), delayed execution (debounce), and rate-limited execution (throttle)
-- **Parent Component**: TBD
+- **Parent Component**: [Async & Control Flow](c4-component-async.md)
 
 ## Code Elements
 

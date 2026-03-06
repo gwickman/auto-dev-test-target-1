@@ -6,7 +6,7 @@
 - **Location**: `src/validation`
 - **Language**: TypeScript
 - **Purpose**: Provides reusable type-narrowing predicates and assertion functions used throughout the library to validate inputs before processing
-- **Parent Component**: TBD
+- **Parent Component**: [Core Infrastructure](c4-component-core.md)
 
 ## Code Elements
 

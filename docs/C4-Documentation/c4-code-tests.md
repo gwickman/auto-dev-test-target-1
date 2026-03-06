@@ -6,7 +6,7 @@
 - **Location**: tests/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates that the main package entry point correctly re-exports all public utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Package Infrastructure](c4-component-package.md)
 
 ## Test Inventory
 

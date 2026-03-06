@@ -6,7 +6,7 @@
 - **Location**: `src/object`
 - **Language**: TypeScript
 - **Purpose**: Provides utilities for cloning, merging, picking/omitting properties, safe nested access, emptiness checking, and typed key extraction
-- **Parent Component**: TBD
+- **Parent Component**: [Collection Utilities](c4-component-collections.md)
 
 ## Code Elements
 

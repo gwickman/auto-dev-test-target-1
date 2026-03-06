@@ -6,7 +6,7 @@
 - **Location**: tests/function/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates execution control, timing behavior, argument passing, this-context preservation, and input validation
-- **Parent Component**: TBD
+- **Parent Component**: [Async & Control Flow](c4-component-async.md)
 
 ## Test Inventory
 

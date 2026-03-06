@@ -6,7 +6,7 @@
 - **Location**: tests/object/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates object introspection, transformation, deep operations, and type safety for all object utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Collection Utilities](c4-component-collections.md)
 
 ## Test Inventory
 

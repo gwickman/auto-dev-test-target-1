@@ -6,7 +6,7 @@
 - **Location**: `src/number`
 - **Language**: TypeScript
 - **Purpose**: Provides utilities for clamping numbers to a range and rounding to a specified number of decimal places
-- **Parent Component**: TBD
+- **Parent Component**: [Primitive Utilities](c4-component-primitives.md)
 
 ## Code Elements
 

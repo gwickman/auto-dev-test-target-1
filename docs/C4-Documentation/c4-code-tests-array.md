@@ -6,7 +6,7 @@
 - **Location**: tests/array/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates correctness, edge cases, type safety, and error handling for array utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Collection Utilities](c4-component-collections.md)
 
 ## Test Inventory
 

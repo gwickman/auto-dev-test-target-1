@@ -6,7 +6,7 @@
 - **Location**: tests/string/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates string transformation, formatting, and error handling for all string utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Primitive Utilities](c4-component-primitives.md)
 
 ## Test Inventory
 

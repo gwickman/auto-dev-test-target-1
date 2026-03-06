@@ -6,7 +6,7 @@
 - **Location**: `src/string`
 - **Language**: TypeScript
 - **Purpose**: Provides common string operations including reversing, truncating with suffix, URL-safe slug generation, and capitalization
-- **Parent Component**: TBD
+- **Parent Component**: [Primitive Utilities](c4-component-primitives.md)
 
 ## Code Elements
 

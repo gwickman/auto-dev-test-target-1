@@ -6,7 +6,7 @@
 - **Location**: tests/errors/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates error instantiation, inheritance chains, message formatting, and field property behavior
-- **Parent Component**: TBD
+- **Parent Component**: [Core Infrastructure](c4-component-core.md)
 
 ## Test Inventory
 

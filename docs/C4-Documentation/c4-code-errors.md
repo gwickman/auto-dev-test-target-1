@@ -6,7 +6,7 @@
 - **Location**: `src/errors`
 - **Language**: TypeScript
 - **Purpose**: Provides structured, typed error classes used throughout the library for input validation failures, out-of-range values, and timeout conditions
-- **Parent Component**: TBD
+- **Parent Component**: [Core Infrastructure](c4-component-core.md)
 
 ## Code Elements
 

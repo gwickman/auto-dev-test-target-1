@@ -6,7 +6,7 @@
 - **Location**: `src/array`
 - **Language**: TypeScript
 - **Purpose**: Provides commonly-needed array operations such as retrieving elements, deduplication, chunking, compacting, flattening, and computing intersections
-- **Parent Component**: TBD
+- **Parent Component**: [Collection Utilities](c4-component-collections.md)
 
 ## Code Elements
 

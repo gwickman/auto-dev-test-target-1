@@ -6,7 +6,7 @@
 - **Location**: `.`
 - **Language**: JSON, TypeScript config
 - **Purpose**: Defines project metadata, dependencies, build scripts, and TypeScript compiler options
-- **Parent Component**: TBD
+- **Parent Component**: [Package Infrastructure](c4-component-package.md)
 
 ## Code Elements
 

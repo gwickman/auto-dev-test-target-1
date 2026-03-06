@@ -6,7 +6,7 @@
 - **Location**: `src/promise`
 - **Language**: TypeScript
 - **Purpose**: Provides utilities for delaying execution (sleep), retrying failed async operations, and adding timeouts to promises
-- **Parent Component**: TBD
+- **Parent Component**: [Async & Control Flow](c4-component-async.md)
 
 ## Code Elements
 

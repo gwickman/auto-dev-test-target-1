@@ -6,7 +6,7 @@
 - **Location**: `src`
 - **Language**: TypeScript
 - **Purpose**: Provides a single entry point that re-exports all sub-module utilities for consumers
-- **Parent Component**: TBD
+- **Parent Component**: [Package Infrastructure](c4-component-package.md)
 
 ## Code Elements
 

@@ -6,7 +6,7 @@
 - **Location**: tests/number/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates value clamping and decimal rounding with edge cases and error handling
-- **Parent Component**: TBD
+- **Parent Component**: [Primitive Utilities](c4-component-primitives.md)
 
 ## Test Inventory
 

@@ -6,7 +6,7 @@
 - **Location**: tests/promise/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates async timing, retry logic, timeout behavior, and input validation for promise utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Async & Control Flow](c4-component-async.md)
 
 ## Test Inventory
 

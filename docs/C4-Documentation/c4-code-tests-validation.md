@@ -6,7 +6,7 @@
 - **Location**: tests/validation/
 - **Language**: TypeScript (Jest)
 - **Purpose**: Validates type checking, type narrowing, range checking, and assertion behavior for all validation utilities
-- **Parent Component**: TBD
+- **Parent Component**: [Core Infrastructure](c4-component-core.md)
 
 ## Test Inventory
 
