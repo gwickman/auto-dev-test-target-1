@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v009] - 2026-03-08
+
+### Added
+
+- `smokeTestGreet(name: string): string` utility function in `src/smoke-utils.ts` returning `'Hello, {name}! (smoke test)'` (PR #38)
+- Jest test for `smokeTestGreet` in `tests/smoke-utils.test.ts`
+- Re-export of `smokeTestGreet` from `src/index.ts`
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
 ## [v008] - 2026-03-08
 
 ### Added
