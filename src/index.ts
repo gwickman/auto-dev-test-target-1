@@ -9,3 +9,4 @@ export * from './promise/index.js';
 export * from './function/index.js';
 export * from './smoke-utils.js';
 export * from './halt-test.js';
+export * from './halt-ping.js';
