@@ -7,3 +7,4 @@ export * from './array/index.js';
 export * from './object/index.js';
 export * from './promise/index.js';
 export * from './function/index.js';
+export * from './smoke-utils.js';
