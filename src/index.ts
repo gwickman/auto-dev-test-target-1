@@ -10,3 +10,4 @@ export * from './function/index.js';
 export * from './smoke-utils.js';
 export * from './halt-test.js';
 export * from './halt-ping.js';
+export * from './halt-echo.js';
