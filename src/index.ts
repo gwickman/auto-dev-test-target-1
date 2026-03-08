@@ -1,3 +1,4 @@
+// v008 halt-test: trivial change to verify halt/recover workflow
 export * from './string/index.js';
 export * from './number/index.js';
 export * from './errors/index.js';
