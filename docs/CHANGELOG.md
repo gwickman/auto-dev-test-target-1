@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v013] - 2026-03-08
+
+### Added
+
+- `haltPing(): string` utility function in `src/halt-ping.ts` returning `'pong'` (PR #43)
+- `haltEcho(msg: string): string` utility function in `src/halt-echo.ts` returning the input message (PR #44)
+- `haltReverse(s: string): string` utility function in `src/halt-reverse.ts` returning reversed string (PR #45)
+- Jest tests for all three halt utilities (`tests/halt-ping.test.ts`, `tests/halt-echo.test.ts`, `tests/halt-reverse.test.ts`)
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
 ## [v012] - 2026-03-08
 
 ### Added
